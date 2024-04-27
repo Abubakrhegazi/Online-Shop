@@ -140,3 +140,30 @@ font-weight: bold;
     padding: 100px 20px;
    
 }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.title {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.title h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.title h1 span {
+    color: #007bff; /* Accent color */
+}
+
+.title p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+}

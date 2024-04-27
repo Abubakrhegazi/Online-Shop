@@ -36,3 +36,19 @@
 
 
 }
+.image1 {
+    background-image: url("../imgs/depositphotos_38143799-stock-photo-e-commerce-shopping-cart-with\ -\ Copy.jpg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    margin-bottom: 120px;
+padding: 20px;
+}
+.textonimage {
+position: absolute  ;
+bottom:308px;
+left: 1100px;
+font-size:30px;
+}

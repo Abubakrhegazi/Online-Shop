@@ -39,9 +39,11 @@ margin: 15px 0 20px 0;
 }
 
 
-section-p1{
+.section-box{
     padding: 40px 80px;
 }
+
+
 body{
 margin: 0;
 width: 100%;
@@ -61,6 +63,10 @@ justify-content: space-between;
 padding: 1% 4%;
 background-color: #a6d1d0;
 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+z-index: 999;
+position: sticky;
+top: 0;
+left: 0;
 }
 
 #navbar{
@@ -128,12 +134,14 @@ justify-content: center;
     color: cornflowerblue;
 }
 #hero button{
+    background-image: url("imgs/button.png");
+    background-size: cover;
+    background-color: transparent;
+    padding: 14px 80px 14px 65px;
+    border: 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;   
+    }
 
-background-image: url("imgs/button.png");
-background-size: cover;
-background-color: transparent;
-padding: 15px 30px;
-/* color: aqua; */
-border: 0;
-    
-}

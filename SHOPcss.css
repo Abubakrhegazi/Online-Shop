@@ -66,54 +66,77 @@ font-size:30px;
 .container {
     margin-top: 1000px;
    
-    width:1000%;
-    height: 1000%;
+    width:auto;
+    height: auto ;
 }
 .text{
     font-size: 60px;
-
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-weight: bold;
 }
+.allproducts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+ width: auto;
+ height:auto;
+    text-shadow: 20px;
+ }
+ .allproducts .img{
+    width:20px;
+    height:20px;
+ }
 .product01{
     width:100px;
 }
 .product01 img{
     
     width:200%;
-    height: 80%;
+    height: 20%;
+    margin-bottom: 0px;
 }
 .product02 img{
     
-    width:20%;
+    width:-10%;
     height: 20%;
+    margin-bottom: 0px;
 }
 .product03 img{
     
-    width:20%;
+    width:-20%;
     height: 20%;
+    margin-bottom: 0px;
+   
 }
 .product04 img{
     
-    width:20%;
+    width:-10%;
     height: 20%;
+    margin-bottom: 0px;
 }
 .product05 img{
-    width:20%;
+    width:-20%;
     height: 20%;
+    margin-bottom: 0px;
 }
 .product06 img{
     
-    width:20%;
+    width: -10%;
     height: 20%;
+    margin-bottom: 0px;
+   
 }
 .product07 img{
-    width:20%;
+    width:-20%;
     height: 20%;
+    margin-bottom: 0px;
 }
- .allproducts {
-    display: grid;
-    grid-template-columns:auto auto auto auto; 
-    grid-template-rows: auto auto auto auto;
-    gap:20px;
-    padding:20px;
-    text-shadow: 20px;
- }
+.banner {
+    background-image: url("imgs/shop-online-facebook-cover-page-timeline-web-ad-banner-template-design-with-photo-place-modern-layout-700-222006835.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    padding: 100px 20px;
+   
+}

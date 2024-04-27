@@ -88,11 +88,52 @@ body {
     border: dotted black 2px;
     display: flex;
     justify-content:space-around;
-    width: 40%;
+    width: 45%;
     margin: 0 10%;
 }
 .free-ship div, .free-ship a{
     color: black;
     padding: 5%;
     text-decoration: none;
+}
+.free-ship a{
+    font-weight: bolder;
+}
+.hrr{
+    width: 45%;
+    margin: 2% 10%;
+}
+
+.item{
+    width: 45%;
+    margin: 2% 10%;
+    display: flex;
+}
+.item-img img{
+    width: 100%;
+}
+.item-img{
+    width: 36%;
+}
+.item-quantity{
+    display: inline;
+}
+.item-details{
+    margin-left: 40px;
+}
+.item-adder{
+    border: solid;
+    padding: 5%;
+    margin-top: 109px;
+    width: 10%;
+    text-align: center;
+}
+.item-adder button, .item-adder p{
+    display: inline;
+    padding: 5%;
+    font-size: 27px;
+}
+.item-adder button{
+    background-color: white;
+    border: none;
 }

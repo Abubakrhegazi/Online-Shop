@@ -137,21 +137,9 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
-.b1 {
-    background-color: azure;
-    font-size: 20px;
-    padding: 10px;
-}
-
 #all-cats{
     right: 12%;
 }
-
-.b1:hover {
-    background-color: rgb(233, 83, 57);
-    transform: scale(0.8);
-}
-
 .container {
     margin-top: 1000px;
 
@@ -161,6 +149,23 @@ body {
 .textonimage{
     background-image: url("../imgs/slideshow/ss1.avif");
     height: 120%;
+    padding: 6%;
+}
+.ssl{
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    font-size: 100px;
+}
+.ssr{
+    position: relative;
+    left: 95%;
+    background-color: transparent;
+    border: none;
+    font-size: 100px;
+}
+.ssr i{
+    text-shadow: white 0 0 3px;
 }
 .text {
     font-size: 60px;

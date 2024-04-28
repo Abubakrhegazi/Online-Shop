@@ -113,20 +113,8 @@ body {
 
 
 }
-/* 
-.image1 {
-    background-image: url("../imgs/depositphotos_38143799-stock-photo-e-commerce-shopping-cart-with\ -\ Copy.jpg");
-    background-size: 50%;
-    background-repeat: no-repeat;
-    width: 200%;
-    height: 100%;
-    position: absolute;
-    margin-bottom: 120px;
-    padding: 20px;
-} */
-
 .moving-info1{
-    background-color: grey;
+    background-color: #01438a;
     margin: 0;
 }
 
@@ -135,11 +123,28 @@ body {
     margin: 0;
     padding: 1% 0.5%;
 }
+
+.categories{
+    background-color: grey;
+    margin: 0;
+}
+.categories p{
+    color: white;
+    margin: 0;
+    padding: 1.5% 0.5%;
+}
+.cat-list{
+    display: flex;
+    justify-content: space-evenly;
+}
 .b1 {
     background-color: azure;
     font-size: 20px;
     padding: 10px;
+}
 
+#all-cats{
+    right: 12%;
 }
 
 .b1:hover {
@@ -262,5 +267,4 @@ body {
 .title p {
     font-size: 20px;
     color: #666;
-    margin-bottom: 30px;
 }

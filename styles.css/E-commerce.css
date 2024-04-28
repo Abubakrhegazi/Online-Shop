@@ -53,7 +53,7 @@ p {
 body {
     margin: 0;
     width: 100%;
-    background-image: url("../imgs/hero4.png");
+    background-image: url("../imgs/bgs/hero4.png");
     background-size: cover;
 }
 
@@ -117,7 +117,7 @@ body {
 
 
 #hero {
-    background-image: url("../imgs/back2.jpg");
+    background-image: url("../imgs/bgs/back2.jpg");
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -143,7 +143,7 @@ body {
 }
 
 #hero button {
-    background-image: url("../imgs/button.png");
+    background-image: url("../imgs/misc/button.png");
     background-size: cover;
     background-color: transparent;
     padding: 14px 80px 14px 65px;
@@ -297,7 +297,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("../imgs/back1.jpg");
+    background-image: url("../imgs/bgs/back1.jpg");
     width: 100%;
     height: 40vh;
     background-size: cover;

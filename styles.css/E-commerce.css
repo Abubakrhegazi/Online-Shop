@@ -68,7 +68,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1% 4%;
-    background-color: #a6d1d0;
+    background-color: #01438a;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index: 999;
     position: sticky;
@@ -139,7 +139,7 @@ body {
 
 #hero h1 {
     margin-bottom: -20px;
-    color: cornflowerblue;
+    color: #01438a;
 }
 
 #hero button {
@@ -159,7 +159,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #a6d1d0;
+    background-color: #01438a;
 
 
 }

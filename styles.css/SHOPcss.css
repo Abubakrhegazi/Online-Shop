@@ -149,20 +149,20 @@ body {
 .textonimage{
     background-image: url("../imgs/slideshow/ss1.avif");
     height: 120%;
-    padding: 6%;
+    padding: 7%;
 }
 .ssl{
     text-align: left;
     background-color: transparent;
     border: none;
-    font-size: 100px;
+    font-size: 81px;
 }
 .ssr{
     position: relative;
     left: 95%;
     background-color: transparent;
     border: none;
-    font-size: 100px;
+    font-size: 81px;
 }
 .ssr i{
     text-shadow: white 0 0 3px;

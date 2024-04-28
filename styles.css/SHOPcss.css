@@ -50,14 +50,6 @@ p {
 }
 
 
-body {
-    margin: 0;
-    width: 100%;
-    background-size: cover;
-}
-
-
-
 #Header .logo {
     width: 24%;
 }
@@ -113,60 +105,67 @@ body {
 
 
 }
-.moving-info1{
+
+.moving-info1 {
     background-color: #01438a;
     margin: 0;
 }
 
-.moving-info1 p{
+.moving-info1 p {
     color: white;
     margin: 0;
     padding: 1% 0.5%;
 }
 
-.categories{
+.categories {
     background-color: grey;
     margin: 0;
 }
-.categories p{
+
+.categories p {
     color: white;
     margin: 0;
     padding: 1.5% 0.5%;
 }
-.cat-list{
+
+.cat-list {
     display: flex;
     justify-content: space-evenly;
 }
-#all-cats{
+
+#all-cats {
     right: 12%;
 }
-.container {
-    margin-top: 1000px;
 
-    width: auto;
-    height: auto;
+.container {
+    text-align: center;
 }
-.textonimage{
+
+.textonimage {
     background-image: url("../imgs/slideshow/ss1.avif");
     height: 120%;
     padding: 7%;
 }
-.ssl{
+
+.ssl {
     text-align: left;
     background-color: transparent;
     border: none;
     font-size: 81px;
 }
-.ssr{
+
+.ssr {
     position: relative;
     left: 95%;
     background-color: transparent;
     border: none;
     font-size: 81px;
 }
-.ssr i{
+
+.ssr i {
     text-shadow: white 0 0 3px;
 }
+
 .text {
     font-size: 60px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -177,76 +176,17 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    width: auto;
-    height: auto;
-    text-shadow: 20px;
 }
 
 .allproducts .img {
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: auto;
 }
 
-.product01 {
-    width: 100px;
-}
-
-.product01 img {
-
-    width: 200%;
-    height: 20%;
-    margin-bottom: 0px;
-}
-
-.product02 img {
-
-    width: -10%;
-    height: 20%;
-    margin-bottom: 0px;
-}
-
-.product03 img {
-
-    width: -20%;
-    height: 20%;
-    margin-bottom: 0px;
-
-}
-
-.product04 img {
-
-    width: -10%;
-    height: 20%;
-    margin-bottom: 0px;
-}
-
-.product05 img {
-    width: -20%;
-    height: 20%;
-    margin-bottom: 0px;
-}
-
-.product06 img {
-
-    width: -10%;
-    height: 20%;
-    margin-bottom: 0px;
-
-}
-
-.product07 img {
-    width: -20%;
-    height: 20%;
-    margin-bottom: 0px;
-}
-
-.banner {
-    background-image: url("../imgs/shop-online-facebook-cover-page-timeline-web-ad-banner-template-design-with-photo-place-modern-layout-700-222006835.jpg");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: #fff;
-    padding: 100px 20px;
+.product img {
+    width: 40%;
+    height: auto;
+    border: #011132 solid 4px;
 
 }
 
@@ -276,4 +216,55 @@ body {
 .title p {
     font-size: 20px;
     color: #666;
+}
+
+footer {
+    background-color: #011132;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact,
+.social-media {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.contact h4,
+.social-media h4 {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+.contact p {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #FD9610;
 }

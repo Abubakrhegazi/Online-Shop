@@ -4,18 +4,109 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
 }
+* {
+
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+
+}
 .title{
     font-size: 40px;
     color: #333;
     margin-top: 50px;
     text-align: center;
+}
+
+.title h1 {
+    font-size: 47px;
+    color: #333;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.title h1 span {
+    color: #007bff;
+    /* Accent color */
+}
+
+.title p {
+    font-size: 20px;
+    color: #666;
+}
+
+.section-box {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+
+#Header .logo {
+    width: 24%;
+}
+
+#Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 4%;
+    background-color: #011132;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    /* position: sticky; */
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
 
 }
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #FD9610;
+    transition: 0.3s ease;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: #FD9610;
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+
+
+}
+
+
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin: 50px 0;
 }
 
 .login-form {
@@ -24,6 +115,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 400px;
 }
 
 .login-form h2 {
@@ -92,4 +184,57 @@ body {
 
 .title .btn:hover {
     background-color: #0056b3;
+}
+
+footer {
+    background-color: #011132;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact,
+.social-media {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.contact h4,
+.social-media h4 {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+.contact p {
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #FD9610;
 }

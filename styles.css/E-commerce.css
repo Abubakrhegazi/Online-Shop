@@ -91,15 +91,16 @@ body {
 #navbar li a {
     text-decoration: none;
     font-size: 15px;
-    font-weight: 500;
-    color: #1a1a1a;
+    font-weight: 300;
+    color: white;
 
 }
 
 #navbar li a:hover,
 #navbar li a.active {
-    color: red;
+    color: #FD9610;
     transition: 0.3s ease;
+    font-weight: 400;
 }
 
 #navbar li a.active::after,
@@ -107,7 +108,7 @@ body {
     content: "";
     width: 50%;
     height: 2px;
-    background: red;
+    background: #FD9610;
     position: absolute;
     bottom: -4px;
     left: 0px;
@@ -197,7 +198,7 @@ background-color: #01438a;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #088178;
+    /* background-color: #088178; */
 
 
 }

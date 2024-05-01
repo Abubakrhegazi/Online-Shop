@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+
+}
+
 .title {
     text-align: center;
 }
@@ -7,42 +17,88 @@
 .title h1 {
     font-size: 47px;
     color: #333;
-    margin: 0;
-    margin-top: 190px;
+    margin: 2%;
 }
 
 .title h1 span {
     color: #007bff;
     /* Accent color */
 }
-.image {
-    position: relative;
+
+
+.section-box {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+
+#Header .logo {
+    width: 24%;
+}
+
+#Header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 300px; 
-    overflow: hidden; 
+    justify-content: space-between;
+    padding: 1% 4%;
+    background-color: #011132;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
-.image img {
-    max-width: 100%;
-    max-height: 100%;
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.button {
+#navbar li {
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
+
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #FD9610;
+    transition: 0.3s ease;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: #FD9610;
     position: absolute;
-    padding: 10px 20px;
-    background-color: #007bff; 
-    color: #fff; 
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    bottom: -4px;
+    left: 0px;
+
+
 }
+
+.main-container{
+    display: flex;
+    justify-content: space-around;
+}
+
 .body {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
     color: #333;
@@ -64,6 +120,35 @@
     color: #777;
     text-align: center;
 }
+
+.image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.image div img {
+    width: 100%;
+}
+.image div{
+    width: 500px;
+}
+
+.button {
+    /* position: absolute; */
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 footer {
     background-color: #011132;
     padding: 20px 0;

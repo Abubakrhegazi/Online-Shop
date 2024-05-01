@@ -116,7 +116,7 @@ body {
 }
 
 
-#slideshow-sec{
+/* #slideshow-sec{
 
 min-width: 90%;
 background-color: #01438a;
@@ -129,8 +129,8 @@ background-color: #01438a;
     border: 2px solid transparent;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+} */
+/* 
 .arrow {
     position: absolute;
     top: 50%;
@@ -149,7 +149,7 @@ background-color: #01438a;
 
 .next {
     right: 10px;
-}
+} */
 
 
 
@@ -197,7 +197,7 @@ background-color: #01438a;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #01438a;
+    background-color: #cce7d0;
 
 
 }
@@ -229,8 +229,9 @@ background-color: #01438a;
 #mostalzmat .box img {
     margin-bottom: 0px;
     width: 100%;
-    aspect-ratio: 1/1;
-
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    mix-blend-mode: darken;
 }
 
 #mostalzmat .box:nth-child(2) h6 {
@@ -376,4 +377,55 @@ button.seperate {
 #banner button:hover {
     background-color: #088178;
     color: #fff;
+}
+footer {
+    background-color: #011132;
+    padding: 20px 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact,
+.social-media {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.contact h4,
+.social-media h4 {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+.contact p {
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #FD9610;
 }

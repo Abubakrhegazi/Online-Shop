@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "League Spartan", sans-serif;
 }
+
 .section-box {
     padding: 40px 80px;
 }
@@ -78,64 +79,136 @@ body {
     left: 0px;
 }
 
-.cart-title{
+.cart-title {
     margin-left: 10%;
 }
-#items-no, #money-left{
+
+#items-no,
+#money-left {
     display: inline;
 }
-.free-ship{
+
+.free-ship {
     border: dotted black 2px;
     display: flex;
-    justify-content:space-around;
-    width: 45%;
+    justify-content: space-around;
+    /* width: 45%; */
     margin: 0 10%;
 }
-.free-ship div, .free-ship a{
+
+.free-ship div,
+.free-ship a {
     color: black;
     padding: 5%;
     text-decoration: none;
 }
-.free-ship a{
+
+.free-ship a {
     font-weight: bolder;
 }
-.hrr{
-    width: 45%;
+
+.hrr {
+    /* width: 45%; */
     margin: 2% 10%;
 }
 
-.item{
-    width: 45%;
+.item {
+    /* width: 45%; */
     margin: 2% 10%;
     display: flex;
 }
-.item-img img{
+
+.item-img img {
     width: 100%;
 }
-.item-img{
+
+.item-img {
     width: 36%;
 }
-.item-quantity{
+
+.item-quantity {
     display: inline;
 }
-.item-details{
+
+.item-details {
     margin-left: 40px;
 }
-.item-adder{
+
+.item-adder {
     border: solid;
     padding: 5%;
     margin-top: 114px;
     width: 150%;
     text-align: center;
 }
-.item-adder button, .item-adder p{
+
+.item-adder button,
+.item-adder p {
     display: inline;
     padding: 5%;
     font-size: 27px;
 }
-.item-adder button{
+
+.item-adder button {
     background-color: white;
     border: none;
+}
+
+.main-page {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.left-sec {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.right-sec {
+    background-color: #FAF3E9;
+    padding: 2%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
+}
+.right-sec p {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px; /* Adjust max-width as needed */
+}
+.subtotal,
+.total {
+    width: 100%;
+    max-width: 300px; /* Adjust max-width as needed */
+    text-align: right;
+}
+.right-sec span {
+    text-align: right;
+}
+
+.subtotal p,
+.total h3 {
+    margin-bottom: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #011132;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #FD9610;
 }
 
 /* Footer Part */

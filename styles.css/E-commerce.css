@@ -229,6 +229,7 @@ background-color: #01438a;
 #mostalzmat .box img {
     margin-bottom: 0px;
     width: 100%;
+    aspect-ratio: 1/1;
 
 }
 

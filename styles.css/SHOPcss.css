@@ -119,7 +119,7 @@ p {
 }
 
 .categories {
-    background-color: grey;
+ background-color: grey;
     margin: 0;
 }
 
@@ -127,11 +127,21 @@ p {
     color: white;
     margin: 0;
     padding: 1.5% 0.5%;
+    font-size: 15px;
 }
 
 .cat-list {
     display: flex;
     justify-content: space-evenly;
+}
+.cat-list button{
+    background-color: grey;
+    border: none;
+   color:white;
+   font-size: 15px;
+}
+.cat-list button:hover{
+color:orangered;
 }
 
 #all-cats {

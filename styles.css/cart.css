@@ -174,10 +174,11 @@ body {
     text-align: left;
 
 }
-.right-sec p {
+.right-sec p, .right-sec h3 {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center; /* Align items vertically */
     max-width: 300px; /* Adjust max-width as needed */
 }
 .subtotal,

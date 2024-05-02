@@ -42,11 +42,7 @@ p {
 
 
 .section-box {
-    padding: 40px 80px;
-}
-
-.section-m1 {
-    margin: 40px 0;
+    padding: 15px 80px;
 }
 
 
@@ -68,7 +64,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1% 4%;
-    background-color: #01438a;
+    background-color: #011132;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index: 999;
     position: sticky;
@@ -91,15 +87,16 @@ body {
 #navbar li a {
     text-decoration: none;
     font-size: 15px;
-    font-weight: 500;
-    color: #1a1a1a;
+    font-weight: 300;
+    color: white;
 
 }
 
 #navbar li a:hover,
 #navbar li a.active {
-    color: red;
+    color: #FD9610;
     transition: 0.3s ease;
+    font-weight: 400;
 }
 
 #navbar li a.active::after,
@@ -107,7 +104,7 @@ body {
     content: "";
     width: 50%;
     height: 2px;
-    background: red;
+    background: #FD9610;
     position: absolute;
     bottom: -4px;
     left: 0px;
@@ -116,6 +113,7 @@ body {
 }
 
 
+/* 
 #slideshow-sec{
 
 min-width: 90%;
@@ -149,7 +147,7 @@ background-color: #01438a;
 
 .next {
     right: 10px;
-}
+} */
 
 
 
@@ -197,7 +195,7 @@ background-color: #01438a;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #01438a;
+    /* background-color: #088178; */
 
 
 }
@@ -375,4 +373,57 @@ button.seperate {
 #banner button:hover {
     background-color: #088178;
     color: #fff;
+}
+
+footer {
+    background-color: #011132;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact,
+.social-media {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.contact h4,
+.social-media h4 {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+.contact p {
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #FD9610;
 }

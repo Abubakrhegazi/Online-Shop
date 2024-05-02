@@ -227,7 +227,29 @@ body {
     font-size: 20px;
     color: #666;
 }
+.coupon-zone{
+    width: 150%;
+    height: auto;
+  margin-top: 120px;
+  margin-bottom: 150px;
+  
+}
+.coupon{
+   
+    position: relative;
+   left: 920px;
+   bottom:200px;
+}
+.coupon .p {
+   
 
+}
+.coupon p span{
+    color:#007bff;
+}
+.coupon p span:hover{
+    color:orangered;
+}
 .support center {
     border: dashed black 10px;
     

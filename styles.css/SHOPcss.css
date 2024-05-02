@@ -228,6 +228,17 @@ body {
     color: #666;
 }
 
+.support center {
+    border: dashed black 10px;
+    
+}
+.supports{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left:800px;
+    bottom:50px;
+}
 footer {
     background-color: #011132;
     padding: 20px 0;

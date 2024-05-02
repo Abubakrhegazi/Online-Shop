@@ -109,6 +109,7 @@ p {
 .moving-info1 {
     background-color: #01438a;
     margin: 0;
+    animation: slideLeft 10s linear infinite;
 }
 
 .moving-info1 p {

@@ -109,7 +109,7 @@ p {
 .moving-info1 {
     background-color: #01438a;
     margin: 0;
-    animation: slideLeft 10s linear infinite;
+   
 }
 
 .moving-info1 p {
@@ -190,7 +190,16 @@ p {
     border: #011132 solid 4px;
 
 }
-
+.men img{
+    width: 40%;
+    height: auto;
+    border: #011132 solid 4px;
+}
+.watches img{
+    width: 40%;
+    height: auto;
+    border: #011132 solid 4px;
+}
 body {
     margin: 0;
     padding: 0;

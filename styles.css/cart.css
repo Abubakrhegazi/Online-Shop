@@ -172,21 +172,28 @@ body {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-
+    margin-left: 10%;
 }
-.right-sec p, .right-sec h3 {
+
+.right-sec p,
+.right-sec h3 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    align-items: center; /* Align items vertically */
-    max-width: 300px; /* Adjust max-width as needed */
+    align-items: center;
+    /* Align items vertically */
+    max-width: 300px;
+    /* Adjust max-width as needed */
 }
+
 .subtotal,
 .total {
     width: 100%;
-    max-width: 300px; /* Adjust max-width as needed */
+    max-width: 300px;
+    /* Adjust max-width as needed */
     text-align: right;
 }
+
 .right-sec span {
     text-align: right;
 }
@@ -194,6 +201,27 @@ body {
 .subtotal p,
 .total h3 {
     margin-bottom: 5px;
+}
+
+.promo-input {
+    padding: 10px;
+    margin-right: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    font-size: 16px;
+}
+
+.promo-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin: 4% 0;
 }
 
 .btn {

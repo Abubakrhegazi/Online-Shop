@@ -12,11 +12,11 @@
 </header>
 <div class="container">
     <h2>Add Product</h2>
-    <form id="addProductForm">
-        <input type="text" name="name" placeholder="Product Name" required><br>
-        <input type="number" name="price" placeholder="Price" step="1" required><br>
-        <input type="text" name="type" placeholder="Product Type" required><br>
-        <input type="file" name="file" accept="image/*" required><br>
+    <form id="addProductForm" onsubmit="addProduct(); return false;">
+        <input type="text" name="name" placeholder="Product Name" required id="name"><br>
+        <input type="number" name="price" placeholder="Price" step="1" required id="price"><br>
+        <input type="text" name="type" placeholder="Product Type" required id="type"><br>
+        <input type="file" name="file" accept="image/*" required id="image"><br>
         <button type="submit">Add Product</button>
     </form>
     <!-- Other content -->

@@ -1,21 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./styles.css/contact.css">
+</head>
 
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+<body>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <section id="Header">
+        <a href="#"><img src="imgs/logo.png" alt="" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <li><a href="login.html"><i class="far fa-user"></i></a></li>
+            </ul>
+        </div>
+    </section>
 
-    <body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Feel free to reach out to us with any questions or feedback!</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <script src="script.js"></script>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
 
-    </body>
+            <button type="submit">Send</button>
+        </form>
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: contact@example.com</p>
+            <p>Phone: 123-456-7890</p>
+            <p>Address: 123 Main Street, City, Country</p>
+        </div>
+    </div>
+</body>
 
 </html>

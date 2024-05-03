@@ -11,6 +11,7 @@ function addProduct() {
     let price = document.getElementById('price').value;
     let type = document.getElementById('type').value;
     let image = document.getElementById('image').value;
+
     let product = { name, price, type, image };
     products.push(product);
 

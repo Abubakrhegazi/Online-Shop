@@ -103,7 +103,6 @@
 
     }
 
-
     .login-container {
         display: flex;
         justify-content: center;
@@ -131,12 +130,14 @@
     input[type="password"] {
         width: 100%;
         padding: 10px;
-        margin-bottom: 20px;
+        /* margin-bottom: 10px; */
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
     }
-
+    .email, .pass{
+        margin-bottom: 20px;
+    }
     button {
         width: 100%;
         padding: 10px;
@@ -152,7 +153,10 @@
     button:hover {
         background-color: #0056b3;
     }
-
+    .error{
+        color: red;
+        font-size: 12px;
+    }
     p {
         margin-top: 20px;
         font-size: 14px;

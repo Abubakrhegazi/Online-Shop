@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="./styles.css/admin.css">
 </head>
 <body>
-    Hello
+<header>
+    <h1>Admin Panel</h1>
+</header>
+<div class="container">
+    <h2>Add Product</h2>
+    <form id="addProductForm">
+        <input type="text" name="name" placeholder="Product Name" required><br>
+        <input type="number" name="price" placeholder="Price" step="1" required><br>
+        <input type="text" name="type" placeholder="Product Type" required><br>
+        <input type="file" name="file" accept="image/*" required><br>
+        <button type="submit">Add Product</button>
+    </form>
+    <!-- Other content -->
+    <script src="./scripts/admin.js"></script>
+</div>
 </body>
 </html>

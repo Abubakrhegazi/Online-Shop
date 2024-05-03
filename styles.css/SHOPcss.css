@@ -109,6 +109,7 @@ p {
 .moving-info1 {
     background-color: #01438a;
     margin: 0;
+   
 }
 
 .moving-info1 p {
@@ -118,7 +119,7 @@ p {
 }
 
 .categories {
-    background-color: grey;
+ background-color: grey;
     margin: 0;
 }
 
@@ -126,11 +127,21 @@ p {
     color: white;
     margin: 0;
     padding: 1.5% 0.5%;
+    font-size: 15px;
 }
 
 .cat-list {
     display: flex;
     justify-content: space-evenly;
+}
+.cat-list button{
+    background-color: grey;
+    border: none;
+   color:white;
+   font-size: 15px;
+}
+.cat-list button:hover{
+color:orangered;
 }
 
 #all-cats {
@@ -189,7 +200,16 @@ p {
     border: #011132 solid 4px;
 
 }
-
+.men img{
+    width: 40%;
+    height: auto;
+    border: #011132 solid 4px;
+}
+.watches img{
+    width: 40%;
+    height: auto;
+    border: #011132 solid 4px;
+}
 body {
     margin: 0;
     padding: 0;
@@ -217,7 +237,40 @@ body {
     font-size: 20px;
     color: #666;
 }
+.coupon-zone{
+    width: 150%;
+    height: auto;
+  margin-top: 120px;
+  margin-bottom: 150px;
+  
+}
+.coupon{
+   
+    position: relative;
+   left: 920px;
+   bottom:200px;
+}
+.coupon .p {
+   
 
+}
+.coupon p span{
+    color:#007bff;
+}
+.coupon p span:hover{
+    color:orangered;
+}
+.support center {
+    border: dashed black 10px;
+    
+}
+.supports{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left:800px;
+    bottom:50px;
+}
 footer {
     background-color: #011132;
     padding: 20px 0;

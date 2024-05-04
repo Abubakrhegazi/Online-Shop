@@ -375,3 +375,55 @@ button.seperate {
     background-color: #088178;
     color: #fff;
 }
+footer {
+    background-color: #011132;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact,
+.social-media {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.contact h4,
+.social-media h4 {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+.contact p {
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #FD9610;
+}

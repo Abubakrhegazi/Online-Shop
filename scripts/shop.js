@@ -48,3 +48,23 @@ function addProductsToShop() {
     }
 }
 window.addEventListener('load', addProductsToShop);
+
+
+let slideIndex = 0;
+let images = ["../imgs/slideshow/ss1.avif", "../imgs/slideshow/ss2.avif", "../imgs/slideshow/ss3.avif", "../imgs/slideshow/ss4.avif"];
+
+function nextSlide() {
+    let slide = document.getElementById("slide");
+    let n = images.length;
+    slide.src = images[(slideIndex++) % n];
+}
+
+function prevSlide() {
+    let slide = document.getElementById("slide");
+    if(slideIndex == -1){
+        slideIndex = images.length -1;
+    }
+    slide.src = images[slideIndex--];
+    
+}
+

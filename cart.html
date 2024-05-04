@@ -46,9 +46,9 @@
                     </div>
 
                     <div class="item-adder">
-                        <button>-</button>
+                        <button id="sub">-</button>
                         <p>#</p>
-                        <button>+</button>
+                        <button id="add">+</button>
                     </div>
                 </div>
             </div>
@@ -60,12 +60,12 @@
             <br>
             <div class="subtotal">
                 <p><span>Subtotal</span><span class="price">$</span></p>
-                <p><span>Discount</span> <span>-$</span></p>
+                <p><span>Discount</span> <span id="check">-$</span></p>
                 <hr>
             </div>
             <div class="total">
                 <h3><span>Total</span><span>$</span></h3>
-                <form>
+                <form onsubmit="checkPromo(); return false;">
                     <input type="text" placeholder="Enter promo code" class="promo-input">
                     <button type="submit" class="promo-btn">Apply</button>
                   </form>
@@ -96,6 +96,8 @@
             </div>
         </div>
     </footer>
+    
+    <script src="./scripts/cart.js"></script>
 </body>
 
 </html>

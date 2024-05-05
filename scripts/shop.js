@@ -54,17 +54,25 @@ let slideIndex = 0;
 let images = ["../imgs/slideshow/ss1.avif", "../imgs/slideshow/ss2.avif", "../imgs/slideshow/ss3.avif", "../imgs/slideshow/ss4.avif"];
 
 function nextSlide() {
+    console.log(slideIndex);
     let slide = document.getElementById("slide");
+    if(slideIndex == images.length -1){
+        slideIndex = 0;
+    }
     let n = images.length;
-    slide.src = images[(slideIndex++) % n];
+    slide.src = images[slideIndex];
+    slideIndex++;
 }
 
 function prevSlide() {
+    console.log(slideIndex);
+
     let slide = document.getElementById("slide");
     if(slideIndex == -1){
         slideIndex = images.length -1;
     }
-    slide.src = images[slideIndex--];
+    slide.src = images[slideIndex];
+    slideIndex--;
     
 }
 

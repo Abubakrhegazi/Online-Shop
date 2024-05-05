@@ -2,7 +2,6 @@
 
 
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,7 +21,6 @@
 
 .title h1 span {
     color: #007bff;
-    /* Accent color */
 }
 
 
@@ -127,14 +125,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
 }
 
 .image div img {
     width: 100%;
 }
 .image div{
-    width: 500px;
+    width: 65%;
 }
 
 .button {
@@ -146,7 +143,6 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 footer {

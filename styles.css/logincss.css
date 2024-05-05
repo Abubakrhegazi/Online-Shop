@@ -1,240 +1,246 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-}
-* {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
 
-    /* margin: 0; */
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "League Spartan", sans-serif;
+    * {
 
-}
-.title{
-    font-size: 40px;
-    color: #333;
-    margin-top: 50px;
-    text-align: center;
-}
+        /* margin: 0; */
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "League Spartan", sans-serif;
 
-.title h1 {
-    font-size: 47px;
-    color: #333;
-    margin: 0;
-    margin-top: 20px;
-}
+    }
 
-.title h1 span {
-    color: #007bff;
-    /* Accent color */
-}
+    .title {
+        font-size: 40px;
+        color: #333;
+        margin-top: 50px;
+        text-align: center;
+    }
 
-.title p {
-    font-size: 20px;
-    color: #666;
-}
+    .title h1 {
+        font-size: 47px;
+        color: #333;
+        margin: 0;
+        margin-top: 20px;
+    }
 
-.section-box {
-    padding: 40px 80px;
-}
+    .title h1 span {
+        color: #007bff;
+        /* Accent color */
+    }
 
-.section-m1 {
-    margin: 40px 0;
-}
+    .title p {
+        font-size: 20px;
+        color: #666;
+    }
 
+    .section-box {
+        padding: 40px 80px;
+    }
 
-#Header .logo {
-    width: 24%;
-}
-
-#Header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1% 4%;
-    background-color: #011132;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
-    /* position: sticky; */
-    top: 0;
-    left: 0;
-}
-
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#navbar li {
-    list-style: none;
-    margin: 0 20px;
-    position: relative;
-}
-
-#navbar li a {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 300;
-    color: white;
-
-}
-
-#navbar li a:hover,
-#navbar li a.active {
-    color: #FD9610;
-    transition: 0.3s ease;
-}
-
-#navbar li a.active::after,
-#navbar li a:hover::after {
-    content: "";
-    width: 50%;
-    height: 2px;
-    background: #FD9610;
-    position: absolute;
-    bottom: -4px;
-    left: 0px;
+    .section-m1 {
+        margin: 40px 0;
+    }
 
 
-}
+    #Header .logo {
+        width: 24%;
+    }
+
+    #Header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1% 4%;
+        background-color: #011132;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        z-index: 999;
+        /* position: sticky; */
+        top: 0;
+        left: 0;
+    }
+
+    #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #navbar li {
+        list-style: none;
+        margin: 0 20px;
+        position: relative;
+    }
+
+    #navbar li a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 300;
+        color: white;
+
+    }
+
+    #navbar li a:hover,
+    #navbar li a.active {
+        color: #FD9610;
+        transition: 0.3s ease;
+    }
+
+    #navbar li a.active::after,
+    #navbar li a:hover::after {
+        content: "";
+        width: 50%;
+        height: 2px;
+        background: #FD9610;
+        position: absolute;
+        bottom: -4px;
+        left: 0px;
 
 
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0;
-}
+    }
 
-.login-form {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 400px;
-}
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+        margin: 5% 0;
+    }
 
-.login-form h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
+    form {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 400px;
+    }
 
-.login-form input[type="email"],
-.login-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+    h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
 
-.login-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        /* margin-bottom: 10px; */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .email, .pass{
+        margin-bottom: 20px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+    }
 
-.login-form button:hover {
-    background-color: #0056b3;
-}
+    button:hover {
+        background-color: #0056b3;
+    }
+    .error{
+        color: red;
+        font-size: 12px;
+    }
+    p {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+    }
 
-.login-form p {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #666;
-}
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
 
-.login-form p a {
-    color: #007bff;
-    text-decoration: none;
-}
+    a:hover {
+        text-decoration: underline;
+    }
 
-.login-form p a:hover {
-    text-decoration: underline;
-}
+    .error-message {
+        color: red;
+        margin-top: 10px;
+    }
 
-.error-message {
-    color: red;
-    margin-top: 10px;
-}
+    .title .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+    }
 
+    .title .btn:hover {
+        background-color: #0056b3;
+    }
 
-.title .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
+    footer {
+        background-color: #011132;
+        padding: 20px 0;
+    }
 
-.title .btn:hover {
-    background-color: #0056b3;
-}
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
-footer {
-    background-color: #011132;
-    padding: 20px 0;
-}
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    .contact,
+    .social-media {
+        flex: 1;
+        padding: 0 10px;
+    }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-}
+    .contact h4,
+    .social-media h4 {
+        margin-bottom: 10px;
+        color: white;
+        font-weight: 300;
+    }
 
-.contact,
-.social-media {
-    flex: 1;
-    padding: 0 10px;
-}
+    .contact p {
+        margin-bottom: 20px;
+        color: white;
+        font-weight: 300;
+    }
 
-.contact h4,
-.social-media h4 {
-    margin-bottom: 10px;
-    color: white;
-    font-weight: 300;
-}
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
-.contact p {
-    margin-bottom: 20px;
-    color: white;
-    font-weight: 300;
-}
+    ul li {
+        margin-bottom: 10px;
+    }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+    ul li a {
+        color: white;
+        text-decoration: none;
+    }
 
-ul li {
-    margin-bottom: 10px;
-}
-
-ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-ul li a:hover {
-    color: #FD9610;
-}
+    ul li a:hover {
+        color: #FD9610;
+    }

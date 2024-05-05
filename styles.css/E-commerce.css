@@ -49,7 +49,6 @@ p {
 body {
     margin: 0;
     width: 100%;
-    background-image: url("../imgs/bgs/hero4.png");
     background-size: cover;
 }
 
@@ -194,9 +193,6 @@ background-color: #01438a;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #01438a;
-
-
 }
 
 #mostalzmat .box {

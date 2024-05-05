@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
 </head>
+
 <body>
 
     <section id="Header">
@@ -30,9 +32,16 @@
     </div>
 
     <div class="login-container">
-        <form name="contactForm" onsubmit="return validateForm(this)" action="login.html" method="post">            <h2>Login to Your Account</h2>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" minlength="8" required>
+        <form name="contactForm" onsubmit="return validateForm()" method="post" id="loginForm">
+            <h2>Login to Your Account</h2>
+            <div class="email">
+                <input type="email" name="email" placeholder="Email">
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="pass">
+                <input type="password" name="password" placeholder="Password">
+                <div id="passwordError" class="error"></div>
+            </div>
             <button type="submit">Login</button>
             <p>Don't have an account? <a href="#">Sign up</a></p>
             <div class="error-message" id="error-message"></div>
@@ -49,15 +58,19 @@
                 <div class="social-media">
                     <h4>Follow Us</h4>
                     <ul>
-                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a href="https://github.com/Abubakrhegazi/E-Commerce" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i>
+                                Instagram</a></li>
+                        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                        </li>
+                        <li><a href="https://github.com/Abubakrhegazi/E-Commerce" target="_blank"><i
+                                    class="fab fa-github"></i> GitHub</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="loginvaldation.js "></script>
-    
+    <script src="./scripts/loginvaldation.js "></script>
+
 </body>
+
 </html>

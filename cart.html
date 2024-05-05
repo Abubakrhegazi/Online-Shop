@@ -26,13 +26,13 @@
 
     <h1 class="cart-title"><i class="far fa-shopping-bag"></i> Your Cart</h1>
     <h4 class="cart-title">
-        <p id="items-no">#</p> items at checkout
+        <p class="item-quantity">1</p> items at checkout
     </h4>
 
     <div class="main-page">
         <section class="left-sec">
             <div class="free-ship">
-                <div>You're <p id="money-left"># </p> away from FREE SHIPPING!</div>
+                <div id="free-ship-div">You're <p id="money-left">9 </p> items away from FREE SHIPPING!</div>
                 <a href="shop.html">Continue Shopping!</a>
             </div>
             <hr class="hrr">
@@ -42,13 +42,16 @@
                 <div class="item-details">
                     <p class="item-name">Test</p>
                     <div>
-                        <p class="item-quantity">#</p> items
+                        <p class="item-quantity">1</p> items
+                        <br>
+                        <br>
+                        <span>$</span><span id="item-price">10</span>
                     </div>
 
                     <div class="item-adder">
-                        <button>-</button>
-                        <p>#</p>
-                        <button>+</button>
+                        <button id="sub" onclick="sub()">-</button>
+                        <p class="item-quantity">1</p>
+                        <button id="add" onclick="add()">+</button>
                     </div>
                 </div>
             </div>
@@ -60,12 +63,12 @@
             <br>
             <div class="subtotal">
                 <p><span>Subtotal</span><span class="price">$</span></p>
-                <p><span>Discount</span> <span>-$</span></p>
+                <p><span>Discount</span> <span id="check">-$0</span></p>
                 <hr>
             </div>
             <div class="total">
                 <h3><span>Total</span><span>$</span></h3>
-                <form>
+                <form onsubmit="checkPromo(); return false;">
                     <input type="text" placeholder="Enter promo code" class="promo-input">
                     <button type="submit" class="promo-btn">Apply</button>
                   </form>
@@ -96,6 +99,8 @@
             </div>
         </div>
     </footer>
+    
+    <script src="./scripts/cart.js"></script>
 </body>
 
 </html>

@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: "League Spartan", sans-serif;
 }
+body{
+    font-family: "League Spartan", sans-serif;
+}
+
 .section-box {
     padding: 40px 80px;
 }
@@ -11,7 +15,6 @@
 .section-m1 {
     margin: 40px 0;
 }
-
 
 #Header .logo {
     width: 24%;

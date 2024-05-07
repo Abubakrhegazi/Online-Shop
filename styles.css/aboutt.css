@@ -2,10 +2,8 @@
 
 
 * {
-
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: "League Spartan", sans-serif;
 
 }
@@ -22,16 +20,6 @@
 
 .title h1 span {
     color: #007bff;
-    /* Accent color */
-}
-
-
-.section-box {
-    padding: 40px 80px;
-}
-
-.section-m1 {
-    margin: 40px 0;
 }
 
 
@@ -46,7 +34,6 @@
     padding: 1% 4%;
     background-color: #011132;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
@@ -72,14 +59,12 @@
 
 }
 
-#navbar li a:hover,
-#navbar li a.active {
+#navbar li a:hover,#navbar li a.active {
     color: #FD9610;
     transition: 0.3s ease;
 }
 
-#navbar li a.active::after,
-#navbar li a:hover::after {
+#navbar li a.active::after,#navbar li a:hover::after {
     content: "";
     width: 50%;
     height: 2px;
@@ -127,31 +112,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
 }
 
 .image div img {
     width: 100%;
 }
 .image div{
-    width: 500px;
+    width: 65%;
 }
 
 .button {
-    /* position: absolute; */
+   
     padding: 10px 20px;
-    background-color: #007bff; 
-    color: #fff; 
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 footer {
     background-color: #011132;
-    padding: 20px 0;
+    padding: 20px ;
 }
 
 .container {
@@ -165,8 +148,7 @@ footer {
     justify-content: space-around;
 }
 
-.contact h4,
-.social-media h4 {
+.contact h4,.social-media h4 {
     margin-bottom: 10px;
     color: white;
     font-weight: 300;

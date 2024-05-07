@@ -30,20 +30,12 @@
 
     .title h1 span {
         color: #007bff;
-        /* Accent color */
+       
     }
 
     .title p {
         font-size: 20px;
         color: #666;
-    }
-
-    .section-box {
-        padding: 40px 80px;
-    }
-
-    .section-m1 {
-        margin: 40px 0;
     }
 
 
@@ -59,7 +51,7 @@
         background-color: #011132;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
         z-index: 999;
-        /* position: sticky; */
+        position: sticky;
         top: 0;
         left: 0;
     }
@@ -84,8 +76,7 @@
 
     }
 
-    #navbar li a:hover,
-    #navbar li a.active {
+    #navbar li a:hover,#navbar li a.active {
         color: #FD9610;
         transition: 0.3s ease;
     }
@@ -106,8 +97,6 @@
     .login-container {
         display: flex;
         justify-content: center;
-        align-items: center;
-        /* height: 100vh; */
         margin: 5% 0;
     }
 
@@ -126,18 +115,17 @@
         margin-bottom: 20px;
     }
 
-    input[type="email"],
-    input[type="password"] {
+    input[type="email"],input[type="password"] {
         width: 100%;
         padding: 10px;
-        /* margin-bottom: 10px; */
+
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
     }
-    .email, .pass{
-        margin-bottom: 20px;
-    }
+        .email, .pass{
+            margin-bottom: 20px;
+        }
     button {
         width: 100%;
         padding: 10px;
@@ -147,7 +135,7 @@
         border-radius: 4px;
         cursor: pointer;
         font-size: 18px;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s;
     }
 
     button:hover {
@@ -178,7 +166,7 @@
     }
 
     .title .btn {
-        display: inline-block;
+       
         padding: 15px 30px;
         background-color: #007bff;
         color: #fff;
@@ -186,10 +174,6 @@
         border-radius: 4px;
         font-size: 18px;
         transition: background-color 0.3s ease;
-    }
-
-    .title .btn:hover {
-        background-color: #0056b3;
     }
 
     footer {

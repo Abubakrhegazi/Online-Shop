@@ -79,7 +79,7 @@
 
 @keyframes slideInfinite {
     0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-100%); }  
 }
 
 .categories {
@@ -108,7 +108,7 @@
 }
 
 .mySlides img{
-    width: 100%;
+    width:100%;
 }
 
 .slideshow-container {
@@ -126,7 +126,6 @@
     font-size: 18px;
     border: none;
     font-size: 81px;
-
     background-color: transparent;
     position: absolute;
 }

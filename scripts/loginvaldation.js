@@ -1,6 +1,5 @@
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
-    console.log('hello');
 
 }
 function validateForm() {

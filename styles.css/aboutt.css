@@ -162,13 +162,7 @@ footer {
 
 .row {
     display: flex;
-    justify-content: space-between;
-}
-
-.contact,
-.social-media {
-    flex: 1;
-    padding: 0 10px;
+    justify-content: space-around;
 }
 
 .contact h4,

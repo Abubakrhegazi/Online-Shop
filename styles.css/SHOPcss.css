@@ -126,7 +126,7 @@
     font-size: 18px;
     border: none;
     font-size: 81px;
-    border: none;
+
     background-color: transparent;
     position: absolute;
 }
@@ -229,7 +229,7 @@ body {
 
 .title h1 span {
     color: #007bff;
-    /* Accent color */
+ 
 }
 
 .title p {
@@ -275,7 +275,7 @@ body {
     margin: 4px;
 }
 .support-text{
-    justify-content: flex-start;
+  
     margin-right: 40%;
 }
 .supports {

@@ -36,3 +36,12 @@
 // }
 
 // window.onload = changeImg;
+document.addEventListener('DOMContentLoaded', function() {
+    window.alert('tes');
+});
+
+
+function addProductToCart(buttonElement) {
+    let prodID = buttonElement.parentNode.id;
+    window.alert(prodID);
+}

@@ -53,7 +53,4 @@ function prevSlide() {
     
 }
 
-function addProductToCart(buttonElement) {
-    let prodID = buttonElement.parentNode.id;
-    window.alert(prodID);
-}
+

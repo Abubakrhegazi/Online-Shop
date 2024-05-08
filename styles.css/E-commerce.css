@@ -439,7 +439,7 @@
         color: red;
     }
 
-    button.seperate {
+    a.seperate {
         font-size: 20px;
         font-weight: 700;
         border-radius: 5px;
@@ -450,6 +450,7 @@
         border: none;
         outline: none;
         transition: 0.2s ease;
+        text-decoration: none;
     }
 
     #banner button:hover {
@@ -504,8 +505,10 @@
         color: #FD9610;
     }
     body.dark-mode {
-        background-color: black;
+        background-color: #292929;
         color: white;
         transition: background-color 2s, color 2s;
+        .section-box h2, .pro h5, .pro span{
+            color: white;
+        }
     }
-    

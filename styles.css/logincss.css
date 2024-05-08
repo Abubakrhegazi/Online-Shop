@@ -271,8 +271,12 @@
         }
     }
     body.dark-mode {
-        background-color: black;
+        background-color: #292929;
         color: white;
         transition: background-color 2s, color 2s;
+
+        .title h1{
+            color: white;
+        }
     }
     

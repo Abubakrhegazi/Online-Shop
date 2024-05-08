@@ -43,4 +43,3 @@ cartIcons.forEach(cartIcon => {
         });
     });
 });
-

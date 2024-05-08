@@ -459,7 +459,10 @@ ul li a:hover {
     }
 }
 body.dark-mode {
-    background-color: black;
+    background-color: #292929;
     color: white;
     transition: background-color 2s, color 2s;
+    .title h1, .pro h5, .pro span{
+        color: white;
+    }
 }

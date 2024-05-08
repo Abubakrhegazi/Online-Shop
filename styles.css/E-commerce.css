@@ -81,6 +81,7 @@
         list-style: none;
         margin: 0 20px;
         position: relative;
+        color: white;
     }
 
     #navbar li a {
@@ -507,3 +508,14 @@
     ul li a:hover {
         color: #FD9610;
     }
+
+    .dark-mode {
+        background-color: black;
+        color: white;
+        transition: background-color 2s, color 2s;
+    }
+    body.dark-mode{
+        background-color: black;
+        color: white;
+    }
+    

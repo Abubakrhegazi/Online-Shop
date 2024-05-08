@@ -1,37 +1,84 @@
 let products = [];
+
 function addProduct() {
-    let name = document.getElementById('name').value;
-    let price = document.getElementById('price').value;
-    let type = document.getElementById('type').value;
-    let image = document.getElementById('image').value;
+    let form = document.getElementById('addProductForm');
+    let name = form.name.value;
+    let price = form.price.value;
+    let type = form.type.value;
+    let image = form.file.value;
 
     if (name === '') {
-        document.getElementById('name-err').innerHTML = "Please fill name field";
+        document.getElementById('nameAdd-err').innerHTML = "Please fill name field";
     }
     else {
-        document.getElementById('name-err').innerHTML = "";
+        document.getElementById('nameAdd-err').innerHTML = "";
     }
     if (price === '') {
-        document.getElementById('price-err').innerHTML = "Please fill in price field";
+        document.getElementById('priceAdd-err').innerHTML = "Please fill in price field";
     }
     else {
-        document.getElementById('price-err').innerHTML = "";
+        document.getElementById('priceAdd-err').innerHTML = "";
     }
     if (type === '') {
-        document.getElementById('type-err').innerHTML = "Please fill in type field";
+        document.getElementById('typeAdd-err').innerHTML = "Please fill in type field";
     }
     else {
-        document.getElementById('type-err').innerHTML = "";
+        document.getElementById('typeAdd-err').innerHTML = "";
     }
     if (image === '') {
-        document.getElementById('image-err').innerHTML = "Please select an image";
+        document.getElementById('imageAdd-err').innerHTML = "Please select an image";
     }
     else {
-        document.getElementById('image-err').innerHTML = "";
+        document.getElementById('imageAdd-err').innerHTML = "";
     }
     if (!(name === '' || price === '' || type === '' || image === '')) {
         document.getElementById('error').innerHTML = "";
         let product = { name, price, type, image };
         products.push(product);
+        window.alert('Product added successfully!');
+    }
+}
+
+function editProduct() {
+    let form = document.getElementById('editProductForm');
+    let ID = form.ID.value;
+    let name = form.name.value;
+    let price = form.price.value;
+    let type = form.type.value;
+    let image = form.file.value;
+
+    if (ID === '') {
+        document.getElementById('IDEdit-err').innerHTML = "Please fill ID field";
+    }
+    else {
+        document.getElementById('IDEdit-err').innerHTML = "";
+    }
+    if (name === '') {
+        document.getElementById('nameEdit-err').innerHTML = "Please fill name field";
+    }
+    else {
+        document.getElementById('nameEdit-err').innerHTML = "";
+    }
+    if (price === '') {
+        document.getElementById('priceEdit-err').innerHTML = "Please fill in price field";
+    }
+    else {
+        document.getElementById('priceEdit-err').innerHTML = "";
+    }
+    if (type === '') {
+        document.getElementById('typeEdit-err').innerHTML = "Please fill in type field";
+    }
+    else {
+        document.getElementById('typeEdit-err').innerHTML = "";
+    }
+    if (image === '') {
+        document.getElementById('imageEdit-err').innerHTML = "Please select an image";
+    }
+    else {
+        document.getElementById('imageEdit-err').innerHTML = "";
+    }
+    if (!(ID === '' || name === '' || price === '' || type === '' || image === '')) {
+        document.getElementById('error').innerHTML = "";
+        window.alert('Product edited successfully!');
     }
 }

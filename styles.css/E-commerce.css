@@ -81,6 +81,7 @@
         list-style: none;
         margin: 0 20px;
         position: relative;
+        color: white;
     }
 
     #navbar li a {
@@ -466,16 +467,11 @@
         padding: 0 20px;
     }
 
-    .row {
-        display: flex;
-        justify-content: space-between;
-    }
+.row {
+    display: flex;
+    justify-content: space-around;
+}
 
-    .contact,
-    .social-media {
-        flex: 1;
-        padding: 0 10px;
-    }
 
     .contact h4,
     .social-media h4 {
@@ -507,3 +503,9 @@
     ul li a:hover {
         color: #FD9610;
     }
+    body.dark-mode {
+        background-color: black;
+        color: white;
+        transition: background-color 2s, color 2s;
+    }
+    

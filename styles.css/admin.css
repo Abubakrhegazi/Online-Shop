@@ -2,9 +2,24 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: darkslategrey;
+    background-image: url('../imgs/bgs/shoppp.avif');
+}
+
+.main{
+    width: 80%;
+    margin: 20px auto;
+    /* background-color: rgb(223, 182, 0); */
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #292929;
+}
+.main2{
+    background-color: #e2dfb7;
+    padding-bottom: 5px;
 }
 header {
-    background-color: #333;
+    background-color: #292929;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -34,4 +49,50 @@ form button:hover {
 .error{
     font-size: 15px;
     color: red;
+}
+
+@media only screen and (max-width: 768px) {
+    .main {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .container {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+
+    form input, form select {
+        padding: 6px;
+    }
+
+    form button {
+        padding: 8px 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .main {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .main2{
+        background-color: #e2dfb7;
+        padding-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    form input, form select {
+        padding: 4px;
+    }
+
+    form button {
+        padding: 6px 12px;
+    }
+}
+body.dark-mode {
+    background-color: black;
+    color: white;
+    transition: background-color 2s, color 2s;
 }

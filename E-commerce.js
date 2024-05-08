@@ -26,7 +26,7 @@ cartIcons.forEach(cartIcon => {
 
         modal.style.display = 'block';
         modal.style.position = 'absolute';
-
+        
         modal.querySelector('.close').addEventListener('click', () => {
             modal.style.display = 'none';
         });
@@ -43,3 +43,4 @@ cartIcons.forEach(cartIcon => {
         });
     });
 });
+

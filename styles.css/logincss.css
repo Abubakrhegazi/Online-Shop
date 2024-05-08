@@ -222,3 +222,52 @@
     ul li a:hover {
         color: #FD9610;
     }
+
+
+
+    @media only screen and (max-width: 768px) {
+        #Header {
+            padding: 1% 2%;
+        }
+    
+        #navbar li a {
+            font-size: 14px;
+        }
+    
+        .login-container {
+            margin: 10% 0;
+        }
+    
+        form {
+            width: 90%;
+        }
+    }
+    
+    @media only screen and (max-width: 480px) {
+        .title h1 {
+            font-size: 20px;
+        }
+    
+        .title p {
+            font-size: 16px;
+        }
+    
+        form {
+            width: 100%;
+            padding: 10px;
+        }
+    
+        input[type="email"], input[type="password"] {
+            padding: 8px;
+        }
+    
+        button {
+            padding: 8px;
+            font-size: 16px;
+        }
+    
+        .login-container {
+            margin: 20% 0;
+        }
+    }
+    

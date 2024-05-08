@@ -502,3 +502,100 @@
     ul li a:hover {
         color: #FD9610;
     }
+
+
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    #Header .logo {
+        width: 80%;
+    }
+
+    #navbar {
+        justify-content: center;
+    }
+
+    #navbar li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .section-box {
+        padding: 15px;
+    }
+
+    #product1 .pro {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h2 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button.seperate {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    #Header .logo {
+        width: 100%;
+    }
+
+    .section-box {
+        padding: 10px;
+    }
+
+    #product1 .pro {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    button.seperate {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

@@ -50,3 +50,45 @@ form button:hover {
     font-size: 15px;
     color: red;
 }
+
+@media only screen and (max-width: 768px) {
+    .main {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .container {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+
+    form input, form select {
+        padding: 6px;
+    }
+
+    form button {
+        padding: 8px 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .main {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .main2{
+        background-color: #e2dfb7;
+        padding-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    form input, form select {
+        padding: 4px;
+    }
+
+    form button {
+        padding: 6px 12px;
+    }
+}
+ 

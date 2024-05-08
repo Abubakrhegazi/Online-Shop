@@ -183,3 +183,59 @@ ul li a {
 ul li a:hover {
     color: #FD9610;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    input,
+    textarea {
+        padding: 5px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    .contact-info {
+        padding: 10px;
+    }
+
+    .container1 {
+        padding: 0 10px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #Header {
+        padding: 1% 2%;
+    }
+
+    #navbar li a {
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 20px auto;
+    }
+
+    .container1 {
+        padding: 0;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info h2 {
+        font-size: 1em;
+    }
+}

@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: darkslategrey;
     background-image: url('../imgs/bgs/shoppp.avif');
+    background-size: cover;
 }
 
 .main{

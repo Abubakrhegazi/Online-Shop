@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
             product.style.display = 'block';
         });
     }
-
-   
-
-    function filterProducts(category) {
+ function filterProducts(category) {
         var products = document.querySelectorAll('.pro');
         products.forEach(function (product) {
             var productCategory = product.querySelector('h5').innerText.toLowerCase();

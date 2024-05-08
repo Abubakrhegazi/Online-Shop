@@ -68,7 +68,6 @@
 
 .moving-info1 p {
     display: inline-block;
-    padding-left: 100%;
     animation: slideInfinite 10s linear infinite;
     color: white;
     margin: 0;
@@ -79,7 +78,7 @@
 
 @keyframes slideInfinite {
     0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-100%); }  
 }
 
 .categories {
@@ -108,7 +107,7 @@
 }
 
 .mySlides img{
-    width: 100%;
+    width:100%;
 }
 
 .slideshow-container {
@@ -126,7 +125,6 @@
     font-size: 18px;
     border: none;
     font-size: 81px;
-    border: none;
     background-color: transparent;
     position: absolute;
 }
@@ -229,7 +227,7 @@ body {
 
 .title h1 span {
     color: #007bff;
-    /* Accent color */
+ 
 }
 
 .title p {
@@ -275,7 +273,7 @@ body {
     margin: 4px;
 }
 .support-text{
-    justify-content: flex-start;
+  
     margin-right: 40%;
 }
 .supports {
@@ -301,12 +299,7 @@ footer {
 
 .row {
     display: flex;
-    justify-content: space-between;
-}
-
-.contact,.social-media {
-    flex: 1;
-    padding: 0 10px;
+    justify-content: space-around;
 }
 
 .contact h4,
@@ -338,4 +331,130 @@ ul li a {
 
 ul li a:hover {
     color: #FD9610;
+}
+
+@media only screen and (max-width: 768px) {
+    .section-box {
+        margin: 20px;
+    }
+
+    #Header .logo {
+        width: 40%;
+    }
+
+    #Header{
+        position: relative;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar li {
+        margin: 10px 0;
+    }
+
+    .moving-info1 p {
+        text-align: center;
+    }
+
+    .cat-list {
+        flex-wrap: wrap;
+    }
+
+    .cat-list button {
+        width: 45%;
+        margin: 5px;
+    }
+
+    .title h1 {
+        font-size: 32px;
+    }
+
+    .title p {
+        font-size: 16px;
+    }
+
+    .pro {
+        width: 48%;
+        margin: 10px 0;
+    }
+
+    .pro img {
+        border-radius: 10px;
+    }
+
+    .pro .des {
+        padding: 5px 0;
+    }
+
+    .pro .des span {
+        font-size: 10px;
+    }
+
+    .pro .des h5 {
+        font-size: 12px;
+    }
+
+    .pro .des h4 {
+        font-size: 14px;
+    }
+
+    .pro .cart {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        border-radius: 30px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #Header{
+        position: relative;
+    }
+
+    .section-box {
+        margin: 10px;
+    }
+
+    #Header .logo {
+        width: 60%;
+    }
+
+    .cat-list button {
+        width: 90%;
+    }
+
+    .title h1 {
+        font-size: 24px;
+    }
+
+    .title p {
+        font-size: 14px;
+    }
+
+    .pro {
+        width: 100%;
+    }
+
+    .pro .cart {
+        right: 5%;
+    }
+
+    .support-text {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .supports {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .supports div {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }

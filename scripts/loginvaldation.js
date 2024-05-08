@@ -1,11 +1,7 @@
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
-    console.log('hello');
 
 }
-
-
-
 function validateForm() {
     const form = document.getElementById('loginForm');
     const email = form.email.value;

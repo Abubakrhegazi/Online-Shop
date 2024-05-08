@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel</title>
-<link rel="stylesheet" href="./styles.css/admin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./styles.css/admin.css">
 </head>
+
 <body>
-<header>
-    <h1>Admin Panel</h1>
-</header>
-<div class="container">
-    <h2>Add Product</h2>
-    <form id="addProductForm" onsubmit="addProduct(); return false;">
-        <input type="text" name="name" placeholder="Product Name"  id="name"><br>
-        <div id="name-err" class="error"></div>
-        <input type="number" name="price" placeholder="Price" step="1"  id="price"><br>
-        <div id="price-err" class="error"></div>
-        <input type="text" name="type" placeholder="Product Type"  id="type"><br>
-        <div id="type-err" class="error"></div>
-        <input type="file" name="file" accept="image/*"  id="image"><br>
-        <div id="image-err" class="error"></div>
-        <button type="submit">Add Product</button>
-    </form>
-    <!-- Other content -->
+    <div class="main">
+        <div class="main2">
+            <header>
+                <h1>Admin Panel</h1>
+            </header>
+            <div class="container">
+                <h2>Add Product</h2>
+                <form id="addProductForm" onsubmit="addProduct(); return false;">
+                    <input type="text" name="name" placeholder="Product Name" id="nameAdd"><br>
+                    <div id="nameAdd-err" class="error"></div>
+                    <input type="number" name="price" placeholder="Price" step="1" id="priceAdd"><br>
+                    <div id="priceAdd-err" class="error"></div>
+                    <input type="text" name="type" placeholder="Product Type" id="typeAdd"><br>
+                    <div id="typeAdd-err" class="error"></div>
+                    <input type="file" name="file" accept="image/*" id="imageAdd"><br>
+                    <div id="imageAdd-err" class="error"></div>
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+
+            <hr>
+            <div class="container">
+                <h2>Edit Product</h2>
+                <form id="editProductForm" onsubmit="editProduct(); return false;">
+                    <input type="number" name="ID" placeholder="Product ID" id="IDEdit"><br>
+                    <div id="IDEdit-err" class="error"></div>
+                    <input type="text" name="name" placeholder="Product Name" id="nameEdit"><br>
+                    <div id="nameEdit-err" class="error"></div>
+                    <input type="number" name="price" placeholder="Price" step="1" id="priceEdit"><br>
+                    <div id="priceEdit-err" class="error"></div>
+                    <input type="text" name="type" placeholder="Product Type" id="typeEdit"><br>
+                    <div id="typeEdit-err" class="error"></div>
+                    <input type="file" name="file" accept="image/*" id="imageEdit"><br>
+                    <div id="imageEdit-err" class="error"></div>
+                    <button type="submit">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
     <script src="./scripts/admin.js"></script>
-</div>
+
 </body>
+
 </html>

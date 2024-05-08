@@ -4,7 +4,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: "League Spartan", sans-serif;
 
 }
@@ -24,15 +23,6 @@
 }
 
 
-.section-box {
-    padding: 40px 80px;
-}
-
-.section-m1 {
-    margin: 40px 0;
-}
-
-
 #Header .logo {
     width: 24%;
 }
@@ -44,7 +34,6 @@
     padding: 1% 4%;
     background-color: #011132;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
@@ -70,14 +59,12 @@
 
 }
 
-#navbar li a:hover,
-#navbar li a.active {
+#navbar li a:hover,#navbar li a.active {
     color: #FD9610;
     transition: 0.3s ease;
 }
 
-#navbar li a.active::after,
-#navbar li a:hover::after {
+#navbar li a.active::after,#navbar li a:hover::after {
     content: "";
     width: 50%;
     height: 2px;
@@ -135,10 +122,10 @@
 }
 
 .button {
-    /* position: absolute; */
+   
     padding: 10px 20px;
-    background-color: #007bff; 
-    color: #fff; 
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -147,7 +134,7 @@
 
 footer {
     background-color: #011132;
-    padding: 20px 0;
+    padding: 20px ;
 }
 
 .container {
@@ -158,17 +145,10 @@ footer {
 
 .row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.contact,
-.social-media {
-    flex: 1;
-    padding: 0 10px;
-}
-
-.contact h4,
-.social-media h4 {
+.contact h4,.social-media h4 {
     margin-bottom: 10px;
     color: white;
     font-weight: 300;
@@ -196,4 +176,80 @@ ul li a {
 
 ul li a:hover {
     color: #FD9610;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #Header .logo {
+        width: 40%;
+    }
+
+    #navbar {
+        justify-content: center;
+    }
+
+    #navbar li a {
+        font-size: 14px;
+    }
+
+    .image div {
+        width: 100%;
+    }
+
+    .title h1 {
+        font-size: 36px;
+    }
+
+    .body {
+        padding: 10px;
+    }
+
+    .title h1 {
+        font-size: 30px;
+    }
+    .body h3 {
+        font-size: 18px;
+    }
+    .body h1 {
+        font-size: 14px;
+    }
+    .body h5 {
+        font-size: 12px;
+    }
+    .contact p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #Header .logo {
+        width: 50%;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar li a {
+        font-size: 12px;
+        margin: 5px 0;
+    }
+
+    .title h1 {
+        font-size: 24px;
+    }
+    .body h3 {
+        font-size: 16px;
+    }
+    .body h1 {
+        font-size: 12px;
+    }
+    .body h5 {
+        font-size: 10px;
+    }
+    .contact p {
+        font-size: 10px;
+    }
+    
 }

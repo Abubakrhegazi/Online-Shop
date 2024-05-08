@@ -503,3 +503,9 @@
     ul li a:hover {
         color: #FD9610;
     }
+    body.dark-mode {
+        background-color: black;
+        color: white;
+        transition: background-color 2s, color 2s;
+    }
+    

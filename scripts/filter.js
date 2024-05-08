@@ -6,15 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    document.getElementById('all categories').addEventListener('click', function () {
-        showAllProducts();
-    });
-    document.querySelectorAll('.cat-list button').forEach(function (button) {
-        button.addEventListener('click', function () {
-            var category = this.innerText.toLowerCase();
-            filterProducts(category);
-        });
-    });
+   
 
     function filterProducts(category) {
         var products = document.querySelectorAll('.pro');
@@ -26,5 +18,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     product.style.display = 'none';
                 }
         });
-    }
+    } 
+    //category
+    document.getElementById('all-cats').addEventListener('click', function () {
+        showAllProducts();
+    });
+
+    document.querySelectorAll('.cat-list button').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var category = this.innerText.toLowerCase();
+            filterProducts(category);
+        });
+    });
 });

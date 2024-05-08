@@ -239,3 +239,8 @@ ul li a:hover {
         font-size: 1em;
     }
 }
+body.dark-mode {
+    background-color: black;
+    color: white;
+    transition: background-color 2s, color 2s;
+}

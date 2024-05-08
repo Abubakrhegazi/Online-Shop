@@ -368,3 +368,8 @@ ul li a:hover {
         margin-right: 0;
     }
 }
+body.dark-mode {
+    background-color: black;
+    color: white;
+    transition: background-color 2s, color 2s;
+}

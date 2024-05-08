@@ -91,4 +91,8 @@ form button:hover {
         padding: 6px 12px;
     }
 }
- 
+body.dark-mode {
+    background-color: black;
+    color: white;
+    transition: background-color 2s, color 2s;
+}

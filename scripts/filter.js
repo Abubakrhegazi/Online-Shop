@@ -1,19 +1,30 @@
-const filterProducts = (category) => {
-    const products = document.querySelectorAll('.pro');
-
-    products.forEach((product) => {
-        if (category === 'all' || product.querySelector('h5').textContent.toLowerCase() === category) {
+document.addEventListener('DOMContentLoaded', function () {
+    function showAllProducts() {
+        var products = document.querySelectorAll('.pro');
+        products.forEach(function (product) {
             product.style.display = 'block';
-        } else {
-            product.style.display = 'none';
-        }
+        });
+    }
+
+    document.getElementById('all categories').addEventListener('click', function () {
+        showAllProducts();
     });
-};
+    document.querySelectorAll('.cat-list button').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var category = this.innerText.toLowerCase();
+            filterProducts(category);
+        });
+    });
 
-document.getElementById('filter-buttons').addEventListener('click', (event) => {
-    if (event.target.tagName === 'BUTTON') {
-        const category = event.target.textContent.toLowerCase();
-
-        filterProducts(category);
+    function filterProducts(category) {
+        var products = document.querySelectorAll('.pro');
+        products.forEach(function (product) {
+            var productCategory = product.querySelector('h5').innerText.toLowerCase();
+                if (productCategory === category || category === 'all categories') {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+        });
     }
 });

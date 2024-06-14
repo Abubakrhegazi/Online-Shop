@@ -73,9 +73,11 @@ function editProduct() {
     }
     if (image === '') {
         document.getElementById('imageEdit-err').innerHTML = "Please select an image";
+        var img = new Image();
+      img.src = "image.jpg";
     }
     else {
-        document.getElementById('imageEdit-err').innerHTML = "";
+        document.getElementById('imageEdit-err').innerHTML = "Wrong extention";
     }
     if (!(ID === '' || name === '' || price === '' || type === '' || image === '')) {
         document.getElementById('error').innerHTML = "";

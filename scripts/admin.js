@@ -73,11 +73,15 @@ function editProduct() {
     }
     if (image === '') {
         document.getElementById('imageEdit-err').innerHTML = "Please select an image";
-        var img = new Image();
-      img.src = "image.jpg";
+       // Function to validate the file extension
+function validateImageType(image) {
+    // Check if the file name ends with ".jpg" or ".jpeg"
+    return fileName.toLowerCase().endsWith(".jpg") || fileName.toLowerCase().endsWith(".jpeg");
+}
+
     }
     else {
-        document.getElementById('imageEdit-err').innerHTML = "Wrong extention";
+        document.getElementById('imageEdit-err').innerHTML = "";
     }
     if (!(ID === '' || name === '' || price === '' || type === '' || image === '')) {
         document.getElementById('error').innerHTML = "";

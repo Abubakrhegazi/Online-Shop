@@ -65,6 +65,9 @@ function editProduct() {
     else {
         document.getElementById('priceEdit-err').innerHTML = "";
     }
+    if(price<0){
+        document.getElementById('priceEdit-err').innerHTML = "Invalid value ";
+    }
     if (type === '') {
         document.getElementById('typeEdit-err').innerHTML = "Please fill in type field";
     }

@@ -26,6 +26,9 @@ function validateForm() {
     if (email == 'admin@admin' && password == '0000') {
         window.location.href = "admin.html"
     }
+    if (email == 'mena@gmail.com' && password == '1234') {
+        window.location.href = "shop.html"
+    }
 
     alert('Login successful');
     form.reset();

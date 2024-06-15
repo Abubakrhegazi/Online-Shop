@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: darkslategrey;
     background-image: url('../imgs/bgs/shoppp.avif');
+    background-size: cover;
 }
 
 .main{
@@ -91,4 +92,8 @@ form button:hover {
         padding: 6px 12px;
     }
 }
- 
+body.dark-mode {
+    background-color: black;
+    color: white;
+    transition: background-color 2s, color 2s;
+}

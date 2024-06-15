@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP</title>
+    <link rel="stylesheet" href="./styles.css/fil.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="stylesheet" href="./styles.css/SHOPcss.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- <link rel="stylesheet" href="./styles.css/E-commerce.css"> -->
+
+    <title>Category filter</title>
 </head>
-
 <body>
-    <section id="Header">
-        <a href="#"><img src="imgs/logo.png" alt="" class="logo"></a>
-        <div>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
-                <li><a href="login.html"><i class="far fa-user"></i></a></li>
-                <li><a href="#" id="toggle-dark"><i class="far fa-sun"></i></a></li>
-                
-            </ul>       
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                <img src="f4.png" alt="">
+                <h3>ekhtar</h3>
+                </div>
+                <ul>
+                    <li><a href="#">All</a></li>
+                    <li><a href="#">Mobiles</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                </ul>
+                <div class="search">
+                    <form action="#">
+                        <input type="search" placeholder="search category or title">
+                        <button type="button" class="btn_search"> <i class="fas fa-search"> </i></button>
+                    </form>
+                </div>
+            </nav>
         </div>
-    </section>
-    <div class="moving-info1">
-        <p>10% OFF ON YOUR FIRST ORDER </p>
-    </div>
+    </header>
 
-    <div class="categories">
-        <div class="cat-list">
-            <button id="all-cats">ALL CATEGORIES</button>
-            <button class="m">MOBILES</button>
-            <button class="mens">MEN</button>
-            <button class="women">WOMEN</button>
+
+    <!-- <main>
+        <div class="container">
+            <div class="products-wrapper">
+                <div class="products">
+                    <div class="pr_img">
+                        <img src="hamza-nouasria-WMDVjvLE8ls-unsplash.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="title">pantalon fager</h3>
+                        <p class="release-date">Release dtae: Dec 19, 2021</p>
+                        <p class="price">price :15$</p>
+                    </div>
+                </div>
+                <div class="products">
+                    <div class="pr_img">
+                        <img src="hamza-nouasria-WMDVjvLE8ls-unsplash.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="title">pantalon fager</h3>
+                        <p class="release-date">Release dtae: Dec 19, 2021</p>
+                        <p class="price">price :15$</p>
+                    </div>
+                </div>
+                <div class="products">
+                    <div class="pr_img">
+                        <img src="hamza-nouasria-WMDVjvLE8ls-unsplash.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3 class="title">pantalon fager</h3>
+                        <p class="release-date">Release dtae: Dec 19, 2021</p>
+                        <p class="price">price :15$</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </main> -->
 
-    <div class="title">
-        <h1>Welcome to <span>Our E-Commerce Storee</span></h1>
-        <p>Discover amazing deals on your favorite products!</p>
-    </div>
-
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="../imgs/slideshow/ss1.avif " id="slide">
-        </div>
-
-        <div class="textonimage">
-            <button class="ssl" onclick="prevSlide()"><i class="fa fa-angle-left"></i></button>
-            <button class="ssr" onclick="nextSlide()"><i class="fa fa-angle-right"></i></button>
-        </div>
-    </div>
+    
 
 
     <section id="product1" class="section-box">
@@ -334,67 +349,9 @@
             </div>
         </div>
     </section>
-    <hr>
-    <section class="coupon-zone">
-        <div class="c-img"><img src="imgs/models/couponimage.jpg"></div>
-        <div class="coupon">
-            <p>For Orders More Than 499 EGP:<span>Here is Your Coupon EC10%</span></p>
-            <p>For Orders More Than 7998 EGP:<span>Here is Your Coupon EC15%</span></p>
-            <p>For Orders More Than 999 EGP:<span>Here is Your Coupon EC20%</span></p>
-            <p>For Orders Above 1599 EGP:    <span>Here is Your Coupon EC25%+Free Shipping</span></p>
-        </div>
-    </section>
-    <hr>
+        <script src="../E-Commerce/scripts/fil.js"></script>
+        <script src="./scripts/darkMode.js"></script>
 
-    <section class="support-center">
-        <div class="support-text">
-            <strong>We're always Here To Help </strong>
-            <h5>Reach out to us through any of these support channels</h5>
-        </div>
-        <div class="supports">
-            <div>
-                <p>Help center</p>
-                <a href="#">Help@e-commerce.com</a>
-            </div>
-            <div>
-                <p>Email Support</p>
-                <a href="#">egypt@e-commerce.com</a>
-            </div>
-            <div>
-                <p>Phone Support:</p>
-                <p>16359</p>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="contact">
-                    <h4>Contact Us</h4>
-                    <p>Email: Menakhalid2020@gmail.com<br>Phone: 01148841234</p>
-                </div>
-                <div class="social-media">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i>
-                                Instagram</a></li>
-                        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i>
-                                Facebook</a>
-                        </li>
-                        <li><a href="https://github.com/Abubakrhegazi/E-Commerce" target="_blank"><i
-                                    class="fab fa-github"></i> GitHub</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    </div>
-    <script src="./scripts/shop.js"></script>
-    <script src="./scripts/darkMode.js"></script>
-    <script src="./scripts/filter.js"></script>
 
 </body>
-
 </html>

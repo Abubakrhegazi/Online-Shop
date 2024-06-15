@@ -65,6 +65,9 @@ function editProduct() {
     else {
         document.getElementById('priceEdit-err').innerHTML = "";
     }
+    if(price<0){
+        document.getElementById('priceEdit-err').innerHTML = "Invalid value ";
+    }
     if (type === '') {
         document.getElementById('typeEdit-err').innerHTML = "Please fill in type field";
     }
@@ -73,6 +76,12 @@ function editProduct() {
     }
     if (image === '') {
         document.getElementById('imageEdit-err').innerHTML = "Please select an image";
+       // Function to validate the file extension
+function validateImageType(image) {
+    // Check if the file name ends with ".jpg" or ".jpeg"
+    return fileName.toLowerCase().endsWith(".jpg") || fileName.toLowerCase().endsWith(".jpeg");
+}
+
     }
     else {
         document.getElementById('imageEdit-err').innerHTML = "";

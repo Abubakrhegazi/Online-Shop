@@ -344,7 +344,13 @@ ul li a:hover {
 
     #Header{
         position: relative;
+        flex-direction: column;
+
     }
+
+.ssr{
+    left: 90%;
+}
 
     #navbar {
         flex-direction: column;
@@ -413,6 +419,8 @@ ul li a:hover {
 @media only screen and (max-width: 480px) {
     #Header{
         position: relative;
+        flex-direction: column;
+
     }
 
     .section-box {
@@ -457,5 +465,13 @@ ul li a:hover {
     .supports div {
         margin-right: 0;
         margin-bottom: 10px;
+    }
+}
+body.dark-mode {
+    background-color: #292929;
+    color: white;
+    transition: background-color 2s, color 2s;
+    .title h1, .pro h5, .pro span{
+        color: white;
     }
 }

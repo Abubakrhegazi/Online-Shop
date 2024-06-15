@@ -222,7 +222,7 @@ ul li a:hover {
         font-size: 14px;
     }
 
-    .container {
+    .container1 {
         margin: 20px auto;
     }
 
@@ -239,3 +239,15 @@ ul li a:hover {
         font-size: 1em;
     }
 }
+body.dark-mode {
+    background-color: #292929;
+    color: white;
+    transition: background-color 2s, color 2s;
+
+    .container, .form label{
+        color: #292929;
+    }
+
+
+}
+

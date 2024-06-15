@@ -368,3 +368,17 @@ ul li a:hover {
         margin-right: 0;
     }
 }
+
+body.dark-mode {
+    background-color: #292929;
+    color: white;
+    transition: background-color 2s, color 2s;
+
+    #free-ship-div, .free-ship a {
+        color: white;
+    }
+
+    .right-sec {
+        color: #292929;
+    }
+}

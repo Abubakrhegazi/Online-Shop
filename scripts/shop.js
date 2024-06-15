@@ -46,7 +46,7 @@ function nextSlide() {
 function prevSlide() {
     let slide = document.getElementById("slide");
     if(slideIndex == -1 ){
-        slideIndex = images.length -1;
+        slideIndex  = images.length -1;
     }
     slide.src = images[slideIndex];
     slideIndex--;

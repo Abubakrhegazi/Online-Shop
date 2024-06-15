@@ -13,21 +13,8 @@
 <body>
 
 
-    <section id="Header">
-        <a href="#"><img src="/imgs/logo.png" alt="" class="logo"></a>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="/">Home</a></li>
-                <li><a href="shop">Shop</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="cart"><i class="far fa-shopping-bag"></i></a></li>
-                <li><a href="login"><i class="far fa-user"></i></a></li>
-                <!-- <li><a href="#" id="toggle-dark" onclick="toggleDarkMode()"><i class="far fa-sun"></i></a></li> -->
+    <%- include('./partials/nav.ejs') %>
 
-            </ul>
-        </div>
-    </section>
 
     <!-- <section id="slideshow-sec">
 
@@ -241,32 +228,6 @@
         </footer>
 
     </section>
-
-
-    <!-- <script src="./E-commerce.js"></script> -->
-    <!-- <% const toggle = document.getElementById('toggle-dark'); %>
-    <% const body = document.querySelector('body');%>
-    
-    <%function toggleDarkMode() {%>
-        <%   body.classList.toggle('dark-mode');%>
-        <%   const isDarkMode = body.classList.contains('dark-mode');%>
-        <%   localStorage.setItem('darkMode', isDarkMode);%>
-        <% }%>
-    
-        <% toggle.addEventListener('click', function(){%>
-            <%     toggleDarkMode();%>
-            <%  });%>
-    
-            <%  window.onload = function() {%>
-      <%  const darkModeEnabled = localStorage.getItem('darkMode') === 'true';%>
-      <%  if (darkModeEnabled) {%>
-        <%    body.classList.add('dark-mode');%>
-       <% }%>
-   <% };%>
-     -->
-
-
-
 </body>
 
 </html>

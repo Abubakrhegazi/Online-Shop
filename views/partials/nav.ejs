@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #navbar a.active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <section id="Header">
+        <a href="#"><img src="imgs/logo.png" alt="" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="home" class="<%= currentPage === 'home' ? 'active' : '' %>">Home</a></li>
+                <li><a href="shop" class="<%= currentPage === 'shop' ? 'active' : '' %>">Shop</a></li>
+                <li><a href="about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a></li>
+                <li><a href="contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a></li>
+                <li><a href="cart" class="<%= currentPage === 'cart' ? 'active' : '' %>"><i class="far fa-shopping-bag"></i></a></li>
+                <li><a href="login" class="<%= currentPage === 'login' ? 'active' : '' %>"><i class="far fa-user"></i></a></li>
+                <li><a href="#" id="toggle-dark"><i class="far fa-sun"></i></a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

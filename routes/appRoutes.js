@@ -5,5 +5,9 @@ require('dotenv').config();
 
 router.get('/home',appController.home_get);
 router.get('/shop',appController.shop_get);
+router.get('/about',appController.about_get);
+router.get('/contact',appController.contact_get);
+router.get('/cart',appController.cart_get);
+router.get('/profile',appController.profile_get);
 
 module.exports=router;

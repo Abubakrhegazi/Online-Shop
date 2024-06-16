@@ -4,6 +4,7 @@ const Schema=mongoose.Schema;
 const product=new Schema({
 	image:{
 		type: String,
+        required: true
 	},
 	name:{
 		type: String,

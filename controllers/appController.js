@@ -4,10 +4,10 @@ const Product = require('../models/product');
 
 module.exports = {
     home_get: (req, res) => {
-        res.render('index', { title: 'Home', currentPage: 'home' });
+        res.render('index', { title: 'Home', currentPage: 'home'});
     },
     shop_get: async(req, res) => {
-        const data = await Product.find().sort({ createdAt: -1 });
+        const data = await Product.find().sort({ createdAt: -1 }); // bey sort bel geh el awl
         res.render('shop', { title: 'Shop', currentPage: 'shop',data:data});
     },
     about_get: (req, res) => {
@@ -21,5 +21,8 @@ module.exports = {
     },
     profile_get: (req, res) => {
         res.render('profile', { title: 'Profile', currentPage: 'profile' });
+    },
+    login_get: (req, res) => {
+        res.render('login', { title: 'Login', currentPage: 'login' });
     },
 };

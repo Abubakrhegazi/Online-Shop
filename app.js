@@ -9,16 +9,14 @@ app.listen(8000); // port
 
 
 
-app.use(morgan('dev'));
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ extended: true }));
-app.use('/', appRoutes);
+app.use(morgan('dev')); //k
+app.use(express.json({ limit: '50mb' }));  //karim + bysr3 al donia
+app.use(express.urlencoded({ extended: true })); //karim
+app.use('/', appRoutes);//btwdyny 3la al ana 3yzah
 app.use(express.static('public'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.dbURL)
-	.then(() => {
+	.then(() => { //zy try w btkmal al b3dyha
 		app.listen(process.env.PORT, () => {
 			console.log('db connected and listening to port');
 		})
@@ -27,7 +25,7 @@ mongoose.connect(process.env.dbURL)
 		console.log(err)
 	})
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); //karim
 app.set('views', 'views');
 app.get('/', (req, res) => {
 	res.redirect('/home');

@@ -47,37 +47,33 @@
     <section id="product1" class="section-box">
         <h2>Featured Products</h2>
         <p>Shop Now!</p>
-        <div class="pro-container">
-            <!-- gets products from data base -->
+        <div class="prod_grid">                       
             <% if (typeof data !== 'undefined' && data.length > 0) { %>
                 <% data.forEach(item => { %>
-                    <div>
-                        <div><%= item.image %></div>
-                        <div><%= item.name %></div>
-                        <div><%= item.price %></div>
-                        <div><%= item.description %></div>
-                    </div>
+                    <% if (item.name && item.price && item.description) { %>       
+                        <div class="pro">
+                            <img class="proImg" src="imgs/models/model1.jpg" alt="">
+                            <div class="des">
+                                <span><%= item.brand %></span>
+                                <h5><%= item.name %></h5>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4><%= item.price %></h4>
+                            </div>
+                            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                        </div>
+                    <% } %>
                 <% }) %>
             <% } else { %>
                 <p>No results available.</p>
-            <% } %>            
-            <!-- <div class="pro">
-                <img src="imgs/models/model1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>women</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-  
+            <% } %>  
+        </div>
+  <!--
             <div class="pro">
                 <img src="imgs/models/model2.jpg" alt="">
                 <div class="des">

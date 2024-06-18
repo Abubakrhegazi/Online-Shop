@@ -16,15 +16,23 @@
             </header>
             <div class="container">
                 <h2>Add Product</h2>
-                <form id="addProductForm" onsubmit="addProduct(); return false;">
-                    <input type="text" name="name" placeholder="Product Name" accept="" id="nameAdd"><br>
+                <form id="addProductForm" method="post" action="/addProduct" onsubmit="return confirm('Proceed to add this product?');">
+                    <!-- <input type="file" name="file" accept="image/*" id="imageAdd"><br>
+                    <div id="imageAdd-err" class="error"></div> -->
+                    <input type="text" name="name" placeholder="Product Name" accept="" id="nameAdd" required><br>
                     <div id="nameAdd-err" class="error"></div>
-                    <input type="number" name="price" placeholder="Price" step="1" id="priceAdd"><br>
-                    <div id="priceAdd-err" class="error"></div>
+                    <input type="text" name="category" placeholder="Category" id="categoryAdd"><br>
+                    <div id="categoryAdd-err" class="error"></div> 
                     <input type="text" name="type" placeholder="Product Type" id="typeAdd"><br>
                     <div id="typeAdd-err" class="error"></div>
-                    <input type="file" name="file" accept="image/*" id="imageAdd"><br>
-                    <div id="imageAdd-err" class="error"></div>
+                    <input type="text" name="description" placeholder="Description" id="descriptionAdd"><br>
+                    <div id="descriptionAdd-err" class="error"></div> 
+                    <input type="text" name="brand" placeholder="Brand" id="brandAdd"><br>
+                    <div id="brandAdd-err" class="error"></div>  
+                    <input type="text" name="color" placeholder="Color" id="colorAdd"><br>
+                    <div id="colorAdd-err" class="error"></div> 
+                    <input type="number" name="price" placeholder="Price" step="1" id="priceAdd"><br>
+                    <div id="priceAdd-err" class="error"></div>    
                     <button type="submit">Add Product</button>
                 </form>
             </div>

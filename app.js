@@ -6,8 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config()
 app.listen(8000); // port
-
-
+const multer = require('multer');
 
 app.use(morgan('dev')); //k
 app.use(express.json({ limit: '50mb' }));  //karim + bysr3 al donia
@@ -24,6 +23,7 @@ mongoose.connect(process.env.dbURL)
 	.catch((err) => {
 		console.log(err)
 	})
+
 
 app.set('view engine', 'ejs'); //karim
 app.set('views', 'views');

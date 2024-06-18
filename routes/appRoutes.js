@@ -10,5 +10,6 @@ router.get('/contact',appController.contact_get);
 router.get('/cart',appController.cart_get);
 router.get('/profile',appController.profile_get);
 router.get('/login',appController.login_get);
-
+router.get('/admin',appController.admin_get);
+router.post('/addProduct',appController.addProduct_post);
 module.exports=router;

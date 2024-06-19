@@ -18,7 +18,20 @@ module.exports = {
             brand: { $exists: true },
             price: { $exists: true }
         }).sort({ createdAt: -1 }); // bey sort bel geh el awl yeb2a fel akher
+
+        data.forEach(item => {
+            if (item.image) {
+                const parts = item.image.split('public');
+                if (parts.length > 1) {
+                    item.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+        });
+
+        
         res.render('shop', { title: 'Shop', currentPage: 'shop', data: data });
+
+        
     },
     about_get: (req, res) => {
         res.render('about', { title: 'About', currentPage: 'about' });

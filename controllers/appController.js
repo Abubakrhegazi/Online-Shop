@@ -7,6 +7,15 @@ module.exports = {
     details_get: async (req, res) => {
         try {
             const product = await Product.findById(req.params.id);
+
+            if (product.image) {
+                const parts = product.image.split('public');
+                if (parts.length > 1) {
+                    product.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+
+
             res.render('details', { title: 'Product Details', product: product });
         } catch (error) {
             console.error('Error fetching product details', error);

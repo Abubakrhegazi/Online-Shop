@@ -25,4 +25,6 @@ router.get('/profile', appController.profile_get);
 router.get('/login', appController.login_get);
 router.get('/admin', appController.admin_get);
 router.post('/addProduct', upload.single('image'), appController.addProduct_post);
+router.get('/details/:id', appController.details_get);
+
 module.exports = router;

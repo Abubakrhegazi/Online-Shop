@@ -9,8 +9,9 @@ module.exports = {
     },
     shop_get: async (req, res) => {
         const data = await Product.find({
+            image: { $exists: true },
             name: { $exists: true },
-            descriptionnpm: { $exists: true },
+            description: { $exists: true },
             category: { $exists: true },
             type: { $exists: true },
             color: { $exists: true },

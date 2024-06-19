@@ -52,7 +52,8 @@
                 <% data.forEach(item => { %>
                     <% if (item.name && item.price && item.description) { %>       
                         <div class="pro">
-                            <img class="proImg" src="<%= product.image %>" alt="<%= product.name %> Image">
+                            <img class="proImg" src="<%= item.image || '/uploads/default.jpg' %>" alt="<%= item.name %> Image">
+                            <% console.log(item.image) %>
                             <div class="des">
                                 <span><%= item.brand %></span>
                                 <h5><%= item.name %></h5>

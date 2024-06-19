@@ -53,7 +53,6 @@
                     <% if (item.name && item.price && item.description) { %>       
                         <div class="pro">
                             <img class="proImg" src="<%= item.image || '/uploads/default.jpg' %>" alt="<%= item.name %> Image">
-                            <% console.log(item.image) %>
                             <div class="des">
                                 <span><%= item.brand %></span>
                                 <h5><%= item.name %></h5>
@@ -66,7 +65,7 @@
                                 </div>
                                 <h4><%= item.price %></h4>
                             </div>
-                            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                            <a href="/details/<%= item._id %>"><i class="fal fa-shopping-cart cart"></i></a>
                         </div>
                     <% } %>
                 <% }) %>
@@ -74,6 +73,7 @@
                 <p>No results available.</p>
             <% } %>  
         </div>
+    
   <!--
             <div class="pro">
                 <img src="imgs/models/model2.jpg" alt="">

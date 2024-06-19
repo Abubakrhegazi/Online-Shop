@@ -4,6 +4,15 @@ const Product = require('../models/product');
 
 
 module.exports = {
+    details_get: async (req, res) => {
+        try {
+            const product = await Product.findById(req.params.id);
+            res.render('details', { title: 'Product Details', product: product });
+        } catch (error) {
+            console.error('Error fetching product details', error);
+            res.status(500).send('An error occurred while fetching the product details');
+        }
+    },
     home_get: (req, res) => {
         res.render('index', { title: 'Home', currentPage: 'home' });
     },

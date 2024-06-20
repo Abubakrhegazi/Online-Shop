@@ -81,8 +81,29 @@ module.exports = {
     login_get: (req, res) => {
         res.render('login', { title: 'Login', currentPage: 'login' });
     },
-    admin_get: (req, res) => {
-        res.render('admin', { title: 'Admin' });
+    admin_get: async(req, res) => {
+        const operation = req.params.operation;
+        const data = await Product.find({
+            image: { $exists: true },
+            name: { $exists: true },
+            description: { $exists: true },
+            category: { $exists: true },
+            type: { $exists: true },
+            color: { $exists: true },
+            brand: { $exists: true },
+            price: { $exists: true }
+        }).sort({ createdAt: -1 }); // bey sort bel geh el awl yeb2a fel akher
+
+        data.forEach(item => {
+            if (item.image) {
+                const parts = item.image.split('public');
+                if (parts.length > 1) {
+                    item.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+        });
+
+        res.render('admin', { title: 'Admin', data: data });
     },
     addProduct_post: async (req, res) => {
         try {
@@ -163,5 +184,29 @@ module.exports = {
         }
     },
 
+    admin_crud: async (req, res) => {
+        const operation = req.params.operation;
+        const data = await Product.find({
+            image: { $exists: true },
+            name: { $exists: true },
+            description: { $exists: true },
+            category: { $exists: true },
+            type: { $exists: true },
+            color: { $exists: true },
+            brand: { $exists: true },
+            price: { $exists: true }
+        }).sort({ createdAt: -1 }); // bey sort bel geh el awl yeb2a fel akher
+
+        data.forEach(item => {
+            if (item.image) {
+                const parts = item.image.split('public');
+                if (parts.length > 1) {
+                    item.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+        });
+
+        res.render('adminCRUD', { title: 'Admin', operation: operation, data: data});
+    },
 
 };

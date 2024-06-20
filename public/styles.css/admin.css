@@ -9,9 +9,12 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
+    margin: 0;
 }
-
+.prods-title{
+    display: flex;
+}
 .sidebar {
     width: 250px;
     background-color: #333;
@@ -31,6 +34,7 @@ body {
 
 .sidebar ul li {
     margin: 15px 0;
+    border: #333 3px solid;
 }
 
 .sidebar ul li a {
@@ -47,6 +51,7 @@ body {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
+    width: 100%;
 }
 
 .section {
@@ -82,4 +87,102 @@ form button:hover {
     font-size: 14px;
     margin-top: -10px;
     margin-bottom: 10px;
+}
+
+/* CSS for the product grid */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.prod_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.pro {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.pro:hover {
+    transform: translateY(-5px);
+}
+
+.pro a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.proImg {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.des {
+    padding: 15px;
+    text-align: center;
+}
+
+.des span {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.des h5 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.stars {
+    color: #f5c518;
+}
+
+.stars i {
+    margin: 0 1px;
+}
+
+.des h4 {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #333;
+}
+.actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.edit-btn,
+.delete-btn {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.edit-btn:hover {
+    background-color: #ddd;
+}
+
+.delete-btn:hover{
+    background-color: crimson;
+}
+.view{
+    /* text-align: center; */
+    margin-left: 7%;
 }

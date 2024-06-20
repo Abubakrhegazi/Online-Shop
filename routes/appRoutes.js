@@ -3,7 +3,6 @@ const router = express.Router();
 const appController = require('../controllers/appController');
 const multer = require('multer');
 const path = require('path');
-require('dotenv').config();
 
 
 const storage = multer.diskStorage({
@@ -27,7 +26,7 @@ router.get('/login', appController.login_get);
 router.get('/admin', appController.admin_get);
 router.post('/addProduct', upload.single('image'), appController.addProduct_post);
 router.get('/details/:id', appController.details_get);
-    
+
 router.get('/search', appController.search_get);
 router.get('/shop/:category', appController.category_get);
 

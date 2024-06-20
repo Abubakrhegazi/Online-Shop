@@ -45,7 +45,6 @@ module.exports = {
         res.render('index', { title: 'Home', currentPage: 'home', data: data });
     },
     shop_get: async (req, res) => {
-       
         const data = await Product.find({
             image: { $exists: true },
             name: { $exists: true },

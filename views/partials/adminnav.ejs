@@ -1,0 +1,47 @@
+<head>
+    <link rel="stylesheet" href="/styles.css/adminnav.css">
+</head>
+
+<nav>
+    <section id="Header">
+        <a href="#"><img src="/imgs/logo.png" alt="Logo" class="logo"></a>
+
+        <div class="search-container">
+            <form class="search-form" action="/search" method="get">
+                <input
+                    class="search"
+                    type="text"
+                    placeholder="Search for any product!"
+                    name="query"
+                    id="aa"
+                >
+            </form>
+        </div>
+
+        <div class="profile-container">
+            <button class="profile-button" onclick="toggleProfileMenu()">Profile</button>
+            <div class="profile-menu" id="profileMenu">
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+    </section>
+</nav>
+
+<script>
+    function toggleProfileMenu() {
+        var menu = document.getElementById('profileMenu');
+        menu.classList.toggle('show');
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.profile-button')) {
+            var dropdowns = document.getElementsByClassName("profile-menu");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>

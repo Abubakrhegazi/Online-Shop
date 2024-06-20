@@ -259,3 +259,14 @@ body {
 .view {
     margin-left: 7%;
 }
+
+.sold-out {
+    color: red;
+    font-weight: bold;
+}
+
+.order-btn.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+

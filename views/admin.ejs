@@ -53,8 +53,18 @@
                                         <i class="fas fa-star"></i>
                                     </div>
                                     <h4><p style="display: inline; font-size: 0.8em;">EGP </p><%= item.price %></h4>
+                                    <% if (item.quantity > 0) { %>
+                                        <p>Quantity: <%= item.quantity %></p>
+                                    <% } else { %>
+                                        <p class="sold-out">Sold Out</p>
+                                    <% } %>
                                 </div>
                                 <div class="actions">
+                                    <% if (item.quantity > 0) { %>
+                                        <a href="/order/<%= item._id %>" class="order-btn">Order</a>
+                                    <% } else { %>
+                                        <button class="order-btn disabled" disabled>Sold Out</button>
+                                    <% } %>
                                     <a href="/edit/<%= item._id %>" class="edit-btn">Edit</a>
                                     <a href="/delete/<%= item._id %>" class="delete-btn">Delete</a>
                                 </div>
@@ -63,7 +73,8 @@
                     <% }) %>
                 <% } else { %>
                     <p>No results available.</p>
-                <% } %>  
+                <% } %>
+                
             </div>
         </div>
     </div>

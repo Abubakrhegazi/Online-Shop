@@ -60,11 +60,7 @@
             <% } else if(operation === 'editProduct'){%>
             <hr>
 
-            <!DOCTYPE html>
-            <html>
-            <head>
-              <title>Edit Product</title>
-            </head>
+           
             <body>
               <div id="editProduct" class="section">
                 <h2>Edit Product</h2>
@@ -74,8 +70,6 @@
                   <input type="text" name="name" placeholder="Product Name" id="nameAdd" value="<%= product.name %>" required><br>
                   <div id="nameAdd-err" class="error"></div>
                   <select name="category" id="categoryAdd" required>
-                    <option value="Men" <%= product.category === 'Men' ? 'selected' : '' %>>Men</option>
-                    <option value="Women" <%= product.category === 'Women' ? 'selected' : '' %>>Women</option>
                     <option value="Kids" <%= product.category === 'Kids' ? 'selected' : '' %>>Kids</option>
                     <option value="Athletics" <%= product.category === 'Athletics' ? 'selected' : '' %>>Athletics</option>
                     <option value="Beauty" <%= product.category === 'Beauty' ? 'selected' : '' %>>Beauty</option>

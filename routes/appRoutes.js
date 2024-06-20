@@ -28,4 +28,6 @@ router.get('/admin', appController.admin_get);
 router.post('/addProduct', upload.single('image'), appController.addProduct_post);
 router.get('/details/:id', appController.details_get);
 
+router.get('/shop/:category', appController.category_get);
+
 module.exports = router;

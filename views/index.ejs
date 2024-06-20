@@ -59,17 +59,39 @@
         </div>
     </section>
 
-
-    <a id="product-section-link" href="#product1">View Featured Products</a>
-
-
-
     
     <section id="product1" class="section-box">
         <h2>Featured Products</h2>
         <p>Shop Now!</p>
         <div class="pro-container">
-
+            <div class="prod_flex">                       
+                <% if (typeof data !== 'undefined' && data.length > 0) { %>
+                    <% data.forEach(item => { %>
+                        <% if (item.name && item.price && item.description) { %>       
+                            <div class="pro">
+                                <a href="/details/<%= item._id %>"> <!-- Link wraps the image -->
+                                    <img class="proImg" src="<%= item.image || '/uploads/default.jpg' %>" alt="<%= item.name %> Image">
+                                </a>
+                                <div class="des">
+                                    <span><%= item.brand %></span>
+                                    <h5><%= item.name %></h5>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <h4><p style="display: inline; font-size: 0.8em;">EGP </p><%= item.price %></h4>
+                                </div>
+                                <a href="/details/<%= item._id %>"><i class="fal fa-shopping-cart cart"></i></a>
+                            </div>
+                        <% } %>
+                    <% }) %>
+                <% } else { %>
+                    <p>No results available.</p>
+                <% } %>  
+            </div>
         
           
             <!-- <div class="pro">

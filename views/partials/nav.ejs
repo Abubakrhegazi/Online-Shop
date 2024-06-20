@@ -1,3 +1,8 @@
+<head>
+    <link rel="stylesheet" href="/styles.css/nav.css">
+</head>
+
+<nav>
     <section id="Header">
         <a href="#"><img src="imgs/logo.png" alt="" class="logo"></a>
         <div>
@@ -6,9 +11,28 @@
                 <li><a href="shop" class="<%= currentPage === 'shop' ? 'active' : '' %>">Shop</a></li>
                 <li><a href="about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a></li>
                 <li><a href="contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a></li>
-                <li><a href="cart" class="<%= currentPage === 'cart' ? 'active' : '' %>"><i class="far fa-shopping-bag"></i></a></li>
-                <li><a href="login" class="<%= currentPage === 'login' ? 'active' : '' %>"><i class="far fa-user"></i></a></li>
+                <li><a href="cart" class="<%= currentPage === 'cart' ? 'active' : '' %>"><i
+                            class="far fa-shopping-bag"></i></a></li>
+                <li><a href="login" class="<%= currentPage === 'login' ? 'active' : '' %>"><i
+                            class="far fa-user"></i></a></li>
                 <li><a href="#" id="toggle-dark"><i class="far fa-sun"></i></a></li>
             </ul>
         </div>
     </section>
+
+    <div class="moving-info1">
+        <p>10% OFF ON YOUR FIRST ORDER</p>
+    </div>
+
+    <div class="categories">
+        <div class="cat-list">
+            <a class="ALL CATEGORIES" href="shop/">ALL CATEGORIES</a>
+            <a class="men" href="shop/men">MEN</a>
+            <a class="women" href="shop/women">WOMEN</a>
+            <a class="kids" href="shop/kids">KIDS</a>
+            <a class="athletics" href="shop/athletics">ATHLETICS</a>
+            <a class="beauty" href="shop/beauty">BEAUTY</a>
+
+        </div>
+    </div>
+</nav>

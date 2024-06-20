@@ -1,19 +1,38 @@
 <head>
     <link rel="stylesheet" href="/styles.css/nav.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
 </head>
 
 <nav>
     <section id="Header">
-        <a href="#"><img src="imgs/logo.png" alt="" class="logo"></a>
+        <a href="#"><img src="/imgs/logo.png" alt="" class="logo"></a>
+
+        <div class="search-container">
+            <form class="search-form" action="/search" method="get" onsubmit="console.log(document.getElementById('aa').innerHTML)">
+                <input
+                 class="search"
+                 type="text"
+                 placeholder="Search for any product!"
+                 name="query"
+                 id="aa"
+                 >
+            </form>
+            <div>
+                <ul>
+
+                </ul>
+            </div>
+        </div>
         <div>
             <ul id="navbar">
-                <li><a href="home" class="<%= currentPage === 'home' ? 'active' : '' %>">Home</a></li>
-                <li><a href="shop" class="<%= currentPage === 'shop' ? 'active' : '' %>">Shop</a></li>
-                <li><a href="about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a></li>
-                <li><a href="contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a></li>
-                <li><a href="cart" class="<%= currentPage === 'cart' ? 'active' : '' %>"><i
+                <li><a href="/home" class="<%= currentPage === 'home' ? 'active' : '' %>">Home</a></li>
+                <li><a href="/shop" class="<%= currentPage === 'shop' ? 'active' : '' %>">Shop</a></li>
+                <li><a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a></li>
+                <li><a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a></li>
+                <li><a href="/cart" class="<%= currentPage === 'cart' ? 'active' : '' %>"><i
                             class="far fa-shopping-bag"></i></a></li>
-                <li><a href="login" class="<%= currentPage === 'login' ? 'active' : '' %>"><i
+                <li><a href="/login" class="<%= currentPage === 'login' ? 'active' : '' %>"><i
                             class="far fa-user"></i></a></li>
                 <li><a href="#" id="toggle-dark"><i class="far fa-sun"></i></a></li>
             </ul>
@@ -26,12 +45,12 @@
 
     <div class="categories">
         <div class="cat-list">
-            <a class="ALL CATEGORIES" href="shop/">ALL CATEGORIES</a>
-            <a class="men" href="shop/men">MEN</a>
-            <a class="women" href="shop/women">WOMEN</a>
-            <a class="kids" href="shop/kids">KIDS</a>
-            <a class="athletics" href="shop/athletics">ATHLETICS</a>
-            <a class="beauty" href="shop/beauty">BEAUTY</a>
+            <a class="ALL CATEGORIES" href="/Shop">ALL CATEGORIES</a>
+            <a class="men" href="/shop/Men">MEN</a>
+            <a class="women" href="/shop/Women">WOMEN</a>
+            <a class="kids" href="/shop/Kids">KIDS</a>
+            <a class="athletics" href="/shop/Athletics">ATHLETICS</a>
+            <a class="beauty" href="/shop/Beauty">BEAUTY</a>
 
         </div>
     </div>

@@ -9,7 +9,7 @@
 }
 
 .section-box {
-    margin: 0 80px;
+    margin: 40px 80px;
 }
 
 
@@ -45,6 +45,7 @@
     padding-top: 20px;
 }
 #product1 {
+    margin-top: 0;
     text-align: center;
 }
 

@@ -11,27 +11,10 @@
 
 <body>
     <%- include('./partials/nav.ejs') %>
-    
-
-    <div class="title">
-        <h1>Welcome to <span>Our E-Commerce Storee</span></h1>
-        <p>Discover amazing deals on your favorite products!</p>
-    </div>
-
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="../imgs/slideshow/ss1.avif " id="slide">
-        </div>
-
-        <div class="textonimage">
-            <button class="ssl" onclick="prevSlide()"><i class="fa fa-angle-left"></i></button>
-            <button class="ssr" onclick="nextSlide()"><i class="fa fa-angle-right"></i></button>
-        </div>
-    </div>
 
 
     <section id="product1" class="section-box">
-        <h2>Featured Products</h2>
+        <h2>Showing <%=data.length%> products for: <%= category%></h2>
         <p>Shop Now!</p>
         <div class="prod_grid">                       
             <% if (typeof data !== 'undefined' && data.length > 0) { %>

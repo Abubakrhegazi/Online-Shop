@@ -16,7 +16,7 @@ module.exports = {
             }
 
 
-            res.render('details', { title: 'Product Details', product: product ,currentPage: 'shop'});
+            res.render('details', { title: 'Product Details', product: product, currentPage: 'shop' });
         } catch (error) {
             console.error('Error fetching product details', error);
             res.status(500).send('An error occurred while fetching the product details');
@@ -42,9 +42,10 @@ module.exports = {
                 }
             }
         });
-        res.render('index', { title: 'Home', currentPage: 'home', data: data});
+        res.render('index', { title: 'Home', currentPage: 'home', data: data });
     },
     shop_get: async (req, res) => {
+       
         const data = await Product.find({
             image: { $exists: true },
             name: { $exists: true },
@@ -64,11 +65,7 @@ module.exports = {
                 }
             }
         });
-
-        
-        res.render('shop', { title: 'Shop', currentPage: 'shop', data: data });
-
-        
+        res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query:undefined });
     },
     about_get: (req, res) => {
         res.render('about', { title: 'About', currentPage: 'about' });
@@ -109,9 +106,63 @@ module.exports = {
         }
     },
 
-    category_get: (req, res) => {
+    category_get: async (req, res) => {
         const category = req.params.category;
-        res.render('category', { title: category, category: category}); 
+        const data = await Product.find({
+            image: { $exists: true },
+            name: { $exists: true },
+            description: { $exists: true },
+            category: category,
+            type: { $exists: true },
+            color: { $exists: true },
+            brand: { $exists: true },
+            price: { $exists: true }
+        }).sort({ createdAt: -1 }); // bey sort bel geh el awl yeb2a fel akher
+
+        data.forEach(item => {
+            if (item.image) {
+                const parts = item.image.split('public');
+                if (parts.length > 1) {
+                    item.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+        });
+
+
+        res.render('category', { title: 'Shop', category: category, currentPage: 'shop', data: data });
     },
+
+    search_get: async (req, res) => {
+        const { query } = req.query;
+        console.log('query:', query);
+        try {
+            const data = await Product.find({
+                image: { $exists: true },
+                name: { $exists: true },
+                description: { $exists: true },
+                category: { $exists: true },
+                type: { $exists: true },
+                color: { $exists: true },
+                brand: { $exists: true },
+                price: { $exists: true },
+                name: { $regex: query, $options: 'i' }
+            }).sort({ createdAt: -1 });
+
+            data.forEach(item => {
+                if (item.image) {
+                    const parts = item.image.split('public');
+                    if (parts.length > 1) {
+                        item.image = parts[1];
+                    }
+                }
+            });
+
+            res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: query });
+        } catch (err) {
+            console.error('Error searching products:', err);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    },
+
 
 };

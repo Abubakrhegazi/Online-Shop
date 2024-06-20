@@ -11,18 +11,14 @@ body {
     margin: 0;
 }
 
-.prods-title {
-    display: flex;
-}
-
 .sidebar {
-    width: 60px; 
+    width: 60px; /* Set initial width */
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 20px 0; /* Remove horizontal padding */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
-    transition: width 0.3s ease; 
+    overflow: hidden; /* Hide overflow content */
+    transition: width 0.3s ease; /* Add transition for smooth sliding */
     position: relative;
 }
 
@@ -40,9 +36,10 @@ body {
 
 .sidebar h2 {
     margin-top: 0;
-    white-space: nowrap; 
+    white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis; /* Truncate text with ellipsis */
+    display: none; /* Hide the title initially */
 }
 
 .sidebar ul {
@@ -53,26 +50,51 @@ body {
 
 .sidebar ul li {
     margin: 15px 0;
+    text-align: center; /* Center align icons */
 }
 
 .sidebar ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    white-space: nowrap; 
+    white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden;
-    text-overflow: ellipsis; 
-    display: block;
-    padding: 10px;
-    transition: background 0.3s ease;
+    text-overflow: ellipsis; /* Truncate text with ellipsis */
+    display: flex;
+    justify-content: center; /* Center align icons */
+    align-items: center;
+    transition: background 0.3s ease, width 0.3s ease; /* Add transition for smooth sliding */
 }
 
-.sidebar ul li a:hover {
-    background: rgba(255, 255, 255, 0.1);
+.sidebar ul li a i {
+    margin-right: 0; /* Remove margin initially */
+    font-size: 20px;
+}
+
+.sidebar ul li a span {
+    display: none; /* Hide the text initially */
 }
 
 .sidebar:hover {
-    width: 250px; 
+    width: 250px; /* Expand the sidebar on hover */
+}
+
+.sidebar:hover h2 {
+    display: block; /* Show the title on hover */
+    text-align: center;
+}
+
+.sidebar:hover ul li a {
+    justify-content: flex-start; /* Align icons and text */
+    padding-left: 20px;
+}
+
+.sidebar:hover ul li a i {
+    margin-right: 10px; /* Add margin to icons on hover */
+}
+
+.sidebar:hover ul li a span {
+    display: inline; /* Show the text on hover */
 }
 
 .main-content {
@@ -80,6 +102,28 @@ body {
     padding: 20px;
     overflow-y: auto;
     width: 100%;
+}
+
+.prods-title {
+    display: flex;
+    justify-content: space-between; /* Spread out the h2 and button */
+    align-items: center; /* Align items vertically */
+    padding: 20px 0; /* Add padding for spacing */
+}
+
+.styled-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.styled-button:hover {
+    background-color: #555;
 }
 
 .section {
@@ -117,6 +161,7 @@ form button:hover {
     margin-bottom: 10px;
 }
 
+/* CSS for the product grid */
 body {
     font-family: Arial, sans-serif;
     margin: 0;

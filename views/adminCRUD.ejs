@@ -29,8 +29,8 @@
             <% if(operation === 'addProduct'){%>
             <div id="addProduct" class="section">
                 <h2>Add Product</h2>
-                <form id="addProductForm" method="post" action="/addProduct" enctype="multipart/form-data"
-                    onsubmit="return confirm('Proceed to add this product?');">
+                <form id="addProductForm" method="post" action="/addProduct" enctype="multipart/form-data">
+                    onsubmit=return confirm'Proceed to add this product?
                     <input type="file" name="image" accept="image/*" id="imageAdd" required><br>
                     <div id="imageAdd-err" class="error"></div>
                     <input type="text" name="name" placeholder="Product Name" id="nameAdd" required><br>
@@ -63,7 +63,7 @@
             <div id="editProduct" class="section">//
                 <h2>Edit Product</h2>
                 <form id="editProductForm" onsubmit="editProduct(); return false;">
-                    <input type="number" name="ID" placeholder="Product ID" id="IDEdit" class="inp"><br>
+                    <xinput type="number" name="ID" placeholder="Product ID" id="IDEdit" class="inp"><br>
                     <div id="IDEdit-err" class="error"></div>
                     <input type="text" name="name" placeholder="Product Name" id="nameEdit" class="inp"><br>
                     <div id="nameEdit-err" class="error"></div>

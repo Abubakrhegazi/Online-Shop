@@ -5,6 +5,7 @@ const multer = require('multer');
 const path = require('path');
 require('dotenv').config();
 
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.join(__dirname, '../public/uploads/')); // Save images to the 'public/uploads/' directory

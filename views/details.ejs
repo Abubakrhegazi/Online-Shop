@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="/styles.css/details.css">
 </head>
 <body>
+    <%- include('./partials/nav.ejs') %> <!-- Include your navbar here -->
+
     <div class="product">
-        <h1>Product Details</h1>
         <img src="<%= product.image %>" alt="<%= product.name %>">
-        <% console.log(product.image)%>
-        <h2><%= product.name %></h2>
-        <p><%= product.description %></p>
-        <p>Category: <%= product.category %></p>
-        <p>Type: <%= product.type %></p>
-        <p>Brand: <%= product.brand %></p>
-        <p>Color: <%= product.color %></p>
-        <p>Price: $<%= product.price %></p>
-        <a href="/shop">Back to Shop</a>
-        <a href="/cart.ejs" class="button">Checkout</a>
+        <div class="product-details">
+            <h1>Product Details</h1>
+            <h2><%= product.name %></h2>
+            <p><%= product.description %></p>
+            <p>Category: <%= product.category %></p>
+            <p>Type: <%= product.type %></p>
+            <p>Brand: <%= product.brand %></p>
+            <p>Color: <%= product.color %></p>
+            <p>Price: $<%= product.price %></p>
+            <a href="/shop" class="button">Back to Shop</a>
+            <a href="/cart.ejs" class="button">Checkout</a>
     </div>
 </body>
 </html>

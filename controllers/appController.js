@@ -102,7 +102,7 @@ module.exports = {
                 }
             }
         });
-
+        console.log(data);
         res.render('admin', { title: 'Admin', data: data });
     },
     addProduct_post: async (req, res) => {

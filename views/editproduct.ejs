@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <link rel="stylesheet" href="/styles.css/edit.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
 </head>
+
 <body>
     <%- include('./partials/adminnav.ejs') %> <!-- Include your navbar here -->
-    
-    <div class="product">
-        <h1>Product Details</h1>
 
-        <img src="<%=product.image %>" alt="<%= product.name %>">
-        <div class="product-details">
-            <h2 class="pp"><%= cap(product.name) %>  <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button></h2>
-            
-            <label for="name">Name:</label>
-            <input type="text" value="<%= cap(product.name) %>" placeholder="name" name="name">
+        <div class="product">
+            <h1>Product Details</h1>
 
-            <label for="description">Description:</label>
-            <input type="text" value="<%= cap(product.description) %>" placeholder="Description" name="description">
+            <img src="<%=product.image %>" alt="<%= product.name %>">
+            <div class="product-details">
+                <form action="/editproduct/<%= product.id%>" method="post" enctype="multipart/form-data">
+                    <h2 class="pp">
+                        <%= cap(product.name) %> <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </h2>
 
-            <label for="category">Category:</label>
-            <input type="text" value="<%= cap(product.category) %>" placeholder="Category" name="category">
+                    <label for="name">Name:</label>
+                    <input type="text" value="<%= cap(product.name) %>" placeholder="name" name="name">
 
-            <label for="type">Type: </label>
-            <input type="text" value="<%= cap(product.type) %>" placeholder="type" name="type">
+                    <label for="description">Description:</label>
+                    <input type="text" value="<%= cap(product.description) %>" placeholder="Description"
+                        name="description">
 
-            <label for="brand">Brand: </label>
-            <input type="text" value="<%= cap(product.brand) %>" placeholder="brand" name="brand">
+                        <select name="category" id="categoryAdd"  required>
+                            <option value="Men">Men</option>
+                            <option value="Women">Women</option>
+                            <option value="Kids">Kids</option>
+                            <option value="Athletics">Athletics</option>
+                            <option value="Beauty">Beauty</option>
+                        </select>
 
-            <label for="color">Color: </label>
-            <input type="text" value="<%= cap(product.color) %>" placeholder="color" name="color">
+                    <label for="type">Type: </label>
+                    <input type="text" value="<%= cap(product.type) %>" placeholder="type" name="type">
 
-            <label for="price">Price: </label>
-            <input type="number" value="<%= product.price %>" name="price">
+                    <label for="brand">Brand: </label>
+                    <input type="text" value="<%= cap(product.brand) %>" placeholder="brand" name="brand">
 
-            <a href="/admin" class="button1">Back to Admin</a>
-            <a href="/cart" class="button1">Confirm</a>
-    </div>
+                    <label for="color">Color: </label>
+                    <input type="text" value="<%= cap(product.color) %>" placeholder="color" name="color">
+
+                    <label for="price">Price: </label>
+                    <input type="number" value="<%= product.price %>" name="price">
+
+                    <button onclick="window.location.href='/admin'" class="button1">Back to Admin</button>
+                    <button type="submit" class="button1">C onfirm</button>
+                </form>
+            </div>
+
 </body>
+
 </html>

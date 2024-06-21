@@ -52,5 +52,7 @@ router.get('/details/:id', appController.details_get);
 router.get('/search', appController.search_get);
 router.get('/shop/:category', appController.category_get);
 router.get('/edit/:id', appController.edit_crud);
+router.post('/editproduct/:id', appController.editproduct);
+
 
 module.exports = router;

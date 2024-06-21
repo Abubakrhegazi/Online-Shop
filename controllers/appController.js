@@ -5,7 +5,7 @@ const Product = require('../models/product');
 function cap(str) {
     if (!str) return str;
     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-  }
+}
 module.exports = {
     details_get: async (req, res) => {
         try {
@@ -213,7 +213,6 @@ module.exports = {
 
     edit_crud: async (req, res) => {
         const productId = req.params.id;
-        console.log(productId);
 
         try {
             const product = await Product.findById(productId);
@@ -223,7 +222,7 @@ module.exports = {
                     product.image = parts[1]; // Set image to the part after 'public'
                 }
             }
-            res.render('editproduct', { product, title: 'Admin', cap});
+            res.render('editproduct', { product, title: 'Admin', cap });
         } catch (err) {
             console.error(err);
             res.status(500).send('Failed to fetch product details');
@@ -244,6 +243,24 @@ module.exports = {
             res.render('details', { title: 'Product Details', product: product, currentPage: 'shop' });
         } catch (error) {
             console.error('Error fetching product details', error);
+            res.status(500).send('An error occurred while fetching the product details');
+        }
+    },
+    editproduct: async (req, res) => {
+        try {
+            console.log(req.body);
+            const productId = req.params.id;
+            // console.log(productId);
+            const newproduct = await Product.findByIdAndUpdate(productId, req.body, { new: true });
+
+            console.log(newproduct);
+            if (!newproduct) {
+                return res.status(404).send('Product not found');
+            }
+            res.redirect('/admin');
+        }
+        catch (error) {
+            console.error('Error trying to reach product ID', error);
             res.status(500).send('An error occurred while fetching the product details');
         }
     },

@@ -73,8 +73,8 @@
     height: 2px;
     background: #FD9610;
     position: absolute;
-    bottom: -4px;
-    left: 0px;
+    bottom: -2px;
+    left: 10px;
 }
 
 .moving-info1 {
@@ -120,4 +120,51 @@
 .cat-list a:hover {
     color: orangered;
     cursor: pointer;
+}
+/* Styles for the dropdown */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: black;
+    border-radius: 5px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999 !important;
+    margin-top: 0; 
+    padding: 0; 
+    margin-left: -50px;
+}
+
+.dropdown-menu li {
+    padding: 15px 15px;
+    list-style: none; /* Remove bullet points */
+    text-align: center;
+    border-top: white 1px solid;
+}
+
+.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.profile:hover {
+    background-color: black;
+}
+
+.profile:hover .dropdown-menu {
+    display: block !important;
+}
+.welcomeTxt{
+    color: white;
+    line-height: 120%;
+}
+.welcomeTxt span{
+    color: #FD9610;
 }

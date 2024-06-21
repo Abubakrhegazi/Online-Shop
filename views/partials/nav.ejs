@@ -32,8 +32,18 @@
                 <li><a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a></li>
                 <li><a href="/cart" class="<%= currentPage === 'cart' ? 'active' : '' %>"><i
                             class="far fa-shopping-bag"></i></a></li>
-                <li><a href="/login" class="<%= currentPage === 'login' ? 'active' : '' %>"><i
-                            class="far fa-user"></i></a></li>
+                <li class="profile">
+                    <i class="far fa-user" style="color: white;"></i>
+                    <ul class="dropdown-menu">
+                        <% if(!user){ %>
+                        <li><a href="/login" class="<%= currentPage === 'login' ? 'active' : '' %>">Login</a></li>
+                        <li><a href="/signup" class="<%= currentPage === 'signup' ? 'active' : '' %>">Signup</a></li>
+                        <% }else if(user){ %>
+                        <li class="welcomeTxt"><span>Welcome</span> <%= user.name %></li>
+                        <li><a href="/logout" onclick="return confirm('Are you sure you want to logout?');">Logout</a></li>
+                        <% } %>
+                    </ul>
+                </li>
                 <li><a href="#" id="toggle-dark"><i class="far fa-sun"></i></a></li>
             </ul>
         </div>

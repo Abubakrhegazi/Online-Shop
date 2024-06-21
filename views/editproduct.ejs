@@ -32,13 +32,15 @@
                     <input type="text" value="<%= cap(product.description) %>" placeholder="Description"
                         name="description">
 
-                        <select name="category" id="categoryAdd"  required>
-                            <option value="Men">Men</option>
-                            <option value="Women">Women</option>
-                            <option value="Kids">Kids</option>
-                            <option value="Athletics">Athletics</option>
-                            <option value="Beauty">Beauty</option>
-                        </select>
+                    <label for="category">Category:</label>
+                    <select name="category" id="categoryAdd" required>
+                        <option value="Men" <%= productCategory === 'Men' ? 'selected' : '' %>>Men</option>
+                        <option value="Women" <%= productCategory === 'Women' ? 'selected' : '' %>>Women</option>
+                        <option value="Kids" <%= productCategory === 'Kids' ? 'selected' : '' %>>Kids</option>
+                        <option value="Athletics" <%= productCategory === 'Athletics' ? 'selected' : '' %>>Athletics</option>
+                        <option value="Beauty" <%= productCategory === 'Beauty' ? 'selected' : '' %>>Beauty</option>
+                      </select>
+                      
 
                     <label for="type">Type: </label>
                     <input type="text" value="<%= cap(product.type) %>" placeholder="type" name="type">
@@ -50,10 +52,10 @@
                     <input type="text" value="<%= cap(product.color) %>" placeholder="color" name="color">
 
                     <label for="price">Price: </label>
-                    <input type="number" value="<%= product.price %>" name="price">
+                    <input type="number" value="<%= product.price %>" name="price" id="price">
 
                     <button onclick="window.location.href='/admin'" class="button1">Back to Admin</button>
-                    <button type="submit" class="button1">C onfirm</button>
+                    <button onclick="console.log(document.getElementById('price').value )" type="submit" class="button1">Confirm</button>
                 </form>
             </div>
 

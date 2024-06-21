@@ -25,6 +25,42 @@ module.exports = {
             res.status(500).send('An error occurred while fetching the product details');
         }
     },
+    edit_crud: async (req, res) => {
+        try {
+            const product = await Product.findById(req.params.id);
+
+            if (product.image) {
+                const parts = product.image.split('public');
+                if (parts.length > 1) {
+                    product.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+
+
+            res.render('details', { title: 'Product Details', product: product, currentPage: 'shop' });
+        } catch (error) {
+            console.error('Error fetching product details', error);
+            res.status(500).send('An error occurred while fetching the product details');
+        }
+    },
+      delete_crud : async (req, res) => {
+        try {
+            const product = await Product.findById(req.params.id);
+
+            if (product.image) {
+                const parts = product.image.split('public');
+                if (parts.length > 1) {
+                    product.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+
+
+            res.render('details', { title: 'Product Details', product: product, currentPage: 'shop' });
+        } catch (error) {
+            console.error('Error fetching product details', error);
+            res.status(500).send('An error occurred while fetching the product details');
+        }
+    },
     home_get: async (req, res) => {
         const data = await Product.find({
             image: { $exists: true },

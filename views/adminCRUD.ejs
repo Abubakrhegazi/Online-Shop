@@ -59,23 +59,48 @@
             </div>
             <% } else if(operation === 'editProduct'){%>
             <hr>
+<<<<<<< HEAD
             <div id="editProduct" class="section">
+=======
+
+           
+            <body>
+              <div id="editProduct" class="section">
+>>>>>>> c10a592a6038222f337411a4e8c82e287a506a91
                 <h2>Edit Product</h2>
-                <form id="editProductForm" onsubmit="editProduct(); return false;">
-                    <input type="number" name="ID" placeholder="Product ID" id="IDEdit" class="inp"><br>
-                    <div id="IDEdit-err" class="error"></div>
-                    <input type="text" name="name" placeholder="Product Name" id="nameEdit" class="inp"><br>
-                    <div id="nameEdit-err" class="error"></div>
-                    <input type="number" name="price" placeholder="Price" step="1" id="priceEdit" class="inp"><br>
-                    <div id="priceEdit-err" class="error"></div>
-                    <input type="text" name="type" placeholder="Product Type" id="typeEdit" class="inp"><br>
-                    <div id="typeEdit-err" class="error"></div>
-                    <input type="file" name="file" accept="image/*" id="imageEdit" class="inp"><br>
-                    <div id="imageEdit-err" class="error"></div>
-                    <button type="submit">Edit</button>
+                <form id="editProductForm" method="post" action="/editProduct/<%= product._id %>" enctype="multipart/form-data" onsubmit="return confirm('Proceed to edit this product?');">
+                  <input type="file" name="image" accept="image/*" id="imageAdd"><br>
+                  <div id="imageAdd-err" class="error"></div>
+                  <input type="text" name="name" placeholder="Product Name" id="nameAdd" value="<%= product.name %>" required><br>
+                  <div id="nameAdd-err" class="error"></div>
+                  <select name="category" id="categoryAdd" required>
+                    <option value="Kids" <%= product.category === 'Kids' ? 'selected' : '' %>>Kids</option>
+                    <option value="Athletics" <%= product.category === 'Athletics' ? 'selected' : '' %>>Athletics</option>
+                    <option value="Beauty" <%= product.category === 'Beauty' ? 'selected' : '' %>>Beauty</option>
+                  </select>
+                  <br>
+                  <div id="categoryAdd-err" class="error"></div>
+                  <input type="text" name="type" placeholder="Product Type" id="typeAdd" value="<%= product.type %>" required><br>
+                  <div id="typeAdd-err" class="error"></div>
+                  <input type="text" name="description" placeholder="Description" id="descriptionAdd" value="<%= product.description %>" required><br>
+                  <div id="descriptionAdd-err" class="error"></div>
+                  <input type="text" name="brand" placeholder="Brand" id="brandAdd" value="<%= product.brand %>" required><br>
+                  <div id="brandAdd-err" class="error"></div>
+                  <input type="text" name="color" placeholder="Color" id="colorAdd" value="<%= product.color %>" required><br>
+                  <div id="colorAdd-err" class="error"></div>
+                  <input type="number" name="price" placeholder="Price" step="1" id="priceAdd" value="<%= product.price %>" required><br>
+                  <div id="priceAdd-err" class="error"></div>
+                  <button type="submit">Edit Product</button>
                 </form>
-            </div>
-            <% } %>
+              
+                <form id="deleteProductForm" method="post" action="/deleteProduct/<%= product._id %>" onsubmit="return confirm('Are you sure you want to delete this product?');">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit">Delete Product</button>
+                </form>
+              </div>
+            </body>
+            </html>
+            
         </div>
     </div>
 

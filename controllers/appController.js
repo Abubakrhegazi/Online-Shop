@@ -102,7 +102,6 @@ module.exports = {
                 }
             }
         });
-        console.log(data);
         res.render('admin', { title: 'Admin', data: data });
     },
     addProduct_post: async (req, res) => {
@@ -211,9 +210,17 @@ module.exports = {
 
     edit_crud: async (req, res) => {
         const productId = req.params.id;
+        console.log(productId);
+
         try {
             const product = await Product.findById(productId);
-            res.render('edit-product', { product });
+            if (product.image) {
+                const parts = product.image.split('public');
+                if (parts.length > 1) {
+                    product.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+            res.render('editproduct', { product, title: 'Admin'});
         } catch (err) {
             console.error(err);
             res.status(500).send('Failed to fetch product details');

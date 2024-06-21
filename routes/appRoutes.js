@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const {requireAuth}=require('../middleware/authMiddleware') 
 const appController = require('../controllers/appController');
 const multer = require('multer');
 const path = require('path');
-
+require('dotenv').config()
 
 router.post('/order', async (req, res) => {
     try {
@@ -40,17 +41,18 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get('/home', appController.home_get);
-router.get('/shop', appController.shop_get);
+router.get('/shop',  appController.shop_get);
 router.get('/about', appController.about_get);
 router.get('/contact', appController.contact_get);
-router.get('/cart', appController.cart_get);
+router.get('/cart', requireAuth,appController.cart_get);
 router.get('/profile', appController.profile_get);
-router.get('/login', appController.login_get);
-router.get('/admin', appController.admin_get);
+router.get('/admin', requireAuth,appController.admin_get);
 router.post('/addProduct', upload.single('image'), appController.addProduct_post);
 router.get('/details/:id', appController.details_get);
 router.get('/search', appController.search_get);
 router.get('/shop/:category', appController.category_get);
+router.get('/edit/:id', appController.edit_crud);
+router.post('/editproduct/:id', appController.editproduct);
 router.get('/admin/:operation', appController.admin_crud);
 
 

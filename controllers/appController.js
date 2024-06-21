@@ -2,7 +2,10 @@ const express = require('express')
 require("dotenv").config()
 const Product = require('../models/product');
 
-
+function cap(str) {
+    if (!str) return str;
+    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  }
 module.exports = {
     details_get: async (req, res) => {
         try {
@@ -220,7 +223,7 @@ module.exports = {
                     product.image = parts[1]; // Set image to the part after 'public'
                 }
             }
-            res.render('editproduct', { product, title: 'Admin'});
+            res.render('editproduct', { product, title: 'Admin', cap});
         } catch (err) {
             console.error(err);
             res.status(500).send('Failed to fetch product details');

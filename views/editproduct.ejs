@@ -4,25 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <link rel="stylesheet" href="/styles.css/details.css">
+    <link rel="stylesheet" href="/styles.css/edit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
 </head>
 <body>
     <%- include('./partials/adminnav.ejs') %> <!-- Include your navbar here -->
-
+    
     <div class="product">
+        <h1>Product Details</h1>
+
         <img src="<%=product.image %>" alt="<%= product.name %>">
-        <%console.log(product.image);%>
         <div class="product-details">
-            <h1>Product Details</h1>
-            <h2><%= product.name %></h2>
-            <p><%= product.description %></p>
-            <p>Category: <%= product.category %></p>
-            <p>Type: <%= product.type %></p>
-            <p>Brand: <%= product.brand %></p>
-            <p>Color: <%= product.color %></p>
-            <p>Price: $<%= product.price %></p>
-            <a href="/shop" class="button">Back to Shop</a>
-            <a href="/cart" class="button">Checkout</a>
+            <h2 class="pp"><%= cap(product.name) %>  <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button></h2>
+            
+            <label for="name">Name:</label>
+            <input type="text" value="<%= cap(product.name) %>" placeholder="name" name="name">
+
+            <label for="description">Description:</label>
+            <input type="text" value="<%= cap(product.description) %>" placeholder="Description" name="description">
+
+            <label for="category">Category:</label>
+            <input type="text" value="<%= cap(product.category) %>" placeholder="Category" name="category">
+
+            <label for="type">Type: </label>
+            <input type="text" value="<%= cap(product.type) %>" placeholder="type" name="type">
+
+            <label for="brand">Brand: </label>
+            <input type="text" value="<%= cap(product.brand) %>" placeholder="brand" name="brand">
+
+            <label for="color">Color: </label>
+            <input type="text" value="<%= cap(product.color) %>" placeholder="color" name="color">
+
+            <label for="price">Price: </label>
+            <input type="number" value="<%= product.price %>" name="price">
+
+            <a href="/admin" class="button1">Back to Admin</a>
+            <a href="/cart" class="button1">Confirm</a>
     </div>
 </body>
 </html>

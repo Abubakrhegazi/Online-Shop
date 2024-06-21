@@ -22,7 +22,6 @@ router.post('/order', async (req, res) => {
         product.quantity -= orderQuantity;
         await product.save();
 
-        // Add code to create the order (not shown here)
         
         res.status(200).json({ message: 'Order placed successfully', product });
     } catch (error) {
@@ -53,5 +52,6 @@ router.get('/search', appController.search_get);
 router.get('/shop/:category', appController.category_get);
 router.get('/edit/:id', appController.edit_crud);
 router.post('/editproduct/:id', appController.editproduct);
+router.get('/admin/:operation', appController.admin_crud);
 
 module.exports = router;

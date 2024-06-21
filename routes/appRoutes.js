@@ -27,6 +27,7 @@ router.post('/order', async (req, res) => {
         res.status(500).json({ message: 'An error occurred', error });
     }
 });
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.join(__dirname, '../public/uploads/')); // Save images to the 'public/uploads/' directory
@@ -51,5 +52,7 @@ router.get('/details/:id', appController.details_get);
 router.get('/search', appController.search_get);
 router.get('/shop/:category', appController.category_get);
 router.get('/admin/:operation', appController.admin_crud);
+
+
 
 module.exports = router;

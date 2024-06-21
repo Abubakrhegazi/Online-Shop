@@ -1,46 +1,42 @@
-const mongoose=require('mongoose');
-const Schema=mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const product=new Schema({
-	image:{
-		type: String,
-        required: true
-	},
-	name:{
+const product = new Schema({
+	image: {
 		type: String,
 		required: true
 	},
-	description:{
+	name: {
 		type: String,
 		required: true
 	},
-	quantity: { type: Number,
-		 required: true,
-		  min: 0 
-		},
-	price:{
+	description: {
+		type: String,
+		required: true
+	},
+	price: {
 		type: Number,
 		required: true
 	},
-	category:{
+	category: {
 		type: String,
 		required: true
 	},
-	type:{
+	type: {
 		type: String,
 		required: true
 	},
-	brand:{
-		type:String,
-		required:true
+	brand: {
+		type: String,
+		required: true
 	},
-	color:{
-		type:String,
-		required:true
+	color: {
+		type: String,
+		required: true
 	},
-    // rating:{
-    //     type:Number           lesa for creativity
-    // }
-},{timestamps:true}); // el wa2t bta3 el product et3amal eh
-const Product=mongoose.model('product',product);
-module.exports=Product;
+	// rating:{
+	//     type:Number           lesa for creativity
+	// }
+}, { timestamps: true }); // el wa2t bta3 el product et3amal eh
+const Product = mongoose.model('product', product);
+module.exports = Product;

@@ -64,7 +64,7 @@ module.exports = {
                 }
             }
         });
-        res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query:undefined });
+        res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: undefined });
     },
     about_get: (req, res) => {
         res.render('about', { title: 'About', currentPage: 'about' });
@@ -81,7 +81,7 @@ module.exports = {
     login_get: (req, res) => {
         res.render('login', { title: 'Login', currentPage: 'login' });
     },
-    admin_get: async(req, res) => {
+    admin_get: async (req, res) => {
         const operation = req.params.operation;
         const data = await Product.find({
             image: { $exists: true },
@@ -206,7 +206,36 @@ module.exports = {
             }
         });
 
-        res.render('adminCRUD', { title: 'Admin', operation: operation, data: data});
+        res.render('adminCRUD', { title: 'Admin', operation: operation, data: data });
+    },
+
+    edit_crud: async (req, res) => {
+        const productId = req.params.id;
+        try {
+            const product = await Product.findById(productId);
+            res.render('edit-product', { product });
+        } catch (err) {
+            console.error(err);
+            res.status(500).send('Failed to fetch product details');
+        }
+    },
+    delete_crud: async (req, res) => {
+        try {
+            const product = await Product.findById(req.params.id);
+
+            if (product.image) {
+                const parts = product.image.split('public');
+                if (parts.length > 1) {
+                    product.image = parts[1]; // Set image to the part after 'public'
+                }
+            }
+
+
+            res.render('details', { title: 'Product Details', product: product, currentPage: 'shop' });
+        } catch (error) {
+            console.error('Error fetching product details', error);
+            res.status(500).send('An error occurred while fetching the product details');
+        }
     },
 
 };

@@ -142,3 +142,49 @@ body {
     border-radius: 8px;
     margin-bottom: 10px;
 }
+/* .countdown-container {
+    position: fixed;
+    top: 20%;
+    right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.countdown-container h2 {
+    margin-bottom: 10px;
+}
+
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+} */
+.countdown-container {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #ff4757; 
+    color: #ffffff; 
+    border-radius: 10px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#countdown {
+    font-size: 3em; 
+    color: #ffffff; 
+    font-weight: bold; 
+    letter-spacing: 2px; 
+}
+
+.countdown-number {
+    display: inline-block; 
+    padding: 15px; 
+    background-color: #ffffff; 
+    color: #ff4757; 
+    border-radius: 5px; 
+    margin: 0 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

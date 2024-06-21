@@ -6,10 +6,13 @@ const multer = require('multer');
 const path = require('path');
 require('dotenv').config();
 const bodyParser = require('body-parser');
+const { requireAuth } = require('../middleware/authMiddleware');
+const User = require('../models/User');
+const Product = require('../models/product');
 
 app.use(bodyParser.json());
 
-let likedItems = []; // This should ideally be stored in your database
+let likedItems = []; 
 
 app.post('/updateLikedItems', (req, res) => {
     const { productId, action } = req.body;

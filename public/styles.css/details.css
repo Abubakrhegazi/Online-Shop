@@ -24,7 +24,6 @@ body{
 
 .product img {
     width: 200px; /* Adjust the size of the image */
-    height: 250px;
     border-radius: 8px;
     margin-right: 20px;
 }

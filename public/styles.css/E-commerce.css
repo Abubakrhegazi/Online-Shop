@@ -135,6 +135,10 @@
         object-fit: cover;
         mix-blend-mode: darken;
     }
+    .pro a{
+        height: 309px;
+        display: block;
+    }
 
     #mostalzmat .box:nth-child(2) h6 {
         background-color: #cdebbc;

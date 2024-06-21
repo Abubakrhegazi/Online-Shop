@@ -51,6 +51,6 @@ router.post('/addProduct', upload.single('image'), appController.addProduct_post
 router.get('/details/:id', appController.details_get);
 router.get('/search', appController.search_get);
 router.get('/shop/:category', appController.category_get);
-router.get('/admin/:operation', appController.admin_crud);
+router.get('/edit/:id', appController.edit_crud);
 
 module.exports = router;

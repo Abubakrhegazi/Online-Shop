@@ -190,7 +190,6 @@ module.exports = {
 
     search_get: async (req, res) => {
         const { query } = req.query;
-        console.log('query:', query);
         try {
             const data = await Product.find({
                 image: { $exists: true },

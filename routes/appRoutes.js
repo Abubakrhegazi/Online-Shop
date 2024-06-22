@@ -6,30 +6,9 @@ const multer = require('multer');
 const path = require('path');
 require('dotenv').config();
 const bodyParser = require('body-parser');
-const { requireAuth } = require('../middleware/authMiddleware');
-const User = require('../models/User');
+const User = require('../models/users');
 const Product = require('../models/product');
 
-app.use(bodyParser.json());
-
-let likedItems = []; 
-
-app.post('/updateLikedItems', (req, res) => {
-    const { productId, action } = req.body;
-
-    if (action === 'add') {
-        // Add the product to liked items
-        if (!likedItems.includes(productId)) {
-            likedItems.push(productId);
-        }
-    } else if (action === 'remove') {
-        // Remove the product from liked items
-        likedItems = likedItems.filter(item => item !== productId);
-    }
-
-    // Respond with the updated liked items
-    res.json({ likedItems });
-});
 
 router.post('/order', async (req, res) => {
     try {
@@ -77,9 +56,9 @@ router.get('/details/:id', appController.details_get);
 router.get('/search', appController.search_get);
 router.get('/shop/:category', appController.category_get);
 router.get('/edit/:id', appController.edit_crud);
-router.post('/editproduct/:id', appController.editproduct);
-router.get('/admin/:operation', appController.admin_crud);
-
+router.post('/editproduct/:id',upload.single('image'), appController.editproduct);
+router.get('/admin/:operation', appController.admin_crud); 
+// router.post('/updateLikedItems', appController.liked);
 
 
 module.exports = router;

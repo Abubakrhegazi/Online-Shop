@@ -6,6 +6,7 @@ function cap(str) {
     if (!str) return str;
     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
+let likedItems = [];
 module.exports = {
     details_get: async (req, res) => {
         try {
@@ -223,13 +224,13 @@ module.exports = {
                 }
             });
 
-            res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: srch, totalPages: totalPages, current_page: page});
+            res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: srch, totalPages: totalPages, current_page: page });
         } catch (error) {
             console.error('Error fetching products:', error);
             res.status(500).send('An error occurred while fetching products');
         }
     },
-    
+
     admin_crud: async (req, res) => {
         const operation = req.params.operation;
         const data = await Product.find({
@@ -293,25 +294,43 @@ module.exports = {
     },
     editproduct: async (req, res) => {
         try {
-            console.log('BODY');
-            const productId = req.params.id;
-            product = Product.findById(productId);
-            // Product.replaceOne({ id: productId },
+            const id = req.params.id;
+            product = Product.findById(id);
+            const { name, description, category, type, brand, price } = req.body;
 
+            image = (req.body.path || product.image);
+            // Update the product by ID
+            await Product.findByIdAndUpdate(id, {
+                image,
+                name,
+                description,
+                category,
+                type,
+                brand,
+                price
+            });
 
-            // );
-
-            const newproduct = await Product.findByIdAndUpdate(productId, req.body, { new: true });
-
-            if (!newproduct) {
-                return res.status(404).send('Product not found');
-            }
             res.redirect('/admin');
-        }
-        catch (error) {
-            console.error('Error trying to reach product ID', error);
-            res.status(500).send('An error occurred while fetching the product details');
+        } catch (err) {
+            console.error(err);
+            res.status(500).send('Internal Server Error');
         }
     },
+    // liked: (req, res) => {
+    //     const { productId, action } = req.body;
+
+    //     if (action === 'add') {
+    //         // Add the product to liked items
+    //         if (!likedItems.includes(productId)) {
+    //             likedItems.push(productId);
+    //         }
+    //     } else if (action === 'remove') {
+    //         // Remove the product from liked items
+    //         likedItems = likedItems.filter(item => item !== productId);
+    //     }
+
+    //     // Respond with the updated liked items
+    //     res.json({ likedItems });
+    // },
 
 };

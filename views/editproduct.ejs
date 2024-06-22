@@ -17,10 +17,14 @@
 
         <img src="<%= product.image %>" alt="<%= product.name %>">
         <div class="product-details">
-            <form action="/editproduct/<%= product.id %>" method="post" enctype="multipart/form-data" onsubmit="console.log('Body: '); return false;">
+            <form action="/editproduct/<%= product.id %>" method="post" enctype="multipart/form-data">
                 <h2 class="pp">
                     <%= cap(product.name) %> <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                 </h2>
+
+                <label for="image">Image:</label>
+                <input type="file" value="<%=product.image %>" name="image">
+                
 
                 <label for="name">Name:</label>
                 <input type="text" value="<%= cap(product.name) %>" placeholder="name" name="name">
@@ -50,10 +54,11 @@
                 <input type="number" value="<%= product.price %>" name="price" id="price">
 
                 <button onclick="window.location.href='/admin'" class="button1" type="button">Back to Admin</button>
-                <button onclick="console.log(document.getElementById('price').value)" type="submit" class="button1">Confirm</button>
+                <button type="submit" class="button1">Confirm</button>
             </form>
         </div>
     </div>
+
 </body>
 
 </html>

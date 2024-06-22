@@ -32,9 +32,10 @@
             <p>Color: <%= product.color %></p>
             <p>In Stock: <%= product.quantity %></p>
             <button class="add-to-cart">Add to Cart</button>
-            <button class="like-button" onclick="toggleLike('<%= product._id %>')">
+            <button id="like-button" class="like-button" onclick="toggleLike('<%= product._id %>')">
                 <i class="fas fa-heart"></i> Like
             </button>
+            
         </div>
     </div>
 
@@ -104,6 +105,19 @@
             <div class="countdown-number">${days}d ${hours}h ${minutes}m ${seconds}s</div>
         `;
     }, 1000); // Update every second (1000 milliseconds)
+
+    const likeButton = document.getElementById('like-button');
+    likeButton.addEventListener('click', function() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-animation');
+        heart.innerHTML = '<i class="fas fa-heart"></i>';
+        likeButton.appendChild(heart);
+
+        // Remove the heart element after animation ends
+        heart.addEventListener('animationend', () => {
+            heart.remove();
+        });
+    });
 });
 
     </script>

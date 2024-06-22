@@ -49,45 +49,45 @@ module.exports = {
         res.render('index', { title: 'Home', currentPage: 'home', data: data });
     },
     shop_get: async (req, res) => {
-    try {
-        const page = parseInt(req.query.page) || 1;
-        const pageSize = parseInt(req.query.pageSize) || 10;
+        try {
+            const page = parseInt(req.query.page) || 1;
+            const pageSize = parseInt(req.query.pageSize) || 10;
 
-        const query = {
-            image: { $exists: true },
-            name: { $exists: true },
-            description: { $exists: true },
-            category: { $exists: true },
-            type: { $exists: true },
-            quantity: { $exists: true },
-            color: { $exists: true },
-            brand: { $exists: true },
-            price: { $exists: true }
-        };
+            const query = {
+                image: { $exists: true },
+                name: { $exists: true },
+                description: { $exists: true },
+                category: { $exists: true },
+                type: { $exists: true },
+                quantity: { $exists: true },
+                color: { $exists: true },
+                brand: { $exists: true },
+                price: { $exists: true }
+            };
 
-        const totalProducts = await Product.countDocuments(query);
-        const totalPages = Math.ceil(totalProducts / pageSize);
+            const totalProducts = await Product.countDocuments(query);
+            const totalPages = Math.ceil(totalProducts / pageSize);
 
-        const data = await Product.find(query)
-            .sort({ createdAt: -1 })
-            .skip((page - 1) * pageSize)
-            .limit(pageSize);
+            const data = await Product.find(query)
+                .sort({ createdAt: -1 })
+                .skip((page - 1) * pageSize)
+                .limit(pageSize);
 
-        data.forEach(item => {
-            if (item.image) {
-                const parts = item.image.split('public');
-                if (parts.length > 1) {
-                    item.image = parts[1]; // Set image to the part after 'public'
+            data.forEach(item => {
+                if (item.image) {
+                    const parts = item.image.split('public');
+                    if (parts.length > 1) {
+                        item.image = parts[1]; // Set image to the part after 'public'
+                    }
                 }
-            }
-        });
+            });
 
-        res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: undefined, totalPages: totalPages, currentPage: page });
-    } catch (error) {
-        console.error('Error fetching products:', error);
-        res.status(500).send('An error occurred while fetching products');
-    }
-},
+            res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: undefined, totalPages: totalPages, current_page: page });
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            res.status(500).send('An error occurred while fetching products');
+        }
+    },
 
     about_get: (req, res) => {
         res.render('about', { title: 'About', currentPage: 'about' });
@@ -149,10 +149,10 @@ module.exports = {
 
     category_get: async (req, res) => {
         try {
-            const category=req.params.category;
+            const category = req.params.category;
             const page = parseInt(req.query.page) || 1;
             const pageSize = parseInt(req.query.pageSize) || 10;
-    
+
             const query = {
                 image: { $exists: true },
                 name: { $exists: true },
@@ -164,15 +164,15 @@ module.exports = {
                 brand: { $exists: true },
                 price: { $exists: true }
             };
-    
+
             const totalProducts = await Product.countDocuments(query);
             const totalPages = Math.ceil(totalProducts / pageSize);
-    
+
             const data = await Product.find(query)
                 .sort({ createdAt: -1 })
                 .skip((page - 1) * pageSize)
                 .limit(pageSize);
-    
+
             data.forEach(item => {
                 if (item.image) {
                     const parts = item.image.split('public');
@@ -181,7 +181,7 @@ module.exports = {
                     }
                 }
             });
-            res.render('category', { title: 'Shop', category: category, currentPage: 'shop', data: data,query: undefined, totalPages: totalPages, currentPage: page });
+            res.render('category', { title: 'Shop', category: category, currentPage: 'shop', data: data, query: undefined, totalPages: totalPages, currentPage: page });
         } catch (error) {
             console.error('Error fetching products:', error);
             res.status(500).send('An error occurred while fetching products');
@@ -189,9 +189,12 @@ module.exports = {
     },
 
     search_get: async (req, res) => {
-        const { query } = req.query;
+        const { srch } = req.query;
         try {
-            const data = await Product.find({
+            const page = parseInt(req.query.page) || 1;
+            const pageSize = parseInt(req.query.pageSize) || 10;
+
+            const query = {
                 image: { $exists: true },
                 name: { $exists: true },
                 description: { $exists: true },
@@ -200,26 +203,33 @@ module.exports = {
                 quantity: { $exists: true },
                 color: { $exists: true },
                 brand: { $exists: true },
-                price: { $exists: true },
-                name: { $regex: query, $options: 'i' }
-            }).sort({ createdAt: -1 });
+                price: { $exists: true }
+            };
+
+            const totalProducts = await Product.countDocuments(query);
+            const totalPages = Math.ceil(totalProducts / pageSize);
+
+            const data = await Product.find(query)
+                .sort({ createdAt: -1 })
+                .skip((page - 1) * pageSize)
+                .limit(pageSize);
 
             data.forEach(item => {
                 if (item.image) {
                     const parts = item.image.split('public');
                     if (parts.length > 1) {
-                        item.image = parts[1];
+                        item.image = parts[1]; // Set image to the part after 'public'
                     }
                 }
             });
 
-            res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: query });
-        } catch (err) {
-            console.error('Error searching products:', err);
-            res.status(500).json({ error: 'Internal Server Error' });
+            res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: srch, totalPages: totalPages, current_page: page});
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            res.status(500).send('An error occurred while fetching products');
         }
     },
-
+    
     admin_crud: async (req, res) => {
         const operation = req.params.operation;
         const data = await Product.find({
@@ -283,9 +293,9 @@ module.exports = {
     },
     editproduct: async (req, res) => {
         try {
-            // console.log(req.body);
+            console.log('BODY');
             const productId = req.params.id;
-            // console.log(productId);  
+            product = Product.findById(productId);
             // Product.replaceOne({ id: productId },
 
 
@@ -293,7 +303,6 @@ module.exports = {
 
             const newproduct = await Product.findByIdAndUpdate(productId, req.body, { new: true });
 
-            console.log(newproduct);
             if (!newproduct) {
                 return res.status(404).send('Product not found');
             }

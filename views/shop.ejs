@@ -69,15 +69,15 @@
         </div>
         <% if (totalPages > 1) { %>
             <div class="pagination">
-                <% if (currentPage > 1) { %>
+                <% if (current_page > 1) { %>
                     <a href="?page=1">First</a>
-                    <a href="?page=<%= currentPage - 1 %>">Previous</a>
+                    <a href="?page=<%= current_page - 1 %>">Previous</a>
                 <% } %>
                 <% for (let i = 1; i <= totalPages; i++) { %>
-                    <a href="?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
-                <% } %>
-                <% if (currentPage < totalPages) { %>
-                    <a href="?page=<%= currentPage + 1 %>">Next</a>
+                    <a href="?page=<%= i %>" class="<%= i === current_page ? 'active' : '' %>"><%= i %></a>
+                <% } %> 
+                <% if (current_page < totalPages) { %>
+                    <a href="?page=<%= current_page + 1 %>">Next</a>
                     <a href="?page=<%= totalPages %>">Last</a>
                 <% } %>
             </div>

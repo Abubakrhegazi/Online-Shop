@@ -10,7 +10,7 @@ const createToken=(id)=>{
 }
 //sign up
 module.exports={
-    signup_get: (req, res) => {
+    signup_get: (req, res) => { 
         res.render('signup', { title: 'Signup' ,error:'.',currentPage:'signup'});
     },
     signup_post: async(req, res) => {
@@ -69,5 +69,5 @@ module.exports={
     logout_get:(req,res)=>{
         res.cookie('jwt','',{maxAge:1});
         res.redirect('/')
-    }
+    },
 }

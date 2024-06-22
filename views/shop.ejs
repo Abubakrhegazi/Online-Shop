@@ -57,7 +57,10 @@
                                 <h4><p style="display: inline; font-size: 0.8em;">EGP </p><%= item.price %></h4>
                             </div>
                             </a>
-                            <a href="/details/<%= item._id %>"><i class="fal fa-shopping-cart cart"></i></a>
+                            <form action="/addtocart" method="post">
+                                <input type="hidden" name="productId" value="<%= item._id %>">
+                            <button type="submit"><i class="fal fa-shopping-cart cart"></i></button>
+                            </form>
                         </div>
                     <% } %>
                 <% }) %>

@@ -51,13 +51,14 @@ router.get('/contact', appController.contact_get);
 router.get('/cart', requireAuth,appController.cart_get);
 router.get('/profile', appController.profile_get);
 router.get('/admin', requireAuth,appController.admin_get);
-router.post('/addProduct', upload.single('image'), appController.addProduct_post);
 router.get('/details/:id', appController.details_get);
 router.get('/search', appController.search_get);
+router.post('/addtocart', requireAuth ,appController.addToCart);
+router.get('/admin/:operation', appController.admin_crud); 
 router.get('/shop/:category', appController.category_get);
 router.get('/edit/:id', appController.edit_crud);
+router.post('/addProduct', upload.single('image'), appController.addProduct_post);
 router.post('/editproduct/:id',upload.single('image'), appController.editproduct);
-router.get('/admin/:operation', appController.admin_crud); 
 // router.post('/updateLikedItems', appController.liked);
 
 

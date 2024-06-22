@@ -296,11 +296,11 @@ module.exports = {
         try {
             const id = req.params.id;
             product = Product.findById(id);
-            const { name, description, category, type, brand, price } = req.body;
-
-            image = (req.body.path || product.image);
+            const { name, description, category, type, brand, price } = req.body;//shayel al updated values
+ 
+            image = (req.body.path || product.image); // bey7ot el image el adeema law mafeesh wahda gedeeda
             // Update the product by ID
-            await Product.findByIdAndUpdate(id, {
+            await Product.findByIdAndUpdate(id, { // <-- de built in function
                 image,
                 name,
                 description,
@@ -314,6 +314,24 @@ module.exports = {
         } catch (err) {
             console.error(err);
             res.status(500).send('Internal Server Error');
+        }
+    },
+    addToCart: async (req, res, next) => {
+        if (!res.locals.user) {
+            return res.status(401).json({ message: 'User not authenticated' });
+        }
+
+        try {
+            const product = await Product.findById(req.body.productId);
+            if (!product) {
+                return res.status(404).json({ message: 'Product not found' });
+            }
+
+            await res.locals.user.addToCart(product);
+            res.redirect('/cart'); // Or handle the response as necessary
+        } catch (err) {
+            console.error('Error adding product to cart:', err);
+            res.status(500).json({ message: 'An error occurred while adding the product to the cart' });
         }
     },
     // liked: (req, res) => {

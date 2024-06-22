@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <link rel="stylesheet" href="/styles.css/edit.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
@@ -12,52 +15,54 @@
 <body>
     <%- include('./partials/adminnav.ejs') %> <!-- Include your navbar here -->
 
-    <div class="product">
-        <h1>Product Details</h1>
+        <div class="product">
+            <h1>Product Details</h1>
 
-        <img src="<%= product.image %>" alt="<%= product.name %>">
-        <div class="product-details">
-            <form action="/editproduct/<%= product.id %>" method="post" enctype="multipart/form-data">
-                <h2 class="pp">
-                    <%= cap(product.name) %> <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                </h2>
+            <img src="<%= product.image %>" alt="<%= product.name %>">
+            <div class="product-details">
+                <form action="/editproduct/<%= product.id %>" method="post" enctype="multipart/form-data">
+                    <h2 class="pp">
+                        <%= cap(product.name) %> <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </h2>
 
-                <label for="image">Image:</label>
-                <input type="file" value="<%=product.image %>" name="image">
-                
+                    <label for="image">Image:</label>
+                    <input type="file" value="<%=product.image %>" name="image">
 
-                <label for="name">Name:</label>
-                <input type="text" value="<%= cap(product.name) %>" placeholder="name" name="name">
 
-                <label for="description">Description:</label>
-                <input type="text" value="<%= cap(product.description) %>" placeholder="Description" name="description">
+                    <label for="name">Name:</label>
+                    <input type="text" value="<%= cap(product.name) %>" placeholder="name" name="name">
 
-                <label for="category">Category:</label>
-                <select name="category" id="categoryAdd" required>
-                    <option value="Men" <%= product.category === 'Men' ? 'selected' : '' %>>Men</option>
-                    <option value="Women" <%= product.category === 'Women' ? 'selected' : '' %>>Women</option>
-                    <option value="Kids" <%= product.category === 'Kids' ? 'selected' : '' %>>Kids</option>
-                    <option value="Athletics" <%= product.category === 'Athletics' ? 'selected' : '' %>>Athletics</option>
-                    <option value="Beauty" <%= product.category === 'Beauty' ? 'selected' : '' %>>Beauty</option>
-                </select>
+                    <label for="description">Description:</label>
+                    <input type="text" value="<%= cap(product.description) %>" placeholder="Description"
+                        name="description">
 
-                <label for="type">Type: </label>
-                <input type="text" value="<%= cap(product.type) %>" placeholder="type" name="type">
+                    <label for="category">Category:</label>
+                    <select name="category" id="categoryAdd" required>
+                        <option value="Men" <%=product.category==='Men' ? 'selected' : '' %>>Men</option>
+                        <option value="Women" <%=product.category==='Women' ? 'selected' : '' %>>Women</option>
+                        <option value="Kids" <%=product.category==='Kids' ? 'selected' : '' %>>Kids</option>
+                        <option value="Athletics" <%=product.category==='Athletics' ? 'selected' : '' %>>Athletics
+                        </option>
+                        <option value="Beauty" <%=product.category==='Beauty' ? 'selected' : '' %>>Beauty</option>
+                    </select>
 
-                <label for="brand">Brand: </label>
-                <input type="text" value="<%= cap(product.brand) %>" placeholder="brand" name="brand">
+                    <label for="type">Type: </label>
+                    <input type="text" value="<%= cap(product.type) %>" placeholder="type" name="type">
 
-                <label for="color">Color: </label>
-                <input type="text" value="<%= cap(product.color) %>" placeholder="color" name="color">
+                    <label for="brand">Brand: </label>
+                    <input type="text" value="<%= cap(product.brand) %>" placeholder="brand" name="brand">
 
-                <label for="price">Price: </label>
-                <input type="number" value="<%= product.price %>" name="price" id="price">
+                    <label for="color">Color: </label>
+                    <input type="text" value="<%= cap(product.color) %>" placeholder="color" name="color">
 
-                <button onclick="window.location.href='/admin'" class="button1" type="button">Back to Admin</button>
-                <button type="submit" class="button1">Confirm</button>
-            </form>
+                    <label for="price">Price: </label>
+                    <input type="number" value="<%= product.price %>" name="price" id="price">
+                    
+                    <button onclick="window.location.href='/admin'" class="button1" type="button">Back to Admin</button>
+                    <button type="submit" class="button1">Confirm</button>
+                </form>
+            </div>
         </div>
-    </div>
 
 </body>
 

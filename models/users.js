@@ -17,6 +17,12 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 6,
   },
+  likedItems: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Product',
+    },
+  ],
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);

@@ -5,24 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/styles.css/details.css">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 </head>
 <body>
-    <%- include('./partials/nav.ejs') %> <!-- Include your navbar here -->
+    <%- include('./partials/nav.ejs') %>
 
-    <div class="product">
-        <img src="<%= product.image %>" alt="<%= product.name %>">
+    <div class="product-page">
+        <div class="product-images">
+            <img src="<%= product.image %>" alt="<%= product.name %>" class="main-image">
+            <div class="thumbnail-images">
+                <img src="<%= product.image %>" alt="<%= product.name %>">
+                <img src="<%= product.image %>" alt="<%= product.name %>">
+                <img src="<%= product.image %>" alt="<%= product.name %>">
+                <img src="<%= product.image %>" alt="<%= product.name %>">
+            </div>
+        </div>
         <div class="product-details">
-            <h1>Product Details</h1>
-            <h2><%= product.name %></h2>
+            <h1><%= product.name %></h1>
+            <p>Model Number: <%= product.modelNumber %></p>
+            <p class="price">Price: EGP <%= product.price %></p>
+            <p class="old-price">Was: EGP <%= product.oldPrice %></p>
+            <p>Saving: EGP <%= product.saving %> (<%= product.discount %>% Off)</p>
             <p><%= product.description %></p>
             <p>Category: <%= product.category %></p>
-            <p>Type: <%= product.type %></p>
             <p>Brand: <%= product.brand %></p>
             <p>Color: <%= product.color %></p>
-            <p>Price: EGP <%= product.price %></p>
-            <p>Left in stock: <%= product.quantity %></p>
-            <a href="/shop" class="button">Back to Shop</a>
-            <a href="/cart" class="button">Checkout</a>
+            <p>In Stock: <%= product.quantity %></p>
+            <button class="add-to-cart">Add to Cart</button>
+            <button id="like-button" class="like-button" onclick="toggleLike('<%= product._id %>')">
+                <i class="fas fa-heart"></i> Like
+            </button>
+            
+        </div>
     </div>
+
+    <div class="advertisements">
+        <div class="advertisement">
+            <h2>Advertisement 1</h2>
+            <img src="/path/to/your/ad-image1.jpg" alt="Ad Image 1">
+            <p>Check out this amazing offer!</p>
+        </div>
+        <div class="advertisement">
+            <h2>Advertisement 2</h2>
+            <img src="/path/to/your/ad-image2.jpg" alt="Ad Image 2">
+            <p>Explore our special deals!</p>
+        </div>
+        <div class="advertisement">
+            <h2>Advertisement 3</h2>
+            <img src="/path/to/your/ad-image3.jpg" alt="Ad Image 3">
+            <p>Don't miss out on these savings!</p>
+        </div>
+        <div class="creative-element">
+            <h2>Location</h2>
+            <p>Discover us at:</p>
+            <p>Your Creative Location</p>
+        </div>
+    </div>
+
+    <div class="countdown-container">
+        <h2>Offer Ends Soon!</h2>
+        <div id="countdown"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    console.log('Countdown script loaded');
+
+    // Set the date and time when the offer ends (2 days from now)
+    const endTime = new Date();
+    endTime.setDate(endTime.getDate() + 2);
+
+    console.log('End time:', endTime);
+
+    // Update the countdown every second
+    const countdown = setInterval(function() {
+        // Get current date and time
+        const now = new Date().getTime();
+
+        // Calculate the remaining time
+        const distance = endTime - now;
+
+        console.log('Distance:', distance);
+
+        // Check if the offer has ended
+        if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById('countdown').innerHTML = 'Offer has ended!';
+            return;
+        }
+
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the countdown timer
+        document.getElementById('countdown').innerHTML = `
+            <div class="countdown-number">${days}d ${hours}h ${minutes}m ${seconds}s</div>
+        `;
+    }, 1000); // Update every second (1000 milliseconds)
+
+    const likeButton = document.getElementById('like-button');
+    likeButton.addEventListener('click', function() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-animation');
+        heart.innerHTML = '<i class="fas fa-heart"></i>';
+        likeButton.appendChild(heart);
+
+        // Remove the heart element after animation ends
+        heart.addEventListener('animationend', () => {
+            heart.remove();
+        });
+    });
+});
+
+    </script>
+
+    <script src="../scripts/details.js"></script>
 </body>
 </html>

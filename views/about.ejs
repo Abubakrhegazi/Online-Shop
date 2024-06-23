@@ -4,53 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title %></title>
+    <title>About Us</title>
     <link rel="stylesheet" href="/styles.css/aboutt.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 </head>
 
-
 <body>
     <%- include('./partials/nav.ejs') %>
 
-    <div class="title">
-        <h1>About us <span>Our E-Commerce </span></h1>
-    </div>
-
-
     <div class="main-container">
-        <div class="image">
-            <div><img src="/imgs/models/model8.jpg "></div>
-            <button class="button" onclick="alrt()">See Projects</button>
-            
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to HERoines Inc. A safe space and platform to help women master real-life experiences.</h1>
+            </div>
+            <div class="hero-image">
+                <img src="/imgs/models/model8.jpg" alt="Hero Image">
+            </div>
         </div>
-        <div class="body">
-            <h3> About Our Online Store</h3>
-            <h1>Risus suspendisse a orci penatibus a felis suscipit consectetur vestibulum sodales dui cum ultricies
-                lacus
-                interdum. Per suspendisse adipiscing a suspendisse auctor nibh a et at curae condimentum suspendisse
-                enim a
-                eu scelerisque.
-
-                One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a
-                horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his
-                brown
-                belly, slightly domed and divided by arches into stiff.
-
-                Dictumst per ante cras suscipit nascetur ullamcorper in nullam fermentum condimentum torquent iaculis
-                reden
-                posuere potenti viverra condimentum dictumst id tellus suspendisse convallis condimentum.
-
-                His room, a proper human room although a little too small, lay peacefully between its four familiar
-                walls. A
-                collection of textile samples lay spread out on the table – Samsa was a travelling salesman.
-            </h1>
-            <h5>Developed by Mena Khaled  @ 2024.</h5>
+        
+        <div class="about-section">
+            <div class="about-text">
+                <h2>About us</h2>
+                <p>Since 2011, HERoines Inc. has been helping women, young and old, create the lives they want to live through events, girl talk, books, videos, and more that support and empower them to follow their dreams.</p>
+                <p>We help them embark on a journey of finding their true selves by organizing events that discuss women's issues with the help of women who share their experiences. Our events are a mix of girl talk and fun. There are also signature events that happen every year such as #UnWined, Heels Class for a Cure, and #EmpowerYourself.</p>
+                <p>These signature events are led by a guest speaker who has had a breakthrough in the presented topic. She'll speak about her personal experiences followed by hands-on games, activities, and open conversations. And, of course, there's wine and delicious appetizers.</p>
+                <p>Our goal is to encourage and motivate the everyday woman by giving her the tools to overcome everyday challenges and meet women who have faced and overcome the same challenges. By helping one another, women can transform not only our peers but the world.</p>
+                <h5>Developed by Mena Khaled @ 2024.</h5>
+            </div>
         </div>
     </div>
 
     <%- include('./partials/footer.ejs') %>
 </body>
-<script src="./scripts/about us.js"></script>
+<script src="./scripts/about_us.js"></script>
 <script src="./scripts/darkMode.js"></script>
 </html>

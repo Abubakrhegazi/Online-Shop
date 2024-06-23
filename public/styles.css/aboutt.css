@@ -1,30 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
-    font-family: "League Spartan", sans-serif;
-
+    font-family: 'League Spartan', sans-serif;
 }
 
-.title {
-    text-align: center;
-}
-
-.title h1 {
-    font-size: 47px;
+body {
+    background-color: #f4f4f9;
     color: #333;
-    margin: 2%;
+    line-height: 1.6;
 }
 
-.title h1 span {
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffe4e1;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.about-section {
+    padding: 40px;
+    background-color: #fff;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-align: justify;
+}
+
+.about-text h2 {
+    font-size: 32px;
     color: #007bff;
+    margin-bottom: 20px;
 }
 
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
-#Header .logo {
-    width: 24%;
+.about-text h5 {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: 40px;
 }
 
 #Header {
@@ -56,15 +101,16 @@
     font-size: 15px;
     font-weight: 500;
     color: white;
-
 }
 
-#navbar li a:hover,#navbar li a.active {
+#navbar li a:hover,
+#navbar li a.active {
     color: #FD9610;
     transition: 0.3s ease;
 }
 
-#navbar li a.active::after,#navbar li a:hover::after {
+#navbar li a.active::after,
+#navbar li a:hover::after {
     content: "";
     width: 50%;
     height: 2px;
@@ -72,69 +118,13 @@
     position: absolute;
     bottom: -4px;
     left: 0px;
-
-
-}
-
-.main-container{
-    display: flex;
-    justify-content: space-around;
-}
-
-.body {
-    max-width: 800px;
-    margin: 0;
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    text-align: justify;
-}
-.body h3 {
-    font-size: 24px;
-    color: #007bff;
-    margin-bottom: 20px;
-    text-align: center;
-}
-.body h1 {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-.body h5 {
-    font-size: 14px;
-    color: #777;
-    text-align: center;
-}
-
-.image {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.image div img {
-    width: 100%;
-}
-.image div{
-    width: 65%;
-}
-
-.button {
-   
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
 }
 
 footer {
     background-color: #011132;
-    padding: 20px ;
+    padding: 20px;
+    color: white;
+    text-align: center;
 }
 
 .container {
@@ -143,12 +133,7 @@ footer {
     padding: 0 20px;
 }
 
-.row {
-    display: flex;
-    justify-content: space-around;
-}
-
-.contact h4,.social-media h4 {
+.contact h4, .social-media h4 {
     margin-bottom: 10px;
     color: white;
     font-weight: 300;
@@ -178,89 +163,43 @@ ul li a:hover {
     color: #FD9610;
 }
 
-
 @media only screen and (max-width: 768px) {
-    #Header .logo {
-        width: 40%;
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
     }
 
-    #navbar {
-        justify-content: center;
+    .hero-content h1 {
+        font-size: 28px;
     }
 
-    #navbar li a {
-        font-size: 14px;
-    }
-
-    .image div {
-        width: 100%;
-    }
-
-    .title h1 {
-        font-size: 36px;
-    }
-
-    .body {
-        padding: 10px;
-    }
-
-    .title h1 {
-        font-size: 30px;
-    }
-    .body h3 {
-        font-size: 18px;
-    }
-    .body h1 {
-        font-size: 14px;
-    }
-    .body h5 {
-        font-size: 12px;
-    }
-    .contact p {
-        font-size: 12px;
+    .about-text {
+        padding: 20px;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    #Header .logo {
-        width: 50%;
-    }
-
-    #navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #navbar li a {
-        font-size: 12px;
-        margin: 5px 0;
-    }
-
-    .title h1 {
+    .hero-content h1 {
         font-size: 24px;
     }
-    .body h3 {
-        font-size: 16px;
-    }
-    .body h1 {
-        font-size: 12px;
-    }
-    .body h5 {
-        font-size: 10px;
-    }
-    .contact p {
-        font-size: 10px;
-    }
-    
-}
 
+    .about-text p {
+        font-size: 14px;
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+    }
+}
 
 body.dark-mode {
     background-color: #292929;
-    color: black;
+    color: white;
     transition: background-color 2s, color 2s;
+}
 
-    .title h1, .body{
-        color: white;
-    }
+body.dark-mode .about-text h2,
+body.dark-mode .about-text p,
+body.dark-mode .about-text h5 {
+    color: white;
 }

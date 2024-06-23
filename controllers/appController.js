@@ -1,6 +1,8 @@
 const express = require('express')
 require("dotenv").config()
 const Product = require('../models/product');
+const axios = require('axios');
+
 const User = require('../models/users');
 
 function cap(str) {

@@ -4,124 +4,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title %></title>
+    <title>
+        <%=title %>
+    </title>
     <link rel="stylesheet" href="/styles.css/E-commerce.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 </head>
 
 <body>
 
-
     <%- include('./partials/nav.ejs') %>
 
-
-    <!-- <section id="slideshow-sec">
-
-
-            <img id="slideshow" src="" alt="Slideshow Image">
-            <div class="arrow prev" onclick="prevImage()">&#10094;</div>
-            <div class="arrow next" onclick="nextImage()">&#10095;</div> 
-        </section>  -->
-
-    <section id="hero">
-        <h4>Trade-in-offer</h4>
-        <h2>Super value deals</h1>
+        <section id="hero">
+            <h4>Trade-in-offer</h4>
+            <h2>Super value deals</h2>
             <h1>On all products</h1>
             <p>save more with coupons & up to 70%</p>
             <button>Shop now</button>
-    </section>
+        </section>
 
-
-    <section id="mostalzmat" class="section-box">
-        <div class="box">
-            <img src="/imgs/misc/FreeShipping.png" alt="">
-            <h6>Free shipping</h6>
-        </div>
-        <div class="box">
-            <img src="/imgs/misc/online.png" alt="">
-            <h6>Online orders</h6>
-        </div>
-        <div class="box">
-            <img src="/imgs/misc/saveMoney.png" alt="">
-            <h6>Save money</h6>
-        </div>
-        <div class="box">
-            <img src="/imgs/misc/prom.jpg" alt="">
-            <h6>Promotions</h6>
-        </div>
-        <div class="box">
-            <img src="/imgs/misc/f5.png" alt="">
-            <h6>Happy sell</h6>
-        </div>
-        <div class="box">
-            <img src="/imgs/misc/f6.png" alt="">
-            <h6>F24/7Support</h6>
-        </div>
-    </section>
-
-    
-    <section id="product1" class="section-box">
-        <h2>Featured Products</h2>
-        <p>Shop Now!</p>
-        <div class="pro-container">
-            <div class="prod_flex">                       
-                <% if (typeof data !== 'undefined' && data.length > 0) { %>
-                    <% data.forEach(item => { %>
-                        <% if (item.name && item.price && item.description) { %>       
-                            <div class="pro">
-                                <a href="/details/<%= item._id %>"> <!-- Link wraps the image -->
-                                    <img class="proImg" src="<%= item.image || '/uploads/default.jpg' %>" alt="<%= item.name %> Image">
-                                </a>
-                                <div class="des">
-                                    <span><%= item.brand %></span>
-                                    <h5><%= item.name %></h5>
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <h4><p style="display: inline; font-size: 0.8em;">EGP </p><%= item.price %></h4>
-                                </div>
-                                <a href="/details/<%= item._id %>"><i class="fal fa-shopping-cart cart"></i></a>
-                            </div>
-                        <% } %>
-                    <% }) %>
-                <% } else { %>
-                    <p>No results available.</p>
-                <% } %>  
+        <section id="mostalzmat" class="section-box">
+            <div class="box">
+                <img src="/imgs/misc/FreeShipping.png" alt="">
+                <h6>Free shipping</h6>
             </div>
-        
-          
-            <!-- <div class="pro">
-                <img src="/imgs/products/hamza-nouasria-WMDVjvLE8ls-unsplash.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Black long-sleeves</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
+            <div class="box">
+                <img src="/imgs/misc/online.png" alt="">
+                <h6>Online orders</h6>
+            </div>
+            <div class="box">
+                <img src="/imgs/misc/saveMoney.png" alt="">
+                <h6>Save money</h6>
+            </div>
+            <div class="box">
+                <img src="/imgs/misc/prom.jpg" alt="">
+                <h6>Promotions</h6>
+            </div>
+            <div class="box">
+                <img src="/imgs/misc/f5.png" alt="">
+                <h6>Happy sell</h6>
+            </div>
+            <div class="box">
+                <img src="/imgs/misc/f6.png" alt="">
+                <h6>F24/7Support</h6>
+            </div>
+        </section>
+
+        <section id="product1" class="section-box">
+            <h2>Featured Products</h2>
+            <p>Shop Now!</p>
+            <div class="pro-container">
+                <div class="prod_flex">
+                    <% if (typeof data !=='undefined' && data.length> 0) { %>
+                        <% data.forEach(item=> { %>
+                            <% if (item.name && item.price && item.description) { %>
+                                <div class="pro">
+                                    <a href="/details/<%= item._id %>">
+                                        <img class="proImg" src="<%= item.image || '/uploads/default.jpg' %>"
+                                            alt="<%= item.name %> Image">
+                                    </a>
+                                    <div class="des">
+                                        <span>
+                                            <%= item.brand %>
+                                        </span>
+                                        <h5>
+                                            <%= item.name %>
+                                        </h5>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <h4>
+                                            <p style="display: inline; font-size: 0.8em;">EGP </p>
+                                            <%= item.price %>
+                                        </h4>
+                                    </div>
+                                    <a href="/details/<%= item._id %>"><i class="fal fa-shopping-cart cart"></i></a>
+                                </div>
+                                <% } %>
+                                    <% }) %>
+                                        <% } else { %>
+                                            <p>No results available.</p>
+                                            <% } %>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>-->
-        </div>
-    </section> 
+            </div>
+        </section>
 
-    <section id="banner" class="section-m1">
-        <h2>Up to <span>70% off</span> - All t-shirts & Accessories</h2>
-        <a class="seperate" href="shop" >Explore more</a>
-    </section>
+        <section id="banner" class="section-m1">
+            <h2>Up to <span>70% off</span> - All t-shirts & Accessories</h2>
+            <a class="seperate" href="shop">Explore more</a>
+        </section>
 
-    <%- include('./partials/footer.ejs') %>
-    <script src="../scripts/darkMode.js"></script>
+        <%- include('./partials/footer.ejs') %>
 
-   
+            <section id="chatbot-icon">
+                <i class="fas fa-comment-dots"></i>
+            </section>
+
+
+            <section id="chatbot-window" class="hidden">
+                <div class="chatbot-header">
+                    <h4>Chat with us</h4>
+                    <span id="chatbot-close">&times;</span>
+                </div>
+                <div class="chatbot-body" id="chatbot-body">
+                    <p>Hello! How can I help you today?</p>
+                </div>
+                <div class="chatbot-footer">
+                    <form action="/api/chat" method="post">
+                        <input type="text" id="chatbot-input" placeholder="Type a message...">
+                        <button id="chatbot-send" type="submit">Send</button>
+                    </form>
+                </div>
+            </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Toggle chatbot window visibility
+                    document.getElementById('chatbot-icon').addEventListener('click', function () {
+                        document.getElementById('chatbot-window').classList.toggle('hidden');
+                    });
+
+                    // Close chatbot window
+                    document.getElementById('chatbot-close').addEventListener('click', function () {
+                        document.getElementById('chatbot-window').classList.add('hidden');
+                    });
+
+                    // Send message to chatbot and handle response
+                    document.getElementById('chatbot-send').addEventListener('click', async function () {
+                        const input = document.getElementById('chatbot-input').value.trim();
+                        if (input === '') return;
+
+                        // Display user message
+                        const userMessageElement = document.createElement('div');
+                        userMessageElement.textContent = `You: ${input}`;
+                        document.getElementById('chatbot-body').appendChild(userMessageElement);
+
+                        // Send message to backend API
+                        try {
+                            const response = await fetch('/api/chat', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ message: input })
+                            });
+
+                            if (!response.ok) {
+                                throw new Error('Failed to fetch response from server');
+                            }
+
+                            const data = await response.json();
+
+                            // Display bot response
+                            const botMessageElement = document.createElement('div');
+                            botMessageElement.textContent = `Bot: ${data.response}`;
+                            document.getElementById('chatbot-body').appendChild(botMessageElement);
+
+                            // Clear input field
+                            document.getElementById('chatbot-input').value = '';
+
+                        } catch (error) {
+                            console.error('Error fetching or parsing data:', error);
+                            // Handle error (show error message to user, retry logic, etc.)
+                        }
+                    });
+                });
+            </script>
+            <script src="../scripts/darkMode.js"></script>
+
 </body>
 
 </html>

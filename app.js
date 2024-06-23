@@ -1,6 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const axios = require('axios');
 const morgan = require('morgan');
-const appRoutes = require('./routes/appRoutes')
+const appRoutes = require('./routes/appRoutes');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const authRoutes=require('./routes/authRoutes');
@@ -8,6 +10,14 @@ const cookieParser=require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 //initialize connection
 const app = express();
+
+app.use(bodyParser.json());
+app.use(express.static('public'));
+
+
+
+
+
 require('dotenv').config()
 app.listen(8000); // port
 mongoose.connect(process.env.dbURL)

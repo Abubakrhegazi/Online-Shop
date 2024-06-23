@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { makeApiRequest } = require('./apiservice');
 const {requireAuth}=require('../middleware/authMiddleware') 
 const appController = require('../controllers/appController');
 const multer = require('multer');
@@ -32,6 +33,19 @@ router.post('/order', async (req, res) => {
         res.status(500).json({ message: 'An error occurred', error });
     }
 });
+router.post('/exampleRoute', async (req, res) => {
+    try {
+        const requestData = {
+            // Define request data as needed
+            prompt: req.body.prompt,
+            max_tokens: req.body.max_tokens
+        };
+        const apiResponse = await makeApiRequest(requestData);
+        res.json(apiResponse);
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to process request', error: error.message });
+    }
+});
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -59,6 +73,8 @@ router.get('/shop/:category', appController.category_get);
 router.get('/edit/:id', appController.edit_crud);
 router.post('/addProduct', upload.single('image'), appController.addProduct_post);
 router.post('/editproduct/:id',upload.single('image'), appController.editproduct);
+router.post('/api/chat',appController.chat_post);
+router.get('/currency',appController.currency_get);
 // router.post('/updateLikedItems', appController.liked);
 
 

@@ -1,6 +1,8 @@
 const express = require('express')
 require("dotenv").config()
 const Product = require('../models/product');
+const axios = require('axios');
+
 
 function cap(str) {
     if (!str) return str;
@@ -334,6 +336,55 @@ module.exports = {
             res.status(500).json({ message: 'An error occurred while adding the product to the cart' });
         }
     },
+    chat_post: async (req, res) => {
+        const { message } = req.body;
+        const { OPENAI_API_KEY } = process.env; // Ensure your environment variable is correctly set
+    
+        try {
+            const response = await axios.post(
+                'https://api.openai.com/v1/engines/davinci/completions',
+                {
+                    prompt: message,
+                    max_tokens: 150,
+                },
+                {
+                    headers: {
+                        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+                    }
+                }
+            );
+    
+            const botResponse = response.data.choices[0].text.trim();
+            res.json({ response: botResponse });
+        } catch (error) {
+            console.error('Error:', error.response ? error.response.data : error.message);
+            if (error.response && error.response.status === 403) {
+                res.status(403).json({ message: 'Unauthorized. Please check your API key.' });
+            } else if (error.response && error.response.status === 429) {
+                res.status(429).json({ message: 'Too many requests. Please try again later.' });
+            } else {
+                res.status(500).json({ message: 'An error occurred while processing your request.' });
+            }
+        }
+    },
+    currency_get: async (req, res) => {
+        const amountt=req.body.amount;
+        const target=req.body.target;
+        const amount=10;
+        const convertTo="EUR"
+        const apikey=process.env.currencyApiKey
+        const api=process.env.link+apikey
+        try{
+            const response=await fetch(api)
+            const result=await response.json()
+            rate=result.data[convertTo]
+            output=rate*amount
+            res.render('index', { output:output });
+        }catch(err){
+            console.log(err)
+        }
+    },
+       
     // liked: (req, res) => {
     //     const { productId, action } = req.body;
 

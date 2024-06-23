@@ -28,12 +28,12 @@
         
             <section>
                     <% products.forEach(product => { %>
-                        <div class="item">
+                        <a href="/details/<%= product._id %>" class="item">
                             <div class="item-img"><img src="<%= product.image %>" alt=""></div>
                             <div class="item-details">
                                 <p class="item-name"><%= product.name%></p>
                                 <div>
-                                    <p class="item-quantity"><%= product.qty%></p> items
+                                    <p class="item-quantity"><%= product.qty%></p> item(s)
                                     <br>
                                     <br>
                                     <span>$</span><span id="item-price"><%= product.price%></span>
@@ -44,7 +44,7 @@
                                     <button id="add" onclick="add()">+</button>
                                 </div> -->
                             </div>
-                        </div>
+                        </a>
                     <% }) %>
             </section>
             <hr class="hrr">

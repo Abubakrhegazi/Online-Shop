@@ -25,25 +25,28 @@
                 <a href="shop.html">Continue Shopping!</a>
             </div>
             <hr class="hrr">
-
-            <div class="item">
-                <div class="item-img"><img src="./imgs/products/f3.jpg" alt=""></div>
-                <div class="item-details">
-                    <p class="item-name">Test</p>
-                    <div>
-                        <p class="item-quantity">1</p> items
-                        <br>
-                        <br>
-                        <span>$</span><span id="item-price">10</span>
-                    </div>
-
-                    <div class="item-adder">
-                        <button id="sub" onclick="sub()">-</button>
-                        <p class="item-quantity">1</p>
-                        <button id="add" onclick="add()">+</button>
-                    </div>
-                </div>
-            </div>
+        
+            <section>
+                    <% products.forEach(product => { %>
+                        <div class="item">
+                            <div class="item-img"><img src="<%= product.image %>" alt=""></div>
+                            <div class="item-details">
+                                <p class="item-name"><%= product.name%></p>
+                                <div>
+                                    <p class="item-quantity"><%= product.qty%></p> items
+                                    <br>
+                                    <br>
+                                    <span>$</span><span id="item-price"><%= product.price%></span>
+                                </div>
+                                <!-- <div class="item-adder">
+                                    <button id="sub" onclick="sub()">-</button>
+                                    <p class="item-quantity">1</p>
+                                    <button id="add" onclick="add()">+</button>
+                                </div> -->
+                            </div>
+                        </div>
+                    <% }) %>
+            </section>
             <hr class="hrr">
         </section>
 

@@ -1,6 +1,7 @@
 const express = require('express')
 require("dotenv").config()
 const Product = require('../models/product');
+const User = require('../models/users');
 
 function cap(str) {
     if (!str) return str;
@@ -96,8 +97,22 @@ module.exports = {
     contact_get: (req, res) => {
         res.render('contact', { title: 'Contact', currentPage: 'contact' });
     },
-    cart_get: (req, res) => {
-        res.render('cart', { title: 'Cart', currentPage: 'cart' });
+    cart_get:async (req, res) => {
+        const user = res.locals.user;
+        const arr = user.items;
+        try {
+            const productsWithDetails = await Promise.all(arr.map(async item => {
+                const product = await Product.findById(item.productId).lean(); 
+                return {
+                    ...product,
+                    qty: item.qty
+                };
+            }));
+            res.render('cart', { title: 'Cart', currentPage: 'cart', products: productsWithDetails });
+        } catch (error) {
+            console.error('Error fetching product details:', error);
+            res.status(500).send('Server Error');
+        }
     },
     profile_get: (req, res) => {
         res.render('profile', { title: 'Profile', currentPage: 'profile' });
@@ -375,24 +390,28 @@ module.exports = {
             res.status(500).send('Internal Server Error');
         }
     },
-    addToCart: async (req, res, next) => {
-        if (!res.locals.user) {
-            return res.status(401).json({ message: 'User not authenticated' });
-        }
+    addToCart: async (req, res) => {
+        const userId = res.locals.user._id; // Assuming userId is available in res.locals.user
+        const prodId = req.params.id; // Product id from request parameters
 
         try {
-            const product = await Product.findById(req.body.productId);
-            if (!product) {
-                return res.status(404).json({ message: 'Product not found' });
-            }
-
-            await res.locals.user.addToCart(product);
-            res.redirect('/cart'); // Or handle the response as necessary
-        } catch (err) {
-            console.error('Error adding product to cart:', err);
-            res.status(500).json({ message: 'An error occurred while adding the product to the cart' });
+            const user = await User.findById(userId);
+            if (!user) {
+                return res.status(404).json({ error: 'User not found' });
+            } 
+            const newItem = {
+                productId: prodId,
+                qty: 1 
+            };
+            user.items.push(newItem);
+            await user.save();
+            res.redirect('/shop');
+        } catch (error) {
+            console.error('Error adding to cart:', error);
+            res.status(500).json({ error: 'Server error' });
         }
     },
+    
     // liked: (req, res) => {
     //     const { productId, action } = req.body;
 

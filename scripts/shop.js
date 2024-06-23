@@ -50,7 +50,6 @@ function prevSlide() {
     }
     slide.src = images[slideIndex];
     slideIndex--;
-    
 }
 
 

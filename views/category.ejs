@@ -4,26 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title %></title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="/styles.css/SHOPcss.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 </head>
 
 <body>
     <%- include('./partials/nav.ejs') %>
+    
+    <div class="title">
+        <h1>Welcome to <span>Our E-Commerce Store</span></h1>
+        <p>Discover amazing deals on your favorite products!</p>
+    </div>
 
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="../imgs/slideshow/ss1.avif " id="slide">
+        </div>
+
+        <div class="textonimage">
+            <button class="ssl" onclick="prevSlide()"><i class="fa fa-angle-left"></i></button>
+            <button class="ssr" onclick="nextSlide()"><i class="fa fa-angle-right"></i></button>
+        </div>
+    </div>
 
     <section id="product1" class="section-box">
-        <h2>Showing <%=data.length%> products for: <%= category%></h2>
+        <% if(category){ %>
+        <h2>Category: <%= category %></h2> 
+        <% } else { %>
+        <h2>All Products</h2>
+        <% } %>
         <p>Shop Now!</p>
         <div class="prod_grid">                       
             <% if (typeof data !== 'undefined' && data.length > 0) { %>
                 <% data.forEach(item => { %>
                     <% if (item.name && item.price && item.description) { %>       
                         <div class="pro">
-                            <a href="/details/<%= item._id %>"> <!-- Link wraps the image -->
+                            <a href="/details/<%= item._id %>">
                                 <img class="proImg" src="<%= item.image || '/uploads/default.jpg' %>" alt="<%= item.name %> Image">
-                            </a>
                             <div class="des">
                                 <span><%= item.brand %></span>
                                 <h5><%= item.name %></h5>
@@ -36,284 +54,36 @@
                                 </div>
                                 <h4><p style="display: inline; font-size: 0.8em;">EGP </p><%= item.price %></h4>
                             </div>
-                            <a href="/details/<%= item._id %>"><i class="fal fa-shopping-cart cart"></i></a>
+                            </a>
+                            <form action="/addtocart" method="post">
+                                <input type="hidden" name="productId" value="<%= item._id %>">
+                            <button type="submit"><i class="fal fa-shopping-cart cart"></i></button>
+                            </form>
                         </div>
                     <% } %>
                 <% }) %>
+                
             <% } else { %>
                 <p>No results available.</p>
             <% } %>  
+            
         </div>
         <% if (totalPages > 1) { %>
             <div class="pagination">
-                <% if (currentPage > 1) { %>
-                    <a href="?page=1">First</a>
-                    <a href="?page=<%= currentPage - 1 %>">Previous</a>
+                <% if (current_page > 1) { %>
+                    <a href="?category=<%= category %>&page=1">First</a>
+                    <a href="?category=<%= category %>&page=<%= current_page - 1 %>">Previous</a>
                 <% } %>
                 <% for (let i = 1; i <= totalPages; i++) { %>
-                    <a href="?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
-                <% } %>
-                <% if (currentPage < totalPages) { %>
-                    <a href="?page=<%= currentPage + 1 %>">Next</a>
-                    <a href="?page=<%= totalPages %>">Last</a>
+                    <a href="?category=<%= category %>&page=<%= i %>" class="<%= i === current_page ? 'active' : '' %>"><%= i %></a>
+                <% } %> 
+                <% if (current_page < totalPages) { %>
+                    <a href="?category=<%= category %>&page=<%= current_page + 1 %>">Next</a>
+                    <a href="?category=<%= category %>&page=<%= totalPages %>">Last</a>
                 <% } %>
             </div>
         <% } %>
     
-  <!--
-            <div class="pro">
-                <img src="imgs/models/model2.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>women</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model3.webp" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>women</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model4.webp" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>women</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model5.webp" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>women</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model6.webp" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>women</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model7.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>women</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/moedl9.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>men</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model10jpg.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>men</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="imgs/models/model11.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>men</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model12.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>men</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model13.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>men</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model14.webp" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>mobiles</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model15.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>mobiles</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model16jpg.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>mobiles</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-
-            <div class="pro">
-                <img src="imgs/models/model18jpg.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>mobiles</h5>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>78$</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div> -->
         </div>
     </section>
     <hr>

@@ -31,7 +31,10 @@
             <p>Brand: <%= product.brand %></p>
             <p>Color: <%= product.color %></p>
             <p>In Stock: <%= product.quantity %></p>
-            <button class="add-to-cart">Add to Cart</button>
+            <form action="/addtocart/<%=product._id%>" method="post">
+                <input type="hidden" name="productId" value="<%= product._id %>">
+                <button type="submit">Add to cart</button>
+            </form>
             <button id="like-button" class="like-button" onclick="toggleLike('<%= product._id %>')">
                 <i class="fas fa-heart"></i> Like
             </button>

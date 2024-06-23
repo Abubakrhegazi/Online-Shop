@@ -19,12 +19,9 @@ const userSchema = new mongoose.Schema({
     minlength: 6,
 
   },
-  items: [
-    {
-        productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
-        qty: { type: Number, required: true, default: 1 }
-    }
-  ]
+  items: {
+    type: Array,
+  },
 },
 { timestamps: true });
   

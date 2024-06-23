@@ -23,7 +23,8 @@ module.exports={
             const newUser = new userModel({
                 name:req.body.name,
                 email:req.body.email,
-                password:bcrypt.hashSync(password,10)
+                password:bcrypt.hashSync(password,10),
+                items:[]
             });
             // Save the new user to the database
             await newUser.save();

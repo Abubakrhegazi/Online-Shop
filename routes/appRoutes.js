@@ -67,7 +67,7 @@ router.get('/profile', appController.profile_get);
 router.get('/admin', requireAuth,appController.admin_get);
 router.get('/details/:id', appController.details_get);
 router.get('/search', appController.search_get);
-router.post('/addtocart', requireAuth ,appController.addToCart);
+router.post('/addtocart/:id', requireAuth ,appController.addToCart);
 router.get('/admin/:operation', appController.admin_crud); 
 router.get('/shop/:category', appController.category_get);
 router.get('/edit/:id', appController.edit_crud);

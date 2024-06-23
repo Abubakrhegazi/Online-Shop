@@ -14,7 +14,7 @@
     
 
     <div class="title">
-        <h1>Welcome to <span>Our E-Commerce Storee</span></h1>
+        <h1>Welcome to <span>Our E-Commerce Store</span></h1>
         <p>Discover amazing deals on your favorite products!</p>
     </div>
 
@@ -29,13 +29,12 @@
         </div>
     </div>
 
-
     <section id="product1" class="section-box">
         <% if(query){%>
-        <h2>Displaying results for: <%=query%> </h2> 
-        <%}else if(typeof query === 'undefined'){%>
+        <h2>Displaying results for: <%= query %> </h2> 
+        <% } else if(typeof query === 'undefined'){ %>
         <h2>All Products</h2>
-        <%}%>
+        <% } %>
         <p>Shop Now!</p>
         <div class="prod_grid">                       
             <% if (typeof data !== 'undefined' && data.length > 0) { %>
@@ -73,15 +72,15 @@
         <% if (totalPages > 1) { %>
             <div class="pagination">
                 <% if (current_page > 1) { %>
-                    <a href="?page=1">First</a>
-                    <a href="?page=<%= current_page - 1 %>">Previous</a>
+                    <a href="?page=1<%= query ? '&srch=' + query : '' %>">First</a>
+                    <a href="?page=<%= current_page - 1 %><%= query ? '&srch=' + query : '' %>">Previous</a>
                 <% } %>
                 <% for (let i = 1; i <= totalPages; i++) { %>
-                    <a href="?page=<%= i %>" class="<%= i === current_page ? 'active' : '' %>"><%= i %></a>
+                    <a href="?page=<%= i %><%= query ? '&srch=' + query : '' %>" class="<%= i === current_page ? 'active' : '' %>"><%= i %></a>
                 <% } %> 
                 <% if (current_page < totalPages) { %>
-                    <a href="?page=<%= current_page + 1 %>">Next</a>
-                    <a href="?page=<%= totalPages %>">Last</a>
+                    <a href="?page=<%= current_page + 1 %><%= query ? '&srch=' + query : '' %>">Next</a>
+                    <a href="?page=<%= totalPages %><%= query ? '&srch=' + query : '' %>">Last</a>
                 <% } %>
             </div>
         <% } %>

@@ -155,7 +155,7 @@ module.exports = {
             const category = req.params.category;
             const page = parseInt(req.query.page) || 1;
             const pageSize = parseInt(req.query.pageSize) || 10;
-
+    
             const query = {
                 image: { $exists: true },
                 name: { $exists: true },
@@ -167,15 +167,15 @@ module.exports = {
                 brand: { $exists: true },
                 price: { $exists: true }
             };
-
+    
             const totalProducts = await Product.countDocuments(query);
             const totalPages = Math.ceil(totalProducts / pageSize);
-
+    
             const data = await Product.find(query)
                 .sort({ createdAt: -1 })
                 .skip((page - 1) * pageSize)
                 .limit(pageSize);
-
+    
             data.forEach(item => {
                 if (item.image) {
                     const parts = item.image.split('public');
@@ -184,19 +184,71 @@ module.exports = {
                     }
                 }
             });
-            res.render('category', { title: 'Shop', category: category, currentPage: 'shop', data: data, query: undefined, totalPages: totalPages, currentPage: page });
+    
+            res.render('category', { title: 'Shop', category: category, currentPage: 'shop', data: data, totalPages: totalPages, current_page: page });
         } catch (error) {
             console.error('Error fetching products:', error);
             res.status(500).send('An error occurred while fetching products');
         }
     },
+    
+
+    // search_get: async (req, res) => {
+    //     const { srch } = req.query;
+    //     console.log('Request query:', req.query); // Log the entire query object
+
+    //     try {
+    //         const page = parseInt(req.query.page) || 1;
+    //         const pageSize = parseInt(req.query.pageSize) || 10;
+
+    //         const query = {
+    //             image: { $exists: true },
+    //             name: { $exists: true },
+    //             description: { $exists: true },
+    //             category: { $exists: true },
+    //             type: { $exists: true },
+    //             quantity: { $exists: true },
+    //             color: { $exists: true },
+    //             brand: { $exists: true },
+    //             price: { $exists: true },
+    //             name: { $regex: srch, $options: 'i' }
+    //         };
+    //         console.log('query.name');
+    //         console.log(srch);
+
+    //         const totalProducts = await Product.countDocuments(query);
+    //         const totalPages = Math.ceil(totalProducts / pageSize);
+
+    //         const data = await Product.find(query)
+    //             .sort({ createdAt: -1 })
+    //             .skip((page - 1) * pageSize)
+    //             .limit(pageSize);
+
+    //         data.forEach(item => {
+    //             if (item.image) {
+    //                 const parts = item.image.split('public');
+    //                 if (parts.length > 1) {
+    //                     item.image = parts[1]; // Set image to the part after 'public'
+    //                 }
+    //             }
+    //         });
+
+    //         res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: srch, totalPages: totalPages, current_page: page });
+    //     } catch (error) {
+    //         console.error('Error fetching products:', error);
+    //         res.status(500).send('An error occurred while fetching products');
+    //     }
+    // },
 
     search_get: async (req, res) => {
         const { srch } = req.query;
+        console.log('Request query:', req.query); // Log the entire query object
+    
         try {
             const page = parseInt(req.query.page) || 1;
             const pageSize = parseInt(req.query.pageSize) || 10;
-
+    
+            // Base query
             const query = {
                 image: { $exists: true },
                 name: { $exists: true },
@@ -208,15 +260,22 @@ module.exports = {
                 brand: { $exists: true },
                 price: { $exists: true }
             };
-
+    
+            // If a search term is provided, add the regex condition
+            if (srch) {
+                query.name = { $regex: srch, $options: 'i' };
+            }
+    
+            console.log('Search query:', query);
+    
             const totalProducts = await Product.countDocuments(query);
             const totalPages = Math.ceil(totalProducts / pageSize);
-
+    
             const data = await Product.find(query)
                 .sort({ createdAt: -1 })
                 .skip((page - 1) * pageSize)
                 .limit(pageSize);
-
+    
             data.forEach(item => {
                 if (item.image) {
                     const parts = item.image.split('public');
@@ -225,14 +284,14 @@ module.exports = {
                     }
                 }
             });
-
+    
             res.render('shop', { title: 'Shop', currentPage: 'shop', data: data, query: srch, totalPages: totalPages, current_page: page });
         } catch (error) {
             console.error('Error fetching products:', error);
             res.status(500).send('An error occurred while fetching products');
         }
     },
-
+    
     admin_crud: async (req, res) => {
         const operation = req.params.operation;
         const data = await Product.find({
@@ -299,7 +358,7 @@ module.exports = {
             const id = req.params.id;
             product = Product.findById(id);
             const { name, description, category, type, brand, price } = req.body;//shayel al updated values
- 
+
             image = (req.body.path || product.image); // bey7ot el image el adeema law mafeesh wahda gedeeda
             // Update the product by ID
             await Product.findByIdAndUpdate(id, { // <-- de built in function

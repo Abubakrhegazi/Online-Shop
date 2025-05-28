@@ -5,6 +5,9 @@ require('dotenv').config()
 
 const maxAge=3*24*60*60;
 const secret=process.env.secret;
+const ADMIN_USERNAME = 'admin';
+const ADMIN_PASSWORD = 'admin123';
+
 const createToken=(id)=>{
     return jwt.sign({id},secret,{expiresIn: maxAge});
 }
@@ -49,22 +52,34 @@ module.exports={
     login_get: (req, res) => {
         res.render('login', { title: 'Login' ,error:'.',currentPage:'login'});
     },
-    login_post: async(req, res) => {
-        const user = await userModel.findOne({ email: req.body.email });
-        
-        if (user && bcrypt.compareSync(req.body.password, user.password)) {
-            const token=createToken(user._id);
-            res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000});
-            console.log("User authenticated", token);
-            res.redirect('/');
-        }else if (!user) {	
-            res.render('login', { title: 'Login',error:'Email not registered',currentPage:'login'});
-            console.log("User not found");
-        } else {
-            console.log("Invalid credentials");
-            res.render('login', { title: 'Login',error:'Incorrect password',currentPage:'login'});
-        }
-    },
+    login_post: async (req, res) => {
+    const { email, password } = req.body;
+
+    // === 1. Check static admin credentials ===
+    if (email === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+        const token = jwt.sign({ id: 'admin', isAdmin: true }, secret, { expiresIn: maxAge });
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+        console.log("Admin authenticated", token);
+        return res.redirect('/admin/dashboard'); // or wherever your admin goes
+    }
+
+    // === 2. Check normal users from database ===
+    const user = await userModel.findOne({ email });
+
+    if (user && bcrypt.compareSync(password, user.password)) {
+        const token = createToken(user._id);
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+        console.log("User authenticated", token);
+        res.redirect('/');
+    } else if (!user) {
+        res.render('login', { title: 'Login', error: 'Email not registered', currentPage: 'login' });
+        console.log("User not found");
+    } else {
+        console.log("Invalid credentials");
+        res.render('login', { title: 'Login', error: 'Incorrect password', currentPage: 'login' });
+    }
+},
+
 //logout
     logout_get:(req,res)=>{
         res.cookie('jwt','',{maxAge:1});

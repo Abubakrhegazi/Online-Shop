@@ -61,7 +61,7 @@ p {
     #hero {
         background-image: url("../imgs/bgs/back2.jpg");
         height: 90vh;
-        width: 100%;
+        /* width: 100%; */
         background-size: cover;
         background-position: 25% top right 0;
         padding: 0 80px;
